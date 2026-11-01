@@ -440,10 +440,79 @@ html.motion .stack.marq:hover .track,html.motion .stack.marq:focus-within .track
   .cost-tbl tr:last-child{border-bottom:0}
   .cost-tbl td{padding:2px 0;border:0}
 }
-@media (max-width:340px){.topbar .tb-name{display:none}}
-@media (max-width:400px){
-  .kpis{grid-template-columns:1fr}
+/* ---------- phone polish ---------- */
+@media (max-width:860px){
+  html,body{overflow-x:clip}
+  /* compact profile card instead of a tall sidebar */
+  aside.side{gap:14px;padding:18px 18px 20px}
+  aside.side>.btn{display:none}
+  .me{grid-template-columns:64px minmax(0,1fr);column-gap:14px;row-gap:6px;align-items:center}
+  .me .ph{grid-row:span 3}
+  .me .ph img{width:64px;height:64px}
+  .me .ph .dot{width:13px;height:13px;bottom:2px;inset-inline-end:1px}
+  .me strong{font-size:1.12rem}
+  .me .chip{font-size:.72rem;padding:1px 8px}
+  .me p{font-size:.8rem!important;margin:0}
+  .side .links{display:flex;flex-wrap:wrap;gap:8px;margin-top:0}
+  .side .links a{flex:1 1 auto;justify-content:center;padding:8px 10px;font-size:.82rem}
 }
+@media (max-width:560px){
+  .topbar .tb-name{font-size:.88rem}
+  .hero{padding:24px 18px}
+  .hero .actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:22px}
+  .hero .actions .btn{min-width:0;padding-inline:10px}
+  .hero .actions .btn-cal{grid-column:1/-1}
+  .hero .actions a[href$=".pdf"]{display:none}
+  .trust{gap:8px 14px;font-size:.86rem}
+  /* KPI 2x2 */
+  .kpi{padding:14px 14px 16px;gap:4px}
+  .kpi .k{font-size:.72rem;gap:6px}
+  html[lang="ar"] .kpi .k{font-size:.78rem}
+  .kpi .v{font-size:1.45rem}
+  .kpi .s{font-size:.76rem;line-height:1.4}
+  /* value cards: icon beside text */
+  .val{grid-template-columns:44px minmax(0,1fr);column-gap:14px;row-gap:2px;padding:16px}
+  .val .ico{grid-row:span 2;width:44px;height:44px;margin:0}
+  .proc div{padding:16px 18px}
+  section>h2{font-size:1.6rem}
+  /* tables become cards */
+  #automation table,#market table,#compare table{min-width:0}
+  #automation thead,#market thead,#compare thead{display:none}
+  #automation tr,#market tr,#compare tr{display:grid;padding:14px 16px;border-bottom:1px solid var(--line)}
+  #automation tr:last-child,#market tr:last-child,#compare tr:last-child{border-bottom:0}
+  #automation td,#market td,#compare td{display:block;padding:0;border:0;background:none}
+  #automation tr{grid-template-columns:minmax(0,1fr) auto;gap:4px 12px}
+  #automation tbody td:first-child{grid-column:1;grid-row:1;padding-inline-start:30px}
+  #automation tbody td:first-child::before{inset-inline-start:0;top:2px}
+  #automation td:nth-child(2){grid-column:1/-1;grid-row:2;padding-inline-start:30px;font-size:.88rem}
+  #automation td:empty{display:none}
+  #automation td.r{grid-column:2;grid-row:1;min-width:0;font-weight:700;color:var(--green)}
+  #automation td.r .hb{display:none}
+  #automation tr.you{background:var(--blue-tint)}
+  #market tr{grid-template-columns:1fr;gap:4px}
+  #market td:nth-child(1){font-weight:600;color:var(--ink)}
+  #market td:nth-child(3){order:2;text-align:start;color:var(--blue);font-weight:700;white-space:normal}
+  #market td:nth-child(2){order:3;font-size:.88rem;color:var(--muted)}
+  #market tr.you{background:var(--blue-tint)}
+  #market tr.you td{background:none}
+  #market tr.you td:nth-child(3){color:var(--gold)}
+  #compare tr{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px 6px}
+  #compare td{text-align:center;font-size:.86rem;line-height:1.35}
+  #compare td:first-child{grid-column:1/-1;text-align:start;font-weight:600;color:var(--ink);font-size:.92rem}
+  #compare td:not(:first-child){padding:6px 2px;border-radius:10px;background:rgba(255,255,255,.03)}
+  #compare td:nth-child(3){background:rgba(226,184,92,.09)}
+  #compare td:not(:first-child)::before{display:block;font-size:.66rem;font-weight:600;color:var(--muted);letter-spacing:.04em;margin-bottom:2px}
+  #compare td:nth-child(2)::before{content:"Starter"}
+  #compare td:nth-child(3)::before{content:"Business";color:var(--gold)}
+  #compare td:nth-child(4)::before{content:"Custom"}
+  html[lang="ar"] #compare td:nth-child(2)::before{content:"الأساسية"}
+  html[lang="ar"] #compare td:nth-child(3)::before{content:"الأعمال"}
+  html[lang="ar"] #compare td:nth-child(4)::before{content:"المخصصة"}
+  #compare tr:last-child td:nth-child(3)::before{color:var(--gold-ink)}
+  #compare tr:last-child{background:var(--bg-2)}
+  #compare tr:last-child td:first-child{background:none}
+}
+@media (max-width:340px){.topbar .tb-name{display:none}}
 
 /* ---------- print: light, static, complete ---------- */
 @media print{
