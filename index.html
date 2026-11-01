@@ -11,234 +11,399 @@
 <link rel="icon" href="assets/shady.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-/* Layout idea: a client dashboard. Navy sidebar with the consultant; main column opens on a navy hero with the video, then numbers, packages, savings, proof and the next step. */
+/* Calm proposal theme. Low-glare cool off-white ground, off-white cards with soft depth, navy brand anchor, one brass accent kept for "value" moments (recommended, bonuses). Dark surfaces are reserved for brand (sidebar) and decisions (Business card, savings result). */
 :root{
   --navy:#0b2f5e;
-  --navy-2:#123d75;
-  --navy-3:#06213f;
-  --blue:#0b57a4;
-  --sky:#7fb2ec;
-  --ink:#16202e;
-  --muted:#5b6778;
-  --paper:#f3f6fa;
-  --card:#ffffff;
-  --line:#dde3ec;
-  --tint:#e8f0fa;
-  --good:#1f7a4d;
-  --good-tint:#e7f4ec;
-  --gold:#b7791f;
-  --gold-tint:#fdf3e1;
-  --wa:#1fa855;
-  --display:"Bricolage Grotesque","Segoe UI",Arial,sans-serif;
+  --navy-deep:#082448;
+  --navy-hi:#13407a;
+  --blue:#1d5fa8;
+  --navy-soft:#e7eef7;
+  --ink:#172131;
+  --ink-2:#2f3b4d;
+  --muted:#566173;
+  --bg:#f3f5f8;
+  --card:#fbfcfd;
+  --raise:#ffffff;
+  --line:#e2e7ee;
+  --line-2:#d3dae4;
+  --field:#7c8798;
+  --brass:#8a5c0e;
+  --brass-hi:#e2b85c;
+  --brass-tint:#f6eedd;
+  --good:#1f6f47;
+  --wa:#16864a;
+  --wa-hover:#127a42;
+  --on-navy:#dbe5f2;
+  --on-navy-2:#b9c8de;
+  --focus:#1d5fa8;
+  --sh-1:0 1px 2px rgba(16,33,58,.05),0 2px 8px -2px rgba(16,33,58,.06);
+  --sh-2:0 2px 4px rgba(16,33,58,.05),0 14px 32px -12px rgba(16,33,58,.16);
+  --sh-3:0 4px 10px rgba(8,36,72,.12),0 28px 60px -20px rgba(8,36,72,.45);
+  --r:18px;
+  --ease:cubic-bezier(.16,1,.3,1);
+  --display:"Bricolage Grotesque","IBM Plex Sans","Segoe UI",Arial,sans-serif;
   --body:"IBM Plex Sans","Segoe UI",Arial,sans-serif;
+  --i-check:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.9' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E");--i-chev:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.9' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");--i-ccheck:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.9' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cpath d='m9 12 2 2 4-4'/%3E%3C/svg%3E");
   color-scheme:light;
 }
 html[lang="ar"]{--display:"IBM Plex Sans Arabic","Segoe UI",Tahoma,sans-serif;--body:"IBM Plex Sans Arabic","Segoe UI",Tahoma,sans-serif}
 *{box-sizing:border-box}
 html,body{margin:0}
-html{scroll-behavior:smooth}
-body{background:var(--paper);color:var(--ink);font:15.5px/1.65 var(--body)}
-a{color:var(--blue)}
-a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid #f2b705;outline-offset:2px}
-h1,h2,h3{font-family:var(--display);line-height:1.2;text-wrap:balance;margin:0}
-h2{font-size:1.65rem;color:var(--navy)}
-h3{font-size:1.08rem}
-p{margin:0}
-.num{font-variant-numeric:tabular-nums}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;scrollbar-color:#b8c2d0 var(--bg)}
+body{background:var(--bg);color:var(--ink);font:400 16.5px/1.7 var(--body);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+html[lang="ar"] body{font-size:17px;line-height:1.85}
+::selection{background:#cfdcef;color:var(--navy-deep)}
+a{color:var(--blue);text-underline-offset:.2em;text-decoration-thickness:1px}
+a:hover{text-decoration-thickness:2px}
+:focus-visible{outline:2px solid var(--focus);outline-offset:3px;border-radius:6px}
+.side :focus-visible,.pkg.rec :focus-visible,.result :focus-visible{--focus:var(--brass-hi)}
+h1,h2,h3{font-family:var(--display);line-height:1.2;text-wrap:balance;margin:0;color:var(--ink)}
+html[lang="ar"] :is(h1,h2,h3){line-height:1.45}
+h2{font-size:clamp(1.55rem,1.2rem + 1.1vw,2rem);font-weight:700;color:var(--navy);letter-spacing:-.015em}
+h3{font-size:1.1rem;font-weight:600;letter-spacing:-.005em}
+html[lang="ar"] :is(h1,h2,h3){letter-spacing:0}
+p{margin:0;text-wrap:pretty}
+.num{font-variant-numeric:tabular-nums lining-nums}
 .muted{color:var(--muted)}
 .ltr{direction:ltr;unicode-bidi:isolate}
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+svg.i{width:1.15em;height:1.15em;flex:none;display:inline-block;vertical-align:-.2em}
 
-.shell{display:grid;grid-template-columns:290px 1fr;min-height:100%}
-aside.side{background:var(--navy);color:#fff;padding:26px 22px;display:flex;flex-direction:column;gap:20px;position:sticky;top:0;height:100vh;overflow-y:auto}
+/* icon mask helper */
+.mi{display:inline-block;width:1.1em;height:1.1em;flex:none;background:currentColor;-webkit-mask:var(--ic) center/contain no-repeat;mask:var(--ic) center/contain no-repeat;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+
+/* ---------- sidebar ---------- */
+.shell{display:grid;grid-template-columns:300px minmax(0,1fr);min-height:100%}
+aside.side{background:linear-gradient(180deg,var(--navy) 0%,var(--navy-deep) 100%);color:#fff;padding:28px 24px;display:flex;flex-direction:column;gap:20px;position:sticky;top:0;height:100vh;overflow-y:auto;scrollbar-width:thin;scrollbar-color:#2c5488 transparent}
 .me{display:grid;gap:10px;justify-items:start}
 .me .ph{position:relative}
-.me .ph img{width:96px;height:96px;border-radius:50%;object-fit:cover;border:3px solid #fff;display:block}
-.me .ph .dot{position:absolute;bottom:6px;inset-inline-end:4px;width:16px;height:16px;border-radius:50%;background:var(--wa);border:3px solid var(--navy)}
-.me strong{font-family:var(--display);font-size:1.3rem}
+.me .ph img{width:92px;height:92px;border-radius:50%;object-fit:cover;display:block;box-shadow:0 0 0 3px rgba(255,255,255,.9),0 10px 24px -8px rgba(0,0,0,.5)}
+.me .ph .dot{position:absolute;bottom:5px;inset-inline-end:3px;width:16px;height:16px;border-radius:50%;background:#2fbf6b;border:3px solid var(--navy)}
+.me strong{font-family:var(--display);font-size:1.3rem;font-weight:700;letter-spacing:-.01em}
+html[lang="ar"] .me strong{letter-spacing:0}
 .roles{display:flex;flex-wrap:wrap;gap:6px}
-.chip{border:1px solid #3d6aa3;color:#dbe6f5;border-radius:999px;padding:2px 10px;font-size:.78rem}
-.lang{display:inline-flex;border:1px solid #3d6aa3;border-radius:999px;padding:3px;gap:2px;align-self:flex-start}
-.lang button{font:600 .82rem var(--body);background:transparent;color:#c9d8ee;border:0;border-radius:999px;padding:5px 14px;cursor:pointer}
-.lang button[aria-pressed="true"]{background:#fff;color:var(--navy)}
-nav.toc{display:grid;gap:2px}
-nav.toc a{color:#c9d8ee;text-decoration:none;padding:7px 10px;border-radius:8px;font-size:.92rem}
-nav.toc a:hover{background:var(--navy-2);color:#fff}
-.side .links{display:grid;gap:8px;margin-top:auto}
-.side .links a{display:flex;gap:10px;align-items:center;color:#fff;text-decoration:none;font-size:.88rem;padding:8px 10px;border:1px solid #2f5b94;border-radius:10px}
+.chip{background:rgba(255,255,255,.08);color:var(--on-navy);border-radius:999px;padding:3px 11px;font-size:.78rem;font-weight:500}
+.lang{display:inline-flex;background:rgba(0,0,0,.18);border-radius:999px;padding:3px;gap:2px;align-self:flex-start}
+.lang button{font:600 .82rem var(--body);background:transparent;color:var(--on-navy);border:0;border-radius:999px;padding:6px 15px;min-height:32px;cursor:pointer;transition:background .2s var(--ease),color .2s var(--ease)}
+.lang button:hover{color:#fff}
+.lang button[aria-pressed="true"]{background:#fff;color:var(--navy);box-shadow:0 1px 3px rgba(0,0,0,.2)}
+nav.toc{display:grid;gap:1px;margin-inline:-10px}
+nav.toc a{color:var(--on-navy-2);text-decoration:none;padding:7px 12px;border-radius:9px;font-size:.92rem;transition:background .2s var(--ease),color .2s var(--ease)}
+nav.toc a:hover{background:rgba(255,255,255,.07);color:#fff}
+.side .links{display:grid;gap:6px;margin-top:auto}
+.side .links a{display:flex;gap:10px;align-items:center;color:var(--on-navy);text-decoration:none;font-size:.88rem;padding:9px 12px;border-radius:10px;background:rgba(255,255,255,.05);transition:background .2s var(--ease)}
+.side .links a:hover{background:rgba(255,255,255,.11);color:#fff}
 .side .links img,.side .links svg{width:18px;height:18px;flex:none}
 .side .links img{filter:invert(1)}
 
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:10px;padding:11px 18px;font-weight:600;text-decoration:none;border:1px solid transparent;font-size:.95rem;cursor:pointer;line-height:1.2;transition:transform .15s ease,box-shadow .15s ease}
-.btn:hover{transform:translateY(-1px)}
+/* ---------- buttons ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;border-radius:12px;padding:12px 20px;min-height:46px;font-weight:600;text-decoration:none;border:1px solid transparent;font-size:.95rem;cursor:pointer;line-height:1.2;transition:transform .25s var(--ease),box-shadow .25s var(--ease),background-color .2s var(--ease),border-color .2s var(--ease)}
+.btn:hover{transform:translateY(-1px);text-decoration:none}
+.btn:active{transform:translateY(0)}
 .btn .ic{width:18px;height:18px;flex:none;filter:invert(1)}
-.btn-wa{background:var(--wa);color:#fff;box-shadow:0 8px 20px -10px rgba(31,168,85,.8)}
-.btn-cal{background:#fff;color:var(--navy);box-shadow:0 8px 20px -12px rgba(0,0,0,.5)}
-.btn-cal svg{stroke:var(--navy)}
-.about .btn-cal,.panel .btn-cal{background:var(--navy);color:#fff}
-.about .btn-cal svg{stroke:#fff}
-.btn-line{border-color:var(--blue);color:var(--blue);background:#fff}
-.btn-light{border-color:#5b84bd;color:#fff;background:transparent}
+.btn-wa{background:var(--wa);color:#fff;box-shadow:0 1px 2px rgba(0,0,0,.1),0 8px 18px -10px rgba(22,134,74,.9)}
+.btn-wa:hover{background:var(--wa-hover);box-shadow:0 1px 2px rgba(0,0,0,.1),0 12px 22px -10px rgba(22,134,74,.9)}
+.btn-cal{background:var(--navy);color:#fff;box-shadow:0 1px 2px rgba(0,0,0,.1),0 8px 18px -10px rgba(11,47,94,.8)}
+.btn-cal:hover{background:var(--navy-hi)}
+.btn-cal svg{stroke:#fff}
+.side .btn-cal{background:#fff;color:var(--navy);box-shadow:0 8px 20px -12px rgba(0,0,0,.6)}
+.side .btn-cal svg{stroke:var(--navy)}
+.side .btn-cal:hover{background:#eef3fa}
+.btn-line{border-color:var(--line-2);color:var(--navy);background:var(--raise);box-shadow:var(--sh-1)}
+.btn-line:hover{border-color:var(--navy);box-shadow:var(--sh-2)}
+.btn-light{border-color:var(--line-2);color:var(--navy);background:transparent}
+.btn-light:hover{background:var(--raise);border-color:var(--navy)}
+.about .btn-line::before{content:"";width:17px;height:17px;background:currentColor;-webkit-mask:var(--ic) center/contain no-repeat;mask:var(--ic) center/contain no-repeat;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.about .btn-line[href*="linkedin"]{--ic:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.9' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z'/%3E%3Crect x='2' y='9' width='4' height='12'/%3E%3Ccircle cx='4' cy='4' r='2'/%3E%3C/svg%3E")}
+.about .btn-line[href*="github"]{--ic:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.9' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.1-1.3-.3-2.5-1-3.5.3-1.2.3-2.4 0-3.5 0 0-1 0-3 1.5-2.6-.5-5.4-.5-8 0C6 2 5 2 5 2c-.3 1.2-.3 2.4 0 3.5A5.4 5.4 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.4.5-.7 1.1-.9 1.7-.2.6-.2 1.2-.1 1.8v4'/%3E%3Cpath d='M9 18c-4.5 2-5-2-5-2'/%3E%3C/svg%3E")}
 
-main{padding:26px clamp(16px,3vw,40px) 60px;display:grid;gap:40px;max-width:1200px;min-width:0}
-section{display:grid;gap:16px;scroll-margin-top:16px;min-width:0}
-.lead{max-width:70ch;color:var(--muted)}
+/* ---------- main column ---------- */
+main{padding:36px clamp(18px,4vw,56px) 72px;display:grid;gap:clamp(56px,6vw,88px);max-width:1180px;min-width:0}
+section{display:grid;gap:20px;scroll-margin-top:24px;min-width:0}
+.lead{max-width:68ch;color:var(--muted);font-size:1.03em}
+section>h2+.lead{margin-top:-8px}
 
-.hero{background:radial-gradient(120% 140% at 100% 0%,#1b4f8f 0%,var(--navy) 45%,var(--navy-3) 100%);color:#fff;border-radius:22px;padding:30px;display:grid;grid-template-columns:1.05fr 1fr;gap:28px;align-items:center;overflow:hidden;position:relative}
-.hero::after{content:"";position:absolute;inset:auto -80px -120px auto;width:340px;height:340px;border-radius:50%;border:1px solid rgba(127,178,236,.25);pointer-events:none}
-.eyebrow{font-size:.76rem;text-transform:uppercase;letter-spacing:.07em;color:#b9cbe6;font-weight:600;display:flex;flex-wrap:wrap;gap:6px 16px}
-html[lang="ar"] .eyebrow{text-transform:none;letter-spacing:0}
-.hero h1{font-size:clamp(1.7rem,3.2vw,2.5rem);font-weight:800;margin-top:12px}
-.hero h1 em{font-style:normal;color:var(--sky)}
-.hero .lead{color:#dbe6f5;margin-top:12px}
-.hero .actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
-.trust{display:flex;flex-wrap:wrap;gap:14px;margin-top:18px;font-size:.85rem;color:#b9cbe6}
-.trust span{display:inline-flex;gap:6px;align-items:center}
-.trust b{color:#fff}
+/* section heading icon chip (pseudo-elements survive the data-ar innerHTML swap) */
+section>h2,.panel>h2,#limits>h3{position:relative;padding-inline-start:52px;min-height:40px;display:flex;align-items:center}
+section>h2::before,.panel>h2::before,#limits>h3::before{content:"";position:absolute;inset-inline-start:0;top:50%;width:40px;height:40px;margin-top:-20px;border-radius:12px;background:var(--navy-soft);box-shadow:inset 0 0 0 1px rgba(11,47,94,.06)}
+section>h2::after,.panel>h2::after,#limits>h3::after{content:"";position:absolute;inset-inline-start:10px;top:50%;width:20px;height:20px;margin-top:-10px;background:var(--navy);-webkit-mask:var(--ic,var(--i-check)) center/contain no-repeat;mask:var(--ic,var(--i-check)) center/contain no-repeat}
+section>h2::before,section>h2::after,.panel>h2::before,.panel>h2::after,#limits>h3::before,#limits>h3::after{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.panel>h2{font-size:1.35rem;padding-inline-start:46px;min-height:36px}
+.panel>h2::before,#limits>h3::before{width:34px;height:34px;margin-top:-17px;border-radius:10px}
+.panel>h2::after,#limits>h3::after{inset-inline-start:8px;width:18px;height:18px;margin-top:-9px}
+#limits>h3{padding-inline-start:46px;min-height:34px}
+#packages{--ic:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.9' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M11 21.7a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.7l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.7z'/%3E%3Cpath d='M12 22V12'/%3E%3Cpath d='m3.3 7 8.7 5 8.7-5'/%3E%3C/svg%3E")} #savings{--ic:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.9' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='4' y='2' width='16' height='20' rx='2'/%3E%3Cpath d='M8 6h8M8 10h.01M12 10h.01M16 10h.01M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01M16 18h.01'/%3E%3C/svg%3E")} #automation{--ic:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.9' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M13 2 3 14h9l-1 8 10-12h-9z'/%3E%3C/svg%3E")} #growth{--ic:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.9' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Ccircle cx='12' cy='12' r='6'/%3E%3Ccircle cx='12' cy='12' r='2'/%3E%3C/svg%3E")}
+#compare{--ic:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.9' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='3' width='18' height='18' rx='2'/%3E%3Cpath d='M9 3v18M15 3v18'/%3E%3C/svg%3E")} #market{--ic:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.9' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m16 16 3-8 3 8c-.9.7-1.9 1-3 1s-2.1-.3-3-1z'/%3E%3Cpath d='m2 16 3-8 3 8c-.9.7-1.9 1-3 1s-2.1-.3-3-1z'/%3E%3Cpath d='M7 21h10M12 3v18M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2'/%3E%3C/svg%3E")} #how{--ic:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.9' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cpath d='m16.2 7.8-2.1 6.3-6.3 2.1 2.1-6.3z'/%3E%3C/svg%3E")} #work{--ic:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.9' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='2' y='7' width='20' height='14' rx='2'/%3E%3Cpath d='M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16'/%3E%3C/svg%3E")}
+#faq{--ic:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.9' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5'/%3E%3Cpath d='M9 18h6M10 22h4'/%3E%3C/svg%3E")} #start{--ic:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.9' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='8' y='2' width='8' height='4' rx='1'/%3E%3Cpath d='M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2'/%3E%3Cpath d='M9 12h6M9 16h6'/%3E%3C/svg%3E")} #about{--ic:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.9' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='8' r='5'/%3E%3Cpath d='M20 21a8 8 0 0 0-16 0'/%3E%3C/svg%3E")} #limits{--ic:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.9' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cpath d='M12 16v-4M12 8h.01'/%3E%3C/svg%3E")}
+#costs .two>.panel:first-child{--ic:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.9' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='2' y='5' width='20' height='14' rx='2'/%3E%3Cpath d='M2 10h20M6 15h4'/%3E%3C/svg%3E")} #costs .two>.panel:last-child{--ic:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.9' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='2' y='2' width='20' height='8' rx='2'/%3E%3Crect x='2' y='14' width='20' height='8' rx='2'/%3E%3Cpath d='M6 6h.01M6 18h.01'/%3E%3C/svg%3E")}
+section>*{--ic:initial}
+section>h2,.panel>h2,#limits>h3{--ic:inherit}
+#costs .two>.panel>h2{--ic:inherit}
 
-.player{position:relative;border-radius:16px;overflow:hidden;background:#04182f;aspect-ratio:16/9;box-shadow:0 30px 60px -30px rgba(0,0,0,.7);border:1px solid rgba(255,255,255,.12)}
-.player video{width:100%;height:100%;display:block;object-fit:cover;background:#04182f}
-.player .tagv{position:absolute;top:12px;inset-inline-start:12px;background:rgba(0,0,0,.45);color:#fff;font-size:.75rem;border-radius:999px;padding:3px 10px;pointer-events:none}
+/* ---------- hero ---------- */
+.hero{background:radial-gradient(90% 120% at 100% 0%,#e3ebf6 0%,rgba(227,235,246,0) 60%),var(--card);color:var(--ink);border-radius:28px;padding:clamp(22px,4vw,44px);display:grid;grid-template-columns:1.3fr 1fr;gap:clamp(24px,3.5vw,44px);align-items:center;box-shadow:var(--sh-2);border:1px solid var(--line);position:relative;overflow:hidden}
+.eyebrow{font-size:.8rem;color:var(--muted);font-weight:500;display:flex;flex-wrap:wrap;gap:8px}
+.eyebrow span{background:var(--raise);border:1px solid var(--line);border-radius:999px;padding:3px 11px}
+.eyebrow span:first-child{color:var(--navy);font-weight:600}
+.hero h1{font-size:clamp(1.85rem,1.2rem + 2vw,2.6rem);font-weight:700;margin-top:18px;color:var(--navy-deep);letter-spacing:-.025em;line-height:1.12}
+html[lang="ar"] .hero h1{letter-spacing:0;line-height:1.4;font-size:clamp(1.75rem,1.2rem + 1.9vw,2.6rem)}
+.hero h1 em{font-style:normal;color:var(--blue)}
+.hero .lead{color:var(--ink-2);margin-top:16px;max-width:58ch}
+.hero .actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.trust{display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:22px;font-size:.88rem;color:var(--ink-2)}
+.trust>span{display:inline-flex;gap:7px;align-items:center}
+.trust svg.i{color:var(--good);width:18px;height:18px;vertical-align:0}
 
-.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-.kpi{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;display:grid;gap:4px}
-.kpi .k{font-size:.76rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-weight:600}
-html[lang="ar"] .kpi .k{text-transform:none;letter-spacing:0;font-size:.85rem}
-.kpi .v{font-family:var(--display);font-size:1.7rem;font-weight:800;color:var(--navy)}
-.kpi .s{font-size:.85rem;color:var(--muted)}
-.kpi.good{border-inline-start:5px solid var(--good)}
-.kpi.gold{border-inline-start:5px solid var(--gold)}
-.kpi.blue{border-inline-start:5px solid var(--blue)}
-.strike{text-decoration:line-through;color:var(--muted)!important}
+.media{display:grid;gap:10px;min-width:0}
+.vcap{font-size:.78rem;color:var(--muted);text-align:end;padding-inline:4px}
+.player{position:relative;border-radius:20px;overflow:hidden;background:#061a33;aspect-ratio:16/9;box-shadow:var(--sh-3);outline:1px solid rgba(11,47,94,.1);outline-offset:-1px}
+.player video{width:100%;height:100%;display:block;object-fit:cover;background:radial-gradient(80% 80% at 50% 40%,#123d75,#061a33)}
+.player .tagv{position:absolute;top:14px;inset-inline-start:14px;background:rgba(6,26,51,.55);backdrop-filter:blur(6px);color:#fff;font-size:.76rem;font-weight:500;border-radius:999px;padding:4px 12px;pointer-events:none}
 
-.vals{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-.val{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;display:grid;gap:6px;align-content:start}
-.val .ico{width:38px;height:38px;border-radius:10px;background:var(--tint);display:grid;place-items:center;color:var(--blue);font-weight:800;font-family:var(--display)}
-.val p{color:var(--muted);font-size:.92rem}
+/* ---------- KPI strip ---------- */
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border-radius:var(--r);overflow:hidden;box-shadow:var(--sh-1);border:1px solid var(--line)}
+.kpi{background:var(--card);padding:22px 24px;display:grid;gap:6px;align-content:start;position:relative}
+.kpi .k{font-size:.8rem;color:var(--muted);font-weight:500;display:flex;align-items:center;gap:8px}
+.kpi .k::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--kc,var(--line-2));flex:none;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+html[lang="ar"] .kpi .k{font-size:.86rem}
+.kpi .v{font-family:var(--display);font-size:clamp(1.5rem,1.1rem + 1vw,1.85rem);font-weight:700;color:var(--navy);letter-spacing:-.02em;line-height:1.15}
+html[lang="ar"] .kpi .v{letter-spacing:0;font-weight:600}
+.kpi .s{font-size:.86rem;color:var(--muted);line-height:1.5}
+.kpi.blue{--kc:var(--brass-hi);background:linear-gradient(180deg,#fdf9f0,var(--card) 70%)}
+.kpi.gold{--kc:#c9cfd8}
+.kpi.good{--kc:#4caf7d}
+.strike{text-decoration:line-through;text-decoration-thickness:2px;text-decoration-color:rgba(86,97,115,.6);color:var(--muted)!important}
 
-.pkgs{display:grid;grid-template-columns:1fr 1.12fr 1fr;gap:16px;align-items:stretch}
-.pkg{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px;display:flex;flex-direction:column;gap:14px}
-.pkg.rec{border:2px solid var(--blue);box-shadow:0 18px 40px -22px rgba(11,47,94,.6)}
-.badge{align-self:flex-start;background:var(--tint);color:var(--blue);font-weight:600;font-size:.78rem;border-radius:999px;padding:3px 10px}
-.badge.gold{background:var(--gold-tint);color:var(--gold)}
-.badge.grey{background:#eef1f5;color:var(--muted)}
-.price{display:grid;gap:2px}
-.price b{font-family:var(--display);font-size:2.1rem;color:var(--navy)}
+/* ---------- value props (open, no boxes) ---------- */
+.vals{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(20px,3vw,36px)}
+.val{display:grid;gap:8px;align-content:start;padding-top:20px;border-top:1px solid var(--line-2)}
+.val .ico{width:44px;height:44px;border-radius:13px;background:var(--navy);display:grid;place-items:center;color:#fff;margin-bottom:6px;box-shadow:0 8px 16px -10px rgba(11,47,94,.8);-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.val .ico svg{width:22px;height:22px}
+.val p{color:var(--muted);font-size:.95rem}
+
+/* ---------- packages ---------- */
+.pkgs{display:grid;grid-template-columns:1fr 1.14fr 1fr;gap:20px;align-items:stretch;margin-top:8px}
+.pkg{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:28px 26px;display:flex;flex-direction:column;gap:16px;box-shadow:var(--sh-1);transition:transform .35s var(--ease),box-shadow .35s var(--ease)}
+.pkg:hover{transform:translateY(-3px);box-shadow:var(--sh-2)}
+.pkg h3{font-size:1.3rem;font-weight:700}
+.pkg.rec{background:radial-gradient(120% 60% at 100% 0%,#1a4a87 0%,rgba(26,74,135,0) 60%),linear-gradient(180deg,var(--navy) 0%,var(--navy-deep) 100%);border-color:var(--navy-deep);color:var(--on-navy);box-shadow:var(--sh-3);margin-block:-14px;padding-block:36px;position:relative;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.pkg.rec:hover{transform:translateY(-4px)}
+.pkg.rec h3,.pkg.rec .price b,.pkg.rec ul.check li b{color:#fff}
+.badge{align-self:flex-start;background:var(--navy-soft);color:var(--navy);font-weight:600;font-size:.78rem;border-radius:999px;padding:4px 12px;line-height:1.5}
+.pkg.rec .badge{background:var(--brass-hi);color:var(--navy-deep)}
+.badge.gold{background:var(--brass-tint);color:var(--brass)}
+.badge.grey{background:#edf0f4;color:var(--muted)}
+.price{display:grid;gap:4px;padding-bottom:4px}
+.price b{font-family:var(--display);font-size:clamp(2rem,1.6rem + 1vw,2.4rem);font-weight:700;color:var(--navy);letter-spacing:-.025em;line-height:1.1}
+html[lang="ar"] .price b{letter-spacing:0;font-weight:600}
 .price span{color:var(--muted);font-size:.88rem}
-.save{background:var(--good-tint);color:var(--good);border-radius:8px;padding:6px 10px;font-size:.86rem;font-weight:600}
-ul.check{list-style:none;padding:0;margin:0;display:grid;gap:7px}
-ul.check li{padding-inline-start:24px;position:relative;font-size:.93rem}
-ul.check li::before{content:"";position:absolute;inset-inline-start:2px;top:.5em;width:12px;height:7px;border-left:2.5px solid var(--good);border-bottom:2.5px solid var(--good);transform:rotate(-45deg)}
-ul.check li.bonus::before{border-color:var(--gold)}
-ul.check li b{font-weight:600}
-.pkg .fit{font-size:.88rem;color:var(--muted);border-top:1px solid var(--line);padding-top:12px;margin-top:auto}
+.pkg.rec .price span{color:var(--on-navy-2)}
+.save{display:flex;gap:8px;align-items:center;background:rgba(226,184,92,.14);color:var(--brass-hi);border:1px solid rgba(226,184,92,.3);border-radius:10px;padding:8px 12px;font-size:.88rem;font-weight:600}
+.save::before{content:"";width:16px;height:16px;flex:none;background:currentColor;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.9' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 3l1.8 4.7 4.7 1.8-4.7 1.8L12 16l-1.8-4.7-4.7-1.8 4.7-1.8z'/%3E%3Cpath d='M19 15l.8 2.2 2.2.8-2.2.8L19 21l-.8-2.2-2.2-.8 2.2-.8z'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.9' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 3l1.8 4.7 4.7 1.8-4.7 1.8L12 16l-1.8-4.7-4.7-1.8 4.7-1.8z'/%3E%3Cpath d='M19 15l.8 2.2 2.2.8-2.2.8L19 21l-.8-2.2-2.2-.8 2.2-.8z'/%3E%3C/svg%3E") center/contain no-repeat;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+ul.check{list-style:none;padding:0;margin:0;display:grid;gap:9px}
+ul.check li{padding-inline-start:28px;position:relative;font-size:.95rem;line-height:1.55}
+html[lang="ar"] ul.check li{line-height:1.75}
+ul.check li::before{content:"";position:absolute;inset-inline-start:0;top:.2em;width:18px;height:18px;border-radius:50%;background:var(--good);-webkit-mask:var(--i-ccheck) center/contain no-repeat;mask:var(--i-ccheck) center/contain no-repeat;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+html[lang="ar"] ul.check li::before{top:.35em}
+ul.check li.bonus::before{background:var(--brass);-webkit-mask-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.9' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 3l1.8 4.7 4.7 1.8-4.7 1.8L12 16l-1.8-4.7-4.7-1.8 4.7-1.8z'/%3E%3Cpath d='M19 15l.8 2.2 2.2.8-2.2.8L19 21l-.8-2.2-2.2-.8 2.2-.8z'/%3E%3C/svg%3E");mask-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.9' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 3l1.8 4.7 4.7 1.8-4.7 1.8L12 16l-1.8-4.7-4.7-1.8 4.7-1.8z'/%3E%3Cpath d='M19 15l.8 2.2 2.2.8-2.2.8L19 21l-.8-2.2-2.2-.8 2.2-.8z'/%3E%3C/svg%3E")}
+.pkg.rec ul.check li::before{background:#8fd3ad}
+.pkg.rec ul.check li.bonus::before{background:var(--brass-hi)}
+ul.check li b{font-weight:600;color:var(--ink)}
+.pkg .fit{font-size:.88rem;color:var(--muted);border-top:1px solid var(--line);padding-top:14px;margin-top:auto}
+.pkg.rec .fit{color:var(--on-navy-2);border-top-color:rgba(255,255,255,.14)}
 .pkg .btn{width:100%}
 .note{font-size:.88rem;color:var(--muted)}
 
-.guar{display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:center;background:var(--good-tint);border:1px solid #bfe0cc;border-radius:14px;padding:18px 20px}
-.seal{width:54px;height:54px;border-radius:50%;background:var(--good);color:#fff;display:grid;place-items:center;font-family:var(--display);font-weight:800;font-size:1.3rem}
+.guar{display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px 24px;box-shadow:var(--sh-1);margin-top:10px}
+.guar h3{color:var(--navy)}
+.guar p{margin-top:2px}
+.seal{width:52px;height:52px;border-radius:16px;background:var(--good);color:#fff;display:grid;place-items:center;box-shadow:0 8px 18px -10px rgba(31,111,71,.9);-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.seal svg{width:26px;height:26px}
 
-.calc{display:grid;grid-template-columns:1.1fr .9fr;gap:16px}
-.calc .panel label{display:grid;gap:6px}
-.calc output{font-weight:700;color:var(--navy)}
-input[type=range]{accent-color:var(--blue);width:100%;padding:0}
-.result{background:var(--navy);color:#fff;border-radius:14px;padding:22px;display:grid;gap:14px;align-content:start}
-.result .big{font-family:var(--display);font-size:2.3rem;font-weight:800;line-height:1.1}
-.result .row{display:flex;justify-content:space-between;gap:10px;border-bottom:1px solid rgba(255,255,255,.15);padding-bottom:8px;font-size:.92rem;color:#dbe6f5}
-.result .row b{color:#fff}
+/* ---------- calculator ---------- */
+.calc{display:grid;grid-template-columns:1.1fr .9fr;gap:20px}
+.calc .panel{gap:18px}
+.calc .panel label{display:grid;grid-template-columns:1fr auto;gap:8px 12px;align-items:center;font-weight:500;color:var(--ink-2)}
+.calc .panel label input{grid-column:1/-1}
+.calc output{font-weight:600;color:var(--navy);background:var(--navy-soft);border-radius:8px;padding:2px 10px;font-variant-numeric:tabular-nums;font-size:.9rem;white-space:nowrap}
+input[type=range]{accent-color:var(--navy);width:100%;padding:0;height:24px;margin:0;cursor:pointer;border:0;background:transparent}
+.result{background:radial-gradient(100% 80% at 100% 0%,#1a4a87 0%,rgba(26,74,135,0) 60%),linear-gradient(180deg,var(--navy),var(--navy-deep));color:#fff;border-radius:var(--r);padding:28px;display:grid;gap:14px;align-content:start;box-shadow:var(--sh-3)}
+.result .big{font-family:var(--display);font-size:clamp(2.1rem,1.6rem + 1.4vw,2.7rem);font-weight:700;line-height:1.1;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+html[lang="ar"] .result .big{letter-spacing:0}
+.result .row{display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid rgba(255,255,255,.12);padding-bottom:10px;font-size:.93rem;color:var(--on-navy)}
+.result .row b{color:#fff;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap}
+.result .row:last-child b{color:var(--brass-hi)}
 
-.tbl{overflow-x:auto;background:var(--card);border:1px solid var(--line);border-radius:14px}
-table{border-collapse:collapse;width:100%;min-width:560px;font-size:.93rem}
-th,td{text-align:start;padding:11px 14px;border-bottom:1px solid var(--line);vertical-align:top}
-th{background:var(--tint);color:var(--navy);font-weight:600;font-size:.84rem}
+/* ---------- tables ---------- */
+.tbl{overflow-x:auto;background:var(--card);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--sh-1)}
+table{border-collapse:collapse;width:100%;min-width:560px;font-size:.94rem}
+th,td{text-align:start;padding:13px 16px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:#f0f3f7;color:var(--ink-2);font-weight:600;font-size:.84rem}
+tbody tr{transition:background .2s var(--ease)}
+tbody tr:hover td{background:#f5f8fb}
 tr:last-child td{border-bottom:0}
 td.r,th.r{text-align:end;font-variant-numeric:tabular-nums;white-space:nowrap}
-tr.you td{background:var(--good-tint);font-weight:600}
+tr.you td,tbody tr.you:hover td{background:var(--navy-soft);color:var(--navy);font-weight:600}
 td.c,th.c{text-align:center}
-.yes{color:var(--good);font-weight:700}
-.no{color:#a0a8b4}
+.yes{color:var(--good);font-weight:600}
+.no{color:#9aa3b0}
+.ck{display:inline-block;width:20px;height:20px;vertical-align:-.3em;background:var(--good);-webkit-mask:var(--i-check) center/contain no-repeat;mask:var(--i-check) center/contain no-repeat;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+#compare th:nth-child(3),#compare td:nth-child(3){background:#eef3fa}
+#compare th:nth-child(3){color:var(--navy);box-shadow:inset 0 3px 0 var(--navy)}
+#compare tr:last-child td{background:#f0f3f7;color:var(--navy)}
+#compare tr:last-child td:nth-child(3){background:var(--navy);color:#fff;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+#automation tbody td:first-child{padding-inline-start:48px;position:relative;font-weight:500;color:var(--ink)}
+#automation tbody td:first-child::before{content:"";position:absolute;inset-inline-start:16px;top:14px;width:20px;height:20px;background:var(--navy);-webkit-mask:var(--ri) center/contain no-repeat;mask:var(--ri) center/contain no-repeat;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+#automation tbody tr:nth-child(1){--ri:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.9' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9'/%3E%3Cpath d='M10.3 21a1.9 1.9 0 0 0 3.4 0'/%3E%3C/svg%3E")} #automation tbody tr:nth-child(2){--ri:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.9' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2'/%3E%3Ccircle cx='9' cy='7' r='4'/%3E%3Cpath d='M22 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8'/%3E%3C/svg%3E")}
+#automation tbody tr:nth-child(3){--ri:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.9' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 8V4H8'/%3E%3Crect x='4' y='8' width='16' height='12' rx='2'/%3E%3Cpath d='M2 14h2M20 14h2M15 13v2M9 13v2'/%3E%3C/svg%3E")} #automation tbody tr:nth-child(4){--ri:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.9' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M21 8a2 2 0 0 0-1-1.7l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.7l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z'/%3E%3Cpath d='m3.3 7 8.7 5 8.7-5M12 22V12'/%3E%3C/svg%3E")}
+#automation tbody tr:nth-child(5){--ri:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.9' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m21.7 18-8-14a2 2 0 0 0-3.5 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.7-3'/%3E%3Cpath d='M12 9v4M12 17h.01'/%3E%3C/svg%3E")} #automation tbody tr:nth-child(6){--ri:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.9' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8-6.2-3.2-6.2 3.2 1.2-6.8-5-4.9 6.9-1z'/%3E%3C/svg%3E")}
+#automation tbody tr:nth-child(7){--ri:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.9' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3 3v18h18'/%3E%3Cpath d='M18 17V9M13 17V5M8 17v-3'/%3E%3C/svg%3E")} #automation tbody tr.you{--ri:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.9' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M13 2 3 14h9l-1 8 10-12h-9z'/%3E%3C/svg%3E")}
+#automation tbody td:nth-child(2){color:var(--muted)}
 
-.proc{display:grid;grid-template-columns:repeat(4,1fr);background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden}
-.proc div{padding:16px 18px;border-inline-end:1px solid var(--line);display:grid;gap:4px;align-content:start}
-.proc div:last-child{border-inline-end:0}
-.proc b{font-family:var(--display);color:var(--navy)}
-.proc p{font-size:.88rem;color:var(--muted)}
+/* ---------- process ---------- */
+.proc{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.proc div{padding:22px 20px;background:var(--card);border:1px solid var(--line);border-radius:var(--r);display:grid;gap:6px;align-content:start;box-shadow:var(--sh-1);position:relative}
+.proc div::before{content:"";width:28px;height:3px;border-radius:3px;background:var(--brass-hi);margin-bottom:6px;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.proc b{font-family:var(--display);color:var(--navy);font-size:1.05rem;font-weight:700}
+.proc p{font-size:.92rem;color:var(--muted)}
 
-.grow{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.gcard{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;display:grid;gap:10px;align-content:start}
-.gcard .logos{display:flex;gap:10px;align-items:center}
+/* ---------- growth + work cards ---------- */
+.grow{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.gcard,.case{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:24px;display:grid;gap:12px;align-content:start;box-shadow:var(--sh-1);transition:transform .35s var(--ease),box-shadow .35s var(--ease)}
+.gcard:hover,.case:hover{transform:translateY(-3px);box-shadow:var(--sh-2)}
+.gcard .logos{display:flex;gap:12px;align-items:center;height:30px}
 .gcard .logos img{width:26px;height:26px}
-.gcard p{color:var(--muted);font-size:.92rem}
-.stars{color:#f2b705;letter-spacing:2px;font-size:1.05rem}
-
-.work{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}
-.case{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;display:grid;gap:10px;align-content:start}
-.logo{height:48px;display:flex;align-items:center}
-.logo img{max-height:42px;max-width:200px}
-.logo.dark{background:#000;border-radius:8px;padding:4px 10px;justify-self:start}
+.gcard p,.case p{color:var(--muted);font-size:.95rem}
+.stars{color:#e0a823;letter-spacing:2px;font-size:1.05rem}
+.work{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
+.logo{height:64px;padding:12px 18px;border-radius:14px;background:#f1f4f8;border:1px solid var(--line);display:flex;align-items:center;justify-content:flex-start;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.logo img{max-height:40px;max-width:100%;width:auto;height:auto;object-fit:contain;display:block}
+.logo.dark{background:#000;border-color:#000}
 .tags{display:flex;flex-wrap:wrap;gap:6px}
-.tag{display:inline-flex;align-items:center;gap:5px;background:var(--tint);color:var(--navy);border-radius:6px;padding:2px 8px;font-size:.76rem;font-weight:600}
+.tag{display:inline-flex;align-items:center;gap:5px;background:var(--navy-soft);color:var(--navy);border-radius:999px;padding:3px 10px;font-size:.76rem;font-weight:600}
 .tag img{width:12px;height:12px}
-.case p{color:var(--muted);font-size:.92rem}
-.stack{display:flex;flex-wrap:wrap;gap:18px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 18px}
-.stack span{display:inline-flex;gap:8px;align-items:center;font-size:.9rem;font-weight:500}
-.stack img{width:22px;height:22px}
+.case a{font-weight:600;justify-self:start}
+.stack{display:flex;flex-wrap:wrap;gap:10px 22px;align-items:center;justify-content:center;background:transparent;border-top:1px solid var(--line-2);padding:22px 4px 0}
+.stack span{display:inline-flex;gap:8px;align-items:center;font-size:.9rem;font-weight:500;color:var(--ink-2)}
+.stack img{width:22px;height:22px;filter:saturate(.9)}
 
-details{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 16px}
-details+details{margin-top:8px}
-summary{cursor:pointer;font-weight:600;color:var(--navy)}
-details p{margin-top:8px;color:var(--muted)}
+/* ---------- FAQ ---------- */
+details{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:0;box-shadow:var(--sh-1);transition:box-shadow .3s var(--ease)}
+details+details{margin-top:10px}
+details[open]{box-shadow:var(--sh-2)}
+summary{cursor:pointer;font-weight:600;color:var(--navy);list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:16px 20px;min-height:56px;border-radius:16px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"";width:20px;height:20px;flex:none;background:var(--muted);-webkit-mask:var(--i-chev) center/contain no-repeat;mask:var(--i-chev) center/contain no-repeat;transition:transform .3s var(--ease)}
+details[open] summary::after{transform:rotate(180deg)}
+summary:hover{background:#f5f8fb}
+details p{padding:0 20px 18px;color:var(--muted);max-width:72ch}
 
-.two{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.panel{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px;display:grid;gap:12px;align-content:start}
+/* ---------- panels + form ---------- */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:26px;display:grid;gap:14px;align-content:start;box-shadow:var(--sh-1)}
+.panel .tbl{box-shadow:none}
+#costs{gap:20px}
+form{display:grid;gap:18px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+label{display:grid;gap:6px;font-weight:500;font-size:.92rem;color:var(--ink-2)}
+input,textarea,select{font:inherit;font-weight:400;border:1px solid var(--field);border-radius:12px;padding:10px 13px;min-height:46px;background:var(--raise);color:var(--ink);transition:border-color .2s var(--ease),box-shadow .2s var(--ease)}
+input:hover,textarea:hover,select:hover{border-color:var(--navy)}
+input:focus-visible,textarea:focus-visible,select:focus-visible{outline:none;border-color:var(--blue);box-shadow:0 0 0 3px rgba(29,95,168,.25)}
+input[type=checkbox]{min-height:0;width:18px;height:18px;accent-color:var(--navy);padding:0}
+textarea{min-height:96px;resize:vertical}
+fieldset{border:1px solid var(--line-2);border-radius:14px;padding:12px 16px 14px;margin:0}
+legend{font-weight:600;font-size:.92rem;padding:0 6px;color:var(--ink-2)}
+.boxes{display:flex;flex-wrap:wrap;gap:6px 10px}
+.boxes label{display:flex;gap:8px;align-items:center;font-weight:400;padding:6px 12px 6px 10px;border-radius:999px;background:var(--bg);cursor:pointer;min-height:36px;transition:background .2s var(--ease)}
+.boxes label:hover{background:var(--navy-soft)}
+.boxes label:has(input:checked){background:var(--navy-soft);color:var(--navy);font-weight:500}
 
-form{display:grid;gap:14px}
-.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-label{display:grid;gap:5px;font-weight:500;font-size:.9rem}
-input,textarea,select{font:inherit;border:1px solid var(--line);border-radius:10px;padding:9px 11px;background:#fff;color:var(--ink)}
-textarea{min-height:72px;resize:vertical}
-fieldset{border:1px solid var(--line);border-radius:10px;padding:10px 14px}
-legend{font-weight:500;font-size:.9rem;padding:0 4px}
-.boxes{display:flex;flex-wrap:wrap;gap:8px 18px}
-.boxes label{display:flex;gap:6px;align-items:center;font-weight:400}
-
-.about{display:grid;grid-template-columns:150px 1fr;gap:22px;align-items:start}
-.about>img{width:150px;height:150px;border-radius:16px;object-fit:cover}
+.req::after{content:" *";color:#9b2c2c;font-weight:600}
+input[aria-invalid="true"]{border-color:#b42318;box-shadow:0 0 0 3px rgba(180,35,24,.14)}
+.hp{position:absolute;inset-inline-start:-10000px;width:1px;height:1px;overflow:hidden}
+.send-row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.btn-wa-line{border-color:var(--line-2);background:var(--raise);color:var(--navy);box-shadow:var(--sh-1)}
+.btn-wa-line:hover{border-color:var(--wa);box-shadow:var(--sh-2)}
+.btn-wa-line .ic{filter:none}
+.btn[disabled]{opacity:.65;cursor:progress;transform:none}
+.status{margin:0;padding:12px 16px;border-radius:12px;font-size:.93rem;font-weight:500;max-width:72ch}
+.status[data-tone="ok"]{background:#e6f3ec;color:var(--good)}
+.status[data-tone="err"]{background:#fbeceb;color:#9b2c2c}
+.status[data-tone="info"]{background:var(--navy-soft);color:var(--navy)}
+.status a{color:inherit;font-weight:600}
+#costs .two{grid-template-columns:minmax(0,1fr)}
+.cost-intro{font-size:.93rem;margin-top:-4px}
+.cost-tbl td{padding:12px 14px}
+.cost-tbl td:first-child{font-weight:500;color:var(--ink)}
+.cost-p{font-weight:600;color:var(--navy);font-variant-numeric:tabular-nums;min-width:9.5em}
+.cost-how{color:var(--muted);font-size:.9rem}
+.about{display:grid;grid-template-columns:160px 1fr;gap:28px;align-items:start}
+.about>img{width:160px;height:160px;border-radius:22px;object-fit:cover;box-shadow:var(--sh-2)}
 .about .btns{display:flex;flex-wrap:wrap;gap:10px}
-footer{color:var(--muted);font-size:.84rem}
+footer{color:var(--muted);font-size:.85rem;border-top:1px solid var(--line-2);padding-top:20px}
 
+/* ---------- gentle reveal (content is visible at rest; only enhances where supported) ---------- */
+@media screen and (prefers-reduced-motion:no-preference){
+  @supports (animation-timeline:view()){
+    .pkg,.gcard,.case,.val,.proc div,.tbl,details,.guar,.panel,.kpis{animation:rise linear both;animation-timeline:view();animation-range:entry 0% entry 35%}
+    @keyframes rise{from{opacity:.4;translate:0 14px}to{opacity:1;translate:0 0}}
+  }
+}
+
+/* ---------- responsive ---------- */
 @media (max-width:1150px){
   .kpis,.vals{grid-template-columns:1fr 1fr}
   .pkgs,.grow{grid-template-columns:1fr}
+  .pkg.rec{margin-block:0}
   .proc{grid-template-columns:1fr 1fr}
-  .hero,.calc{grid-template-columns:1fr}
+  .hero,.calc,#costs .two{grid-template-columns:1fr}
+  .hero h1{max-width:24ch}
 }
 @media (max-width:860px){
-  .shell{grid-template-columns:1fr}
-  aside.side{position:static;height:auto}
+  .shell{grid-template-columns:minmax(0,1fr)}
+  aside.side{position:static;height:auto;padding:22px 20px}
   nav.toc{display:none}
-  .two{grid-template-columns:1fr}
+  .two,#costs .two{grid-template-columns:1fr}
 }
-@media (max-width:520px){
-  .kpis,.vals,.grid2,.proc{grid-template-columns:1fr}
+@media (max-width:560px){
+  body{font-size:16px}
+  html[lang="ar"] body{font-size:16.5px}
+  main{padding-top:20px}
+  .kpis{grid-template-columns:1fr 1fr}
+  .kpi{padding:16px}
+  .vals,.grid2,.proc{grid-template-columns:1fr}
   .about,.guar{grid-template-columns:1fr}
-  .hero{padding:22px}
+  .hero{border-radius:22px}
+  .hero .actions .btn{flex:1 1 auto}
+  .pkg{padding:24px 20px}
+  .pkg.rec{padding-block:28px}
+  .panel{padding:20px}
+  .result{padding:22px}
+}
+@media (max-width:400px){
+  .kpis{grid-template-columns:1fr}
 }
 @media print{
   @page{size:A4;margin:10mm}
-  body{background:#fff;font-size:11.5px}
+  body{background:#fff;font-size:11.5px;line-height:1.55}
+  html[lang="ar"] body{font-size:12px;line-height:1.7}
   .shell{display:block}
-  aside.side{position:static;height:auto;flex-direction:row;flex-wrap:wrap;align-items:center;border-radius:12px}
-  aside.side,.hero,.result,.kpi,.pkg.rec,th,.badge,.save,tr.you td,.guar,.seal,.tag,.logo.dark{-webkit-print-color-adjust:exact;print-color-adjust:exact}
-  nav.toc,.no-print,.lang,.player,#savings{display:none!important}
-  .hero{grid-template-columns:1fr}
+  aside.side{position:static;height:auto;flex-direction:row;flex-wrap:wrap;align-items:center;border-radius:14px;padding:16px 18px}
+  aside.side,.hero,.result,.kpi,.pkg.rec,th,.badge,.save,tr.you td,.guar,.seal,.tag,.logo.dark,.val .ico{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  nav.toc,.no-print,.lang,.player,.media,#savings{display:none!important}
+  .hero{grid-template-columns:1fr;box-shadow:none;padding:20px}
   .side .links{margin-top:0;grid-template-columns:repeat(3,auto)}
-  main{padding:14px 0;gap:18px;max-width:none}
-  .pkg,.panel,.case,.kpi,.val,.tbl,details,.guar,.gcard{break-inside:avoid}
+  main{padding:14px 0;gap:22px;max-width:none}
+  .pkg,.panel,.case,.kpi,.val,.tbl,details,.guar,.gcard,.proc div{break-inside:avoid;box-shadow:none}
   .pkgs,.grow{grid-template-columns:1fr 1fr 1fr}
+  .pkg.rec{margin-block:0;box-shadow:none}
+  .kpis{grid-template-columns:repeat(4,1fr)}
+  .vals,.proc{grid-template-columns:repeat(4,1fr)}
+  *{animation:none!important;transition:none!important}
 }
-@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
 </style>
 </head>
 <body>
@@ -273,7 +438,7 @@ footer{color:var(--muted);font-size:.84rem}
   <div class="links">
     <a href="https://www.linkedin.com/in/shady-al-halawani-333a5419a"><svg viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M20.4 2H3.6C2.7 2 2 2.7 2 3.6v16.8c0 .9.7 1.6 1.6 1.6h16.8c.9 0 1.6-.7 1.6-1.6V3.6c0-.9-.7-1.6-1.6-1.6zM8 19H5V9.5h3V19zM6.5 8.2a1.7 1.7 0 1 1 0-3.5 1.7 1.7 0 0 1 0 3.5zM19 19h-3v-4.6c0-1.1 0-2.5-1.5-2.5S12.8 13 12.8 14.3V19h-3V9.5h2.8v1.3h.1c.4-.8 1.4-1.5 2.8-1.5 3 0 3.5 2 3.5 4.5V19z"/></svg>LinkedIn</a>
     <a href="https://github.com/Shadysmetools"><img src="assets/github.svg" alt="">GitHub</a>
-    <a data-wa="book" href="https://wa.me/201205461115"><img src="assets/whatsapp.svg" alt=""><span class="ltr">+20 120 546 1115</span></a>
+    <a data-wa="book" href="https://wa.me/201205461115"><img src="assets/whatsapp.svg" alt=""><span class="ltr" dir="ltr">+20 120 546 1115</span></a>
   </div>
 </aside>
 
@@ -281,41 +446,44 @@ footer{color:var(--muted);font-size:.84rem}
 
   <section id="overview" class="hero">
     <div>
-      <div class="eyebrow"><span data-ar="عرض مقدم إلى: [اسم العميل]">Proposal for: [Client name]</span><span data-ar="١ نوفمبر ٢٠٢٦">1 November 2026</span><span data-ar="العرض سارٍ ٣٠ يومًا">Offer valid 30 days</span></div>
+      <div class="eyebrow"><span data-ar="عرض مقدم إلى: [اسم العميل]">Proposal for: [Client name]</span><span data-ar="1 نوفمبر 2026">1 November 2026</span><span data-ar="العرض سارٍ 30 يومًا">Offer valid 30 days</span></div>
       <h1 data-ar="نظام واحد لمبيعاتك ومخزونك وعملائك وموقعك، <em>وذكاء اصطناعي بيرد على واتساب</em>">One system for your sales, stock, customers and website, <em>with AI that answers on WhatsApp</em></h1>
       <p class="lead" data-ar="ERP وCRM وموقع بالعربي والإنجليزي ومساعد ذكي وأتمتة توفر وقت فريقك، مبنية على Odoo مع استشاري واحد بتتعامل معاه مباشرة. اختار الباقة المناسبة النهارده، وكل حاجة بتكمل معاك لما تكبر.">ERP, CRM, a bilingual website, an AI assistant and automations that save your team hours, built on Odoo by one consultant you deal with directly. Pick the package that fits today. Everything carries forward when you grow.</p>
       <div class="actions">
-        <a class="btn btn-cal" href="https://calendly.com/shady-al-halawani"><svg class="cal" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#fff" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg><span data-ar="احجز مكالمة مجانية ٣٠ دقيقة">Book a free 30-minute call</span></a>
+        <a class="btn btn-cal" href="https://calendly.com/shady-al-halawani"><svg class="cal" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#fff" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg><span data-ar="احجز مكالمة مجانية 30 دقيقة">Book a free 30-minute call</span></a>
         <a class="btn btn-wa" data-wa="book" href="https://wa.me/201205461115"><img class="ic" src="assets/whatsapp.svg" alt="">WhatsApp</a>
         <a class="btn btn-light" href="#packages" data-ar="شوف الباقات">See the packages</a>
         <a class="btn btn-light no-print" href="Shady-Al-Halawani-Proposal.pdf" data-ar="تحميل PDF">Download PDF</a>
       </div>
       <div class="trust">
-        <span><b>✓</b> <span data-ar="سعر ثابت مكتوب">Fixed written price</span></span>
-        <span><b>✓</b> <span data-ar="تدفع لما يشتغل">Pay when it works</span></span>
-        <span><b>✓</b> <span data-ar="بياناتك وحساباتك ملكك">Your data, your accounts</span></span>
+        <span><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg> <span data-ar="سعر ثابت مكتوب">Fixed written price</span></span>
+        <span><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg> <span data-ar="تدفع لما يشتغل">Pay when it works</span></span>
+        <span><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg> <span data-ar="بياناتك وحساباتك ملكك">Your data, your accounts</span></span>
       </div>
     </div>
+    <div class="media">
     <div class="player">
       <video id="intro" controls playsinline preload="metadata" poster="assets/video/intro-en.jpg">
         <source id="intro-src" src="assets/video/intro-en.mp4" type="video/mp4">
       </video>
       <span class="tagv" data-ar="فيديو تعريفي">Intro video</span>
     </div>
+    <p class="vcap" data-ar="الصوت: ElevenLabs">Voice: ElevenLabs</p>
+    </div>
   </section>
 
   <div class="kpis">
-    <div class="kpi blue"><span class="k" data-ar="الباقة المُوصى بها">Recommended package</span><span class="v num ltr">USD 2,000</span><span class="s" data-ar="حوالي ١١١٬٦٠٠ جنيه، شامل">about EGP 111,600, all-in</span></div>
-    <div class="kpi gold"><span class="k" data-ar="سعر الشركات المعتاد">Typical agency price</span><span class="v num strike ltr">EGP 150k+</span><span class="s" data-ar="لنفس الشغل في مصر">for the same scope in Egypt</span></div>
-    <div class="kpi good"><span class="k" data-ar="ساعات موفرة شهريًا">Staff hours saved / month</span><span class="v num ltr">20–30</span><span class="s" data-ar="بالأتمتة (تقدير)">with automation (estimate)</span></div>
-    <div class="kpi good"><span class="k" data-ar="رسوم التراخيص">License fees</span><span class="v num ltr">USD 0</span><span class="s" data-ar="Odoo Community، بدون رسوم لكل مستخدم">Odoo Community, no per-user cost</span></div>
+    <div class="kpi blue"><span class="k" data-ar="الباقة المُوصى بها">Recommended package</span><span class="v num" data-ar="2,000 دولار">USD 2,000</span><span class="s" data-ar="حوالي 111,600 جنيه، شامل">about EGP 111,600, all-in</span></div>
+    <div class="kpi gold"><span class="k" data-ar="سعر الشركات المعتاد">Typical agency price</span><span class="v num strike" data-ar="+150 ألف جنيه">EGP 150k+</span><span class="s" data-ar="لنفس الشغل في مصر">for the same scope in Egypt</span></div>
+    <div class="kpi good"><span class="k" data-ar="ساعات موفرة شهريًا">Staff hours saved / month</span><span class="v num">20–30</span><span class="s" data-ar="بالأتمتة (تقدير)">with automation (estimate)</span></div>
+    <div class="kpi good"><span class="k" data-ar="رسوم التراخيص">License fees</span><span class="v num" data-ar="0 دولار">USD 0</span><span class="s" data-ar="Odoo Community، بدون رسوم لكل مستخدم">Odoo Community, no per-user cost</span></div>
   </div>
 
   <div class="vals">
-    <div class="val"><span class="ico">1</span><h3 data-ar="مكان واحد لكل الشغل">One place for the whole business</h3><p data-ar="المبيعات والمخزون والفواتير والعملاء في نظام واحد بدل الإكسل وشاتات الواتساب.">Sales, stock, invoices and customers in one system instead of Excel and WhatsApp threads.</p></div>
-    <div class="val"><span class="ico">⚙</span><h3 data-ar="أتمتة بتقلل التكاليف">Automation that cuts costs</h3><p data-ar="التذكيرات والمتابعات وطلبات الشراء والتقارير بتشتغل لوحدها.">Reminders, follow-ups, reorders and reports run on their own.</p></div>
-    <div class="val"><span class="ico">AI</span><h3 data-ar="ذكاء اصطناعي بيتكلم زي عملائك">AI that speaks like your customers</h3><p data-ar="بيرد بالمصري والإنجليزي والفرانكو، ليل نهار.">Answers in Egyptian Arabic, English and Franco, day and night.</p></div>
-    <div class="val"><span class="ico">★</span><h3 data-ar="عملاء أكتر من جوجل وميتا">More customers from Google and Meta</h3><p data-ar="تقييمات جوجل وتتبع الإعلانات عشان تعرف إيه اللي بيجيب بيع.">Google reviews and ad tracking, so you know what brings sales.</p></div>
+    <div class="val"><span class="ico" aria-hidden="true"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 2 10 5-10 5L2 7z"/><path d="m2 17 10 5 10-5"/><path d="m2 12 10 5 10-5"/></svg></span><h3 data-ar="مكان واحد لكل الشغل">One place for the whole business</h3><p data-ar="المبيعات والمخزون والفواتير والعملاء في نظام واحد بدل الإكسل وشاتات الواتساب.">Sales, stock, invoices and customers in one system instead of Excel and WhatsApp threads.</p></div>
+    <div class="val"><span class="ico" aria-hidden="true"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 3 14h9l-1 8 10-12h-9z"/></svg></span><h3 data-ar="أتمتة بتقلل التكاليف">Automation that cuts costs</h3><p data-ar="التذكيرات والمتابعات وطلبات الشراء والتقارير بتشتغل لوحدها.">Reminders, follow-ups, reorders and reports run on their own.</p></div>
+    <div class="val"><span class="ico" aria-hidden="true"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.8 4.7 4.7 1.8-4.7 1.8L12 16l-1.8-4.7-4.7-1.8 4.7-1.8z"/><path d="M19 15l.8 2.2 2.2.8-2.2.8L19 21l-.8-2.2-2.2-.8 2.2-.8z"/></svg></span><h3 data-ar="ذكاء اصطناعي بيتكلم زي عملائك">AI that speaks like your customers</h3><p data-ar="بيرد بالمصري والإنجليزي والفرانكو، ليل نهار.">Answers in Egyptian Arabic, English and Franco, day and night.</p></div>
+    <div class="val"><span class="ico" aria-hidden="true"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></span><h3 data-ar="عملاء أكتر من جوجل وميتا">More customers from Google and Meta</h3><p data-ar="تقييمات جوجل وتتبع الإعلانات عشان تعرف إيه اللي بيجيب بيع.">Google reviews and ad tracking, so you know what brings sales.</p></div>
   </div>
 
   <section id="packages">
@@ -325,11 +493,11 @@ footer{color:var(--muted);font-size:.84rem}
       <article class="pkg">
         <span class="badge grey" data-ar="ابدأ من هنا">Start here</span>
         <h3 data-ar="الأساسية">Starter</h3>
-        <div class="price"><b class="num ltr">USD 1,200</b><span data-ar="حوالي ٦٧٬٠٠٠ جنيه · مرة واحدة">about EGP 67,000 · one-time</span></div>
+        <div class="price"><b class="num" data-ar="1,200 دولار">USD 1,200</b><span data-ar="حوالي 67,000 جنيه · مرة واحدة">about EGP 67,000 · one-time</span></div>
         <ul class="check">
           <li data-ar="<b>CRM:</b> متابعة العملاء المحتملين ولوحة مبيعات"><b>CRM:</b> lead pipeline, follow-ups, sales dashboard</li>
           <li data-ar="<b>المبيعات والفواتير:</b> من عرض السعر للفاتورة"><b>Sales and invoicing:</b> quotations to invoices</li>
-          <li data-ar="<b>موقع:</b> ٤ صفحات عربي وإنجليزي، والنماذج بتدخل على الـCRM"><b>Website:</b> 4 pages, Arabic and English, forms into the CRM</li>
+          <li data-ar="<b>موقع:</b> 4 صفحات عربي وإنجليزي، والنماذج بتدخل على الـCRM"><b>Website:</b> 4 pages, Arabic and English, forms into the CRM</li>
           <li data-ar="<b>أتمتتين:</b> تذكير الفواتير المتأخرة ومتابعة العملاء"><b>2 automations:</b> unpaid-invoice reminders and lead follow-ups</li>
           <li data-ar="استيراد العملاء والمنتجات من الإكسل">Customers and products imported from Excel</li>
           <li data-ar="الإطلاق: إعداد السيرفر والدومين وSSL ونسخ احتياطي يومي">Launch: server, domain, SSL and daily backups set up</li>
@@ -342,21 +510,21 @@ footer{color:var(--muted);font-size:.84rem}
       <article class="pkg rec">
         <span class="badge" data-ar="المُوصى بها · أفضل قيمة">Recommended · best value</span>
         <h3 data-ar="الأعمال">Business</h3>
-        <div class="price"><b class="num ltr">USD 2,000</b><span data-ar="حوالي ١١١٬٦٠٠ جنيه · مرة واحدة">about EGP 111,600 · one-time</span></div>
-        <div class="save" data-ar="هدايا بقيمة ٨٥٠ دولار مجانًا">Bonuses worth USD 850 included free</div>
+        <div class="price"><b class="num" data-ar="2,000 دولار">USD 2,000</b><span data-ar="حوالي 111,600 جنيه · مرة واحدة">about EGP 111,600 · one-time</span></div>
+        <div class="save" data-ar="هدايا بقيمة 850 دولار مجانًا">Bonuses worth USD 850 included free</div>
         <ul class="check">
           <li data-ar="كل اللي في الأساسية، وكمان:">Everything in Starter, plus:</li>
           <li data-ar="<b>ERP:</b> المخزون والمشتريات والمصروفات"><b>ERP:</b> inventory, purchasing and expenses</li>
-          <li data-ar="<b>موقع:</b> ٦ صفحات عربي وإنجليزي"><b>Website:</b> 6 pages, Arabic and English</li>
+          <li data-ar="<b>موقع:</b> 6 صفحات عربي وإنجليزي"><b>Website:</b> 6 pages, Arabic and English</li>
           <li data-ar="<b>مساعد ذكي</b> على الموقع والواتساب بيرد على العملاء ويسجل الطلبات"><b>AI assistant</b> on your website and WhatsApp that answers customers and captures leads</li>
           <li data-ar="<b>كل الأتمتة</b> اللي بتوفر التكاليف"><b>All the cost-cutting automations</b></li>
           <li data-ar="عروض أسعار ورسائل متابعة بيكتبها الذكاء الاصطناعي">AI-drafted quotations and follow-up messages</li>
-          <li data-ar="جلستين تدريب وأدلة استخدام و٣ شهور دعم">2 training sessions, user guides and 3 months of support</li>
-          <li class="bonus" data-ar="<b>هدية:</b> Google Analytics وMeta Pixel وتتبع التحويلات (١٥٠ دولار)"><b>Bonus:</b> Google Analytics, Meta Pixel and conversion tracking (USD 150)</li>
-          <li class="bonus" data-ar="<b>هدية:</b> تجهيز Google Business وطلب تقييمات تلقائي بعد كل طلب (٢٠٠ دولار)"><b>Bonus:</b> Google Business Profile set-up and automatic review requests after each order (USD 200)</li>
-          <li class="bonus" data-ar="<b>هدية:</b> لوحة إدارة للمبيعات والمخزون والكاش (٢٠٠ دولار)"><b>Bonus:</b> management dashboard for sales, stock and cash (USD 200)</li>
-          <li class="bonus" data-ar="<b>هدية:</b> شهرين دعم إضافيين (٢٠٠ دولار)"><b>Bonus:</b> 2 extra support months (USD 200)</li>
-          <li class="bonus" data-ar="<b>هدية:</b> تقرير مخصص إضافي ومؤشرين زيادة في اللوحة (١٠٠ دولار)"><b>Bonus:</b> 1 extra custom report and 2 extra dashboard tiles (USD 100)</li>
+          <li data-ar="جلستين تدريب وأدلة استخدام و3 شهور دعم">2 training sessions, user guides and 3 months of support</li>
+          <li class="bonus" data-ar="<b>هدية:</b> Google Analytics وMeta Pixel وتتبع التحويلات (150 دولار)"><b>Bonus:</b> Google Analytics, Meta Pixel and conversion tracking (USD 150)</li>
+          <li class="bonus" data-ar="<b>هدية:</b> تجهيز Google Business وطلب تقييمات تلقائي بعد كل طلب (200 دولار)"><b>Bonus:</b> Google Business Profile set-up and automatic review requests after each order (USD 200)</li>
+          <li class="bonus" data-ar="<b>هدية:</b> لوحة إدارة للمبيعات والمخزون والكاش (200 دولار)"><b>Bonus:</b> management dashboard for sales, stock and cash (USD 200)</li>
+          <li class="bonus" data-ar="<b>هدية:</b> شهرين دعم إضافيين (200 دولار)"><b>Bonus:</b> 2 extra support months (USD 200)</li>
+          <li class="bonus" data-ar="<b>هدية:</b> تقرير مخصص إضافي ومؤشرين زيادة في اللوحة (100 دولار)"><b>Bonus:</b> 1 extra custom report and 2 extra dashboard tiles (USD 100)</li>
         </ul>
         <p class="fit" data-ar="مناسبة لـ: إدارة الشغل كله على نظام واحد، والذكاء الاصطناعي بيعمل الردود المتكررة.">Best for: running the whole business on one system, with AI doing the repetitive replies.</p>
         <a class="btn btn-wa" data-wa="business" href="https://wa.me/201205461115"><img class="ic" src="assets/whatsapp.svg" alt=""><span data-ar="اختار الأعمال">Choose Business</span></a>
@@ -365,7 +533,7 @@ footer{color:var(--muted);font-size:.84rem}
       <article class="pkg">
         <span class="badge gold" data-ar="لاحتياجات خاصة">For unique processes</span>
         <h3 data-ar="المخصصة">Custom</h3>
-        <div class="price"><b class="num" data-ar="من 6,500 دولار">from USD 6,500</b><span data-ar="حوالي ٣٦٢٬٧٠٠ جنيه · مرة واحدة">about EGP 362,700 · one-time</span></div>
+        <div class="price"><b class="num" data-ar="من 6,500 دولار">from USD 6,500</b><span data-ar="حوالي 362,700 جنيه · مرة واحدة">about EGP 362,700 · one-time</span></div>
         <ul class="check">
           <li data-ar="كل اللي في الأعمال، وكمان:">Everything in Business, plus:</li>
           <li data-ar="ERP وCRM مبنيين على طريقة شغلك بالظبط، على Odoo أو كتطبيق خاص">ERP and CRM built around your exact workflow, on Odoo or as a custom web app</li>
@@ -380,7 +548,7 @@ footer{color:var(--muted);font-size:.84rem}
     </div>
 
     <div class="guar">
-      <div class="seal" aria-hidden="true">✓</div>
+      <div class="seal" aria-hidden="true"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.7 9a1 1 0 0 1-.6 0C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.2-2.7a1.2 1.2 0 0 1 1.6 0C14.5 3.8 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg></div>
       <div><h3 data-ar="تدفع على اللي بيشتغل">You pay for what works</h3><p class="muted" data-ar="الدفعة التانية بتتدفع بس لما النظام يشتغل زي ما اتفقنا كتابة. ولو حاجة في النطاق المتفق عليه مش مظبوطة، بصلحها قبل ما تدفع.">You pay the second milestone only once the system works the way we agreed in writing. If something in the agreed scope isn't right, I fix it before you pay.</p></div>
     </div>
   </section>
@@ -390,23 +558,23 @@ footer{color:var(--muted);font-size:.84rem}
     <p class="lead" data-ar="حرّك الأرقام على حسب شغلك. الحساب تقديري.">Move the numbers to match your business. It's an estimate.</p>
     <div class="calc">
       <div class="panel">
-        <label for="c-salary"><span data-ar="متوسط مرتب الموظف الشهري">Average staff salary per month</span> <output id="o-salary" class="ltr"></output>
+        <label for="c-salary"><span data-ar="متوسط مرتب الموظف الشهري">Average staff salary per month</span> <output id="o-salary"></output>
           <input type="range" id="c-salary" min="6000" max="40000" step="1000" value="12000"></label>
-        <label for="c-hours"><span data-ar="ساعات بتوفرها الأتمتة شهريًا">Hours saved by automation per month</span> <output id="o-hours" class="ltr"></output>
+        <label for="c-hours"><span data-ar="ساعات بتوفرها الأتمتة شهريًا">Hours saved by automation per month</span> <output id="o-hours"></output>
           <input type="range" id="c-hours" min="5" max="40" step="1" value="25"></label>
-        <label for="c-leads"><span data-ar="عملاء بيضيعوا شهريًا من غير متابعة">Leads lost per month without follow-up</span> <output id="o-leads" class="ltr"></output>
+        <label for="c-leads"><span data-ar="عملاء بيضيعوا شهريًا من غير متابعة">Leads lost per month without follow-up</span> <output id="o-leads"></output>
           <input type="range" id="c-leads" min="0" max="20" step="1" value="3"></label>
-        <label for="c-order"><span data-ar="متوسط قيمة الطلب">Average order value</span> <output id="o-order" class="ltr"></output>
+        <label for="c-order"><span data-ar="متوسط قيمة الطلب">Average order value</span> <output id="o-order"></output>
           <input type="range" id="c-order" min="500" max="50000" step="500" value="5000"></label>
-        <label for="c-margin"><span data-ar="هامش الربح">Profit margin</span> <output id="o-margin" class="ltr"></output>
+        <label for="c-margin"><span data-ar="هامش الربح">Profit margin</span> <output id="o-margin"></output>
           <input type="range" id="c-margin" min="5" max="60" step="1" value="25"></label>
       </div>
       <div class="result" aria-live="polite">
         <span style="color:#b9cbe6" data-ar="التوفير والربح الإضافي في الشهر">Monthly savings and extra profit</span>
-        <span class="big num ltr" id="r-total">–</span>
-        <div class="row"><span data-ar="وقت الموظفين اللي اتوفر">Staff time saved</span><b class="ltr" id="r-time"></b></div>
-        <div class="row"><span data-ar="ربح من عملاء كانوا هيضيعوا">Profit from leads no longer lost</span><b class="ltr" id="r-leads"></b></div>
-        <div class="row"><span data-ar="في السنة">Per year</span><b class="ltr" id="r-year"></b></div>
+        <span class="big num" id="r-total">–</span>
+        <div class="row"><span data-ar="وقت الموظفين اللي اتوفر">Staff time saved</span><b id="r-time"></b></div>
+        <div class="row"><span data-ar="ربح من عملاء كانوا هيضيعوا">Profit from leads no longer lost</span><b id="r-leads"></b></div>
+        <div class="row"><span data-ar="في السنة">Per year</span><b id="r-year"></b></div>
         <div class="row" style="border:0"><span data-ar="باقة الأعمال بتجيب تمنها في">Business package pays for itself in</span><b id="r-pay"></b></div>
       </div>
     </div>
@@ -414,18 +582,18 @@ footer{color:var(--muted);font-size:.84rem}
 
   <section id="automation">
     <h2 data-ar="أتمتة بتقلل تكاليفك">Automations that cut your costs</h2>
-    <p class="lead" data-ar="بتشتغل لوحدها بعد الإطلاق. لفريق صغير بتوفر عادة ٢٠–٣٠ ساعة شغل في الشهر وبتخلي العملاء يدفعوا أسرع. الساعات تقديرية وبتعتمد على حجم شغلك.">These run on their own once the system is live. For a small team they typically give back 20–30 staff hours a month and get customers paying faster. Hours are estimates and depend on your volume.</p>
+    <p class="lead" data-ar="بتشتغل لوحدها بعد الإطلاق. لفريق صغير بتوفر عادة 20–30 ساعة شغل في الشهر وبتخلي العملاء يدفعوا أسرع. الساعات تقديرية وبتعتمد على حجم شغلك.">These run on their own once the system is live. For a small team they typically give back 20–30 staff hours a month and get customers paying faster. Hours are estimates and depend on your volume.</p>
     <div class="tbl"><table>
       <thead><tr><th data-ar="الأتمتة">Automation</th><th data-ar="بدل إيه">What it replaces</th><th class="r" data-ar="ساعات موفرة / شهر">Est. hours saved / month</th></tr></thead>
       <tbody>
-        <tr><td data-ar="تذكير الفواتير المتأخرة بالإيميل والواتساب">Unpaid-invoice reminders by email and WhatsApp</td><td data-ar="التليفونات لمطاردة العملاء">Chasing customers by phone</td><td class="r ltr">4–6</td></tr>
-        <tr><td data-ar="توزيع العملاء المحتملين وتذكير المتابعة">Lead assignment and follow-up reminders</td><td data-ar="عملاء بيتنسوا في الكشاكيل والشات">Leads forgotten in notebooks and chats</td><td class="r ltr">3–5</td></tr>
-        <tr><td data-ar="ردود ذكية على أسئلة العملاء المتكررة">AI replies to common customer questions</td><td data-ar="الرد على نفس الأسئلة طول اليوم">Answering the same questions all day</td><td class="r ltr">6–10</td></tr>
-        <tr><td data-ar="تأكيد الطلب وتحديثات الشحن على الواتساب">Order confirmations and delivery updates on WhatsApp</td><td data-ar="مكالمات «طلبي فين؟»">"Where is my order?" calls</td><td class="r ltr">3–4</td></tr>
-        <tr><td data-ar="تنبيه نقص المخزون وأوامر شراء جاهزة">Low-stock alerts and draft purchase orders</td><td data-ar="الجرد اليدوي ونسيان الطلب">Manual stock counts and missed reorders</td><td class="r ltr">2–3</td></tr>
-        <tr><td data-ar="طلب تقييم جوجل تلقائي بعد كل طلب">Automatic Google review request after each order</td><td data-ar="طلب التقييمات يدويًا">Asking for reviews by hand</td><td class="r ltr">1–2</td></tr>
-        <tr><td data-ar="تقرير أسبوعي للمبيعات والمخزون والكاش لصاحب الشغل">Weekly sales, stock and cash report to the owner</td><td data-ar="عمل التقارير على الإكسل">Building reports in Excel</td><td class="r ltr">2–3</td></tr>
-        <tr class="you"><td data-ar="الإجمالي">Total</td><td></td><td class="r ltr">21–33</td></tr>
+        <tr><td data-ar="تذكير الفواتير المتأخرة بالإيميل والواتساب">Unpaid-invoice reminders by email and WhatsApp</td><td data-ar="التليفونات لمطاردة العملاء">Chasing customers by phone</td><td class="r">4–6</td></tr>
+        <tr><td data-ar="توزيع العملاء المحتملين وتذكير المتابعة">Lead assignment and follow-up reminders</td><td data-ar="عملاء بيتنسوا في الكشاكيل والشات">Leads forgotten in notebooks and chats</td><td class="r">3–5</td></tr>
+        <tr><td data-ar="ردود ذكية على أسئلة العملاء المتكررة">AI replies to common customer questions</td><td data-ar="الرد على نفس الأسئلة طول اليوم">Answering the same questions all day</td><td class="r">6–10</td></tr>
+        <tr><td data-ar="تأكيد الطلب وتحديثات الشحن على الواتساب">Order confirmations and delivery updates on WhatsApp</td><td data-ar="مكالمات «طلبي فين؟»">"Where is my order?" calls</td><td class="r">3–4</td></tr>
+        <tr><td data-ar="تنبيه نقص المخزون وأوامر شراء جاهزة">Low-stock alerts and draft purchase orders</td><td data-ar="الجرد اليدوي ونسيان الطلب">Manual stock counts and missed reorders</td><td class="r">2–3</td></tr>
+        <tr><td data-ar="طلب تقييم جوجل تلقائي بعد كل طلب">Automatic Google review request after each order</td><td data-ar="طلب التقييمات يدويًا">Asking for reviews by hand</td><td class="r">1–2</td></tr>
+        <tr><td data-ar="تقرير أسبوعي للمبيعات والمخزون والكاش لصاحب الشغل">Weekly sales, stock and cash report to the owner</td><td data-ar="عمل التقارير على الإكسل">Building reports in Excel</td><td class="r">2–3</td></tr>
+        <tr class="you"><td data-ar="الإجمالي">Total</td><td></td><td class="r">21–33</td></tr>
       </tbody>
     </table></div>
   </section>
@@ -457,17 +625,17 @@ footer{color:var(--muted);font-size:.84rem}
     <div class="tbl"><table>
       <thead><tr><th data-ar="المميزات">Included</th><th class="c" data-ar="الأساسية">Starter</th><th class="c" data-ar="الأعمال">Business</th><th class="c" data-ar="المخصصة">Custom</th></tr></thead>
       <tbody>
-        <tr><td data-ar="CRM والمبيعات والفواتير">CRM, sales and invoicing</td><td class="c yes">✓</td><td class="c yes">✓</td><td class="c yes">✓</td></tr>
-        <tr><td data-ar="المخزون والمشتريات والمصروفات">Inventory, purchasing, expenses</td><td class="c no">–</td><td class="c yes">✓</td><td class="c yes">✓</td></tr>
-        <tr><td data-ar="موقع بلغتين">Bilingual website</td><td class="c" data-ar="٤ صفحات">4 pages</td><td class="c" data-ar="٦ صفحات">6 pages</td><td class="c" data-ar="تصميم خاص">Custom design</td></tr>
+        <tr><td data-ar="CRM والمبيعات والفواتير">CRM, sales and invoicing</td><td class="c yes"><span class="ck" aria-hidden="true"></span><span class="vh">✓</span></td><td class="c yes"><span class="ck" aria-hidden="true"></span><span class="vh">✓</span></td><td class="c yes"><span class="ck" aria-hidden="true"></span><span class="vh">✓</span></td></tr>
+        <tr><td data-ar="المخزون والمشتريات والمصروفات">Inventory, purchasing, expenses</td><td class="c no">–</td><td class="c yes"><span class="ck" aria-hidden="true"></span><span class="vh">✓</span></td><td class="c yes"><span class="ck" aria-hidden="true"></span><span class="vh">✓</span></td></tr>
+        <tr><td data-ar="موقع بلغتين">Bilingual website</td><td class="c" data-ar="4 صفحات">4 pages</td><td class="c" data-ar="6 صفحات">6 pages</td><td class="c" data-ar="تصميم خاص">Custom design</td></tr>
         <tr><td data-ar="أتمتة بتوفر التكاليف">Cost-cutting automations</td><td class="c">2</td><td class="c" data-ar="الكل">All</td><td class="c" data-ar="الكل + مخصص">All + custom</td></tr>
-        <tr><td data-ar="مساعد ذكي على الموقع والواتساب">AI assistant on website and WhatsApp</td><td class="c no">–</td><td class="c yes">✓</td><td class="c yes">✓</td></tr>
-        <tr><td data-ar="Google Analytics وMeta Pixel">Google Analytics and Meta Pixel</td><td class="c no">–</td><td class="c yes" data-ar="هدية">Free bonus</td><td class="c yes">✓</td></tr>
-        <tr><td data-ar="تقييمات جوجل تلقائية">Automatic Google review requests</td><td class="c no">–</td><td class="c yes" data-ar="هدية">Free bonus</td><td class="c yes">✓</td></tr>
-        <tr><td data-ar="لوحة إدارة">Management dashboard</td><td class="c no">–</td><td class="c yes" data-ar="هدية">Free bonus</td><td class="c yes">✓</td></tr>
-        <tr><td data-ar="حملات Meta وGoogle Ads">Meta and Google Ads campaigns</td><td class="c no">–</td><td class="c no">–</td><td class="c yes">✓</td></tr>
-        <tr><td data-ar="الدعم المشمول">Support included</td><td class="c" data-ar="شهر">1 month</td><td class="c" data-ar="٥ شهور">5 months</td><td class="c" data-ar="٣ شهور">3 months</td></tr>
-        <tr><td><b data-ar="السعر">Price</b></td><td class="c num ltr"><b>USD 1,200</b></td><td class="c num ltr"><b>USD 2,000</b></td><td class="c num ltr"><b>USD 6,500+</b></td></tr>
+        <tr><td data-ar="مساعد ذكي على الموقع والواتساب">AI assistant on website and WhatsApp</td><td class="c no">–</td><td class="c yes"><span class="ck" aria-hidden="true"></span><span class="vh">✓</span></td><td class="c yes"><span class="ck" aria-hidden="true"></span><span class="vh">✓</span></td></tr>
+        <tr><td data-ar="Google Analytics وMeta Pixel">Google Analytics and Meta Pixel</td><td class="c no">–</td><td class="c yes" data-ar="هدية">Free bonus</td><td class="c yes"><span class="ck" aria-hidden="true"></span><span class="vh">✓</span></td></tr>
+        <tr><td data-ar="تقييمات جوجل تلقائية">Automatic Google review requests</td><td class="c no">–</td><td class="c yes" data-ar="هدية">Free bonus</td><td class="c yes"><span class="ck" aria-hidden="true"></span><span class="vh">✓</span></td></tr>
+        <tr><td data-ar="لوحة إدارة">Management dashboard</td><td class="c no">–</td><td class="c yes" data-ar="هدية">Free bonus</td><td class="c yes"><span class="ck" aria-hidden="true"></span><span class="vh">✓</span></td></tr>
+        <tr><td data-ar="حملات Meta وGoogle Ads">Meta and Google Ads campaigns</td><td class="c no">–</td><td class="c no">–</td><td class="c yes"><span class="ck" aria-hidden="true"></span><span class="vh">✓</span></td></tr>
+        <tr><td data-ar="الدعم المشمول">Support included</td><td class="c" data-ar="شهر">1 month</td><td class="c" data-ar="5 شهور">5 months</td><td class="c" data-ar="3 شهور">3 months</td></tr>
+        <tr><td><b data-ar="السعر">Price</b></td><td class="c num"><b data-ar="1,200 دولار">USD 1,200</b></td><td class="c num"><b data-ar="2,000 دولار">USD 2,000</b></td><td class="c num"><b data-ar="من 6,500 دولار">USD 6,500+</b></td></tr>
       </tbody>
     </table></div>
   </section>
@@ -478,22 +646,22 @@ footer{color:var(--muted);font-size:.84rem}
     <div class="tbl"><table>
       <thead><tr><th data-ar="الاختيار">Option</th><th data-ar="هتاخد إيه">What you get</th><th class="r" data-ar="السعر المعتاد">Typical price</th></tr></thead>
       <tbody>
-        <tr class="you"><td data-ar="باقة الأعمال">Business package</td><td data-ar="ERP وCRM وموقع ومساعد ذكي وأتمتة وإطلاق ودعم وهدايا">ERP, CRM, website, AI assistant, automations, launch, support, bonuses</td><td class="r ltr">EGP 111,600</td></tr>
-        <tr><td data-ar="شركة Odoo، باقة مبتدئة">Odoo partner, starter package</td><td data-ar="ERP بس، ٢–٣ موديولات، إعداد وتدريب">ERP only, 2–3 modules, setup and training</td><td class="r ltr">EGP 125,000–250,000</td></tr>
-        <tr><td data-ar="شركة Odoo، باقة نمو">Odoo partner, growth package</td><td data-ar="٥–٨ موديولات وتخصيص وربط">5–8 modules, custom workflows, integrations</td><td class="r ltr">EGP 250,000–600,000</td></tr>
-        <tr><td data-ar="موقع شركة صغيرة لوحده">Small-company website on its own</td><td data-ar="٥–١٠ صفحات">5–10 pages</td><td class="r ltr">~EGP 20,000</td></tr>
+        <tr class="you"><td data-ar="باقة الأعمال">Business package</td><td data-ar="ERP وCRM وموقع ومساعد ذكي وأتمتة وإطلاق ودعم وهدايا">ERP, CRM, website, AI assistant, automations, launch, support, bonuses</td><td class="r" data-ar="111,600 جنيه">EGP 111,600</td></tr>
+        <tr><td data-ar="شركة Odoo، باقة مبتدئة">Odoo partner, starter package</td><td data-ar="ERP بس، 2–3 موديولات، إعداد وتدريب">ERP only, 2–3 modules, setup and training</td><td class="r" data-ar="125,000–250,000 جنيه">EGP 125,000–250,000</td></tr>
+        <tr><td data-ar="شركة Odoo، باقة نمو">Odoo partner, growth package</td><td data-ar="5–8 موديولات وتخصيص وربط">5–8 modules, custom workflows, integrations</td><td class="r" data-ar="250,000–600,000 جنيه">EGP 250,000–600,000</td></tr>
+        <tr><td data-ar="موقع شركة صغيرة لوحده">Small-company website on its own</td><td data-ar="5–10 صفحات">5–10 pages</td><td class="r" data-ar="حوالي 20,000 جنيه">~EGP 20,000</td></tr>
       </tbody>
     </table></div>
-    <p class="note" data-ar="أسعار منشورة في مصر، اتراجعت في نوفمبر ٢٠٢٦. سعر الصرف ٥٥٫٨ جنيه للدولار.">Published Egyptian prices, checked November 2026. EGP figures use 55.8 EGP per USD.</p>
+    <p class="note" data-ar="أسعار منشورة في مصر، اتراجعت في نوفمبر 2026. سعر الصرف 55.8 جنيه للدولار.">Published Egyptian prices, checked November 2026. EGP figures use 55.8 EGP per USD.</p>
   </section>
 
   <section id="how">
     <h2 data-ar="إزاي بنشتغل">How we work</h2>
     <div class="proc">
-      <div><b data-ar="١. نفهم">1. Discover</b><p data-ar="مكالمة مجانية وورشة عمل نفهم فيها شغلك، وتستلم نطاق مكتوب في صفحة واحدة.">A free call and a workshop to map how your business runs. You get a one-page written scope.</p></div>
-      <div><b data-ar="٢. نبني">2. Build</b><p data-ar="النظام بيتجهز على لينك تجريبي وبياناتك بتتنقل عليه.">Your system is set up on a test link and your data is imported.</p></div>
-      <div><b data-ar="٣. نجرب وندرب">3. Test and train</b><p data-ar="فريقك بيجرب كل حاجة، بصلح أي ملاحظة، وبدرب كل دور.">Your team tries everything. I fix what comes up and train each role.</p></div>
-      <div><b data-ar="٤. نطلق وندعم">4. Launch and support</b><p data-ar="الإطلاق، وبعده دعم على الواتساب.">Go live, then support on WhatsApp.</p></div>
+      <div><b data-ar="1. نفهم">1. Discover</b><p data-ar="مكالمة مجانية وورشة عمل نفهم فيها شغلك، وتستلم نطاق مكتوب في صفحة واحدة.">A free call and a workshop to map how your business runs. You get a one-page written scope.</p></div>
+      <div><b data-ar="2. نبني">2. Build</b><p data-ar="النظام بيتجهز على لينك تجريبي وبياناتك بتتنقل عليه.">Your system is set up on a test link and your data is imported.</p></div>
+      <div><b data-ar="3. نجرب وندرب">3. Test and train</b><p data-ar="فريقك بيجرب كل حاجة، بصلح أي ملاحظة، وبدرب كل دور.">Your team tries everything. I fix what comes up and train each role.</p></div>
+      <div><b data-ar="4. نطلق وندعم">4. Launch and support</b><p data-ar="الإطلاق، وبعده دعم على الواتساب.">Go live, then support on WhatsApp.</p></div>
     </div>
   </section>
 
@@ -505,7 +673,7 @@ footer{color:var(--muted);font-size:.84rem}
         <div class="logo"><img src="assets/ariika.png" alt="Ariika"></div>
         <div class="tags"><span class="tag"><img src="assets/whatsapp.svg" alt="">WhatsApp</span><span class="tag">AI</span><span class="tag"><img src="assets/shopify.svg" alt="">E-commerce</span></div>
         <h3 data-ar="أريكة مصر: خدمة عملاء بالذكاء الاصطناعي على الواتساب">Ariika Egypt: AI customer service on WhatsApp</h3>
-        <p data-ar="مساعد ذكي لمتجر أثاث وديكور. بيرد بالمصري والإنجليزي والفرانكو، بيدور في أكتر من ١٬٣٠٠ منتج، وبيبعت تحديثات الطلب على الواتساب.">An AI assistant for a furniture and home-decor store. It answers in Egyptian Arabic, English and Franco, searches 1,300+ products, and sends order updates on WhatsApp.</p>
+        <p data-ar="مساعد ذكي لمتجر أثاث وديكور. بيرد بالمصري والإنجليزي والفرانكو، بيدور في أكتر من 1,300 منتج، وبيبعت تحديثات الطلب على الواتساب.">An AI assistant for a furniture and home-decor store. It answers in Egyptian Arabic, English and Franco, searches 1,300+ products, and sends order updates on WhatsApp.</p>
         <a href="https://ariika.com">ariika.com</a>
       </article>
       <article class="case">
@@ -521,7 +689,7 @@ footer{color:var(--muted);font-size:.84rem}
         <p data-ar="متجر Shopify بثيم متخصص، وكل المنتجات متضافة، وصور المنتجات متجهزة للويب.">A Shopify store with a customised theme, the full product catalogue imported, and product photos prepared for the web.</p>
       </article>
       <article class="case">
-        <div class="logo dark"><img src="assets/radwan.png" alt="Radwan El-Ogail Stores"></div>
+        <div class="logo"><img src="assets/radwan.png" alt="Radwan El-Ogail Stores"></div>
         <div class="tags"><span class="tag">Website</span></div>
         <h3 data-ar="محلات رضوان العجيل: موقع الشركة">Radwan El-Ogail Stores: business website</h3>
         <p data-ar="موقع شركة اتصمم واتبنى واتطلق.">A business website designed, built and launched.</p>
@@ -545,7 +713,7 @@ footer{color:var(--muted);font-size:.84rem}
       <details open><summary data-ar="ليه أرخص من شركات Odoo؟">Why is this cheaper than an Odoo agency?</summary><p data-ar="الشركات بتدفع على فرق مبيعات ومكاتب ومديري حسابات. إنت بتتعامل مباشرة مع اللي بيبني نظامك، والنطاق ثابت ومكتوب قبل ما نبدأ.">Agencies pay for sales teams, offices and account managers. You work directly with the consultant who builds your system. The scope is fixed and written down before work starts.</p></details>
       <details><summary data-ar="لو كبرنا؟">What if we outgrow it?</summary><p data-ar="Odoo بيشغّل شركات فيها آلاف المستخدمين. لما تكبر بتضيف موديولات زي الموارد البشرية أو التصنيع أو متجر أونلاين، ومفيش حاجة بتتعمل من الأول. والانتقال من الأساسية للأعمال بالفرق بس.">Odoo runs companies with thousands of users. As you grow you add modules such as HR, manufacturing or an online store. Nothing is rebuilt. Moving from Starter to Business costs only the difference.</p></details>
       <details><summary data-ar="مين بيملك البيانات والنظام؟">Who owns the data and the system?</summary><p data-ar="إنت. السيرفر والدومين وقاعدة البيانات وكل الاشتراكات باسم شركتك، ومعاك كل الباسوردات. مفيش أي ارتباط إجباري بيا.">You do. The server, domain, database and every subscription are in your company's name, and you get the admin passwords. You are never locked in.</p></details>
-      <details><summary data-ar="بعد فترة الدعم إيه اللي بيحصل؟">What happens after the support period?</summary><p data-ar="كل حاجة بتفضل معاك. الدعم بعد كده اختياري بـ١٠٠ دولار في الشهر وتقدر توقفه في أي وقت، والنسخ الاحتياطي اليومي شغال في كل الأحوال.">You keep everything. Ongoing support is optional at USD 100 a month, cancel any time. Daily backups keep running either way.</p></details>
+      <details><summary data-ar="بعد فترة الدعم إيه اللي بيحصل؟">What happens after the support period?</summary><p data-ar="كل حاجة بتفضل معاك. الدعم بعد كده اختياري بـ100 دولار في الشهر وتقدر توقفه في أي وقت، والنسخ الاحتياطي اليومي شغال في كل الأحوال.">You keep everything. Ongoing support is optional at USD 100 a month, cancel any time. Daily backups keep running either way.</p></details>
       <details><summary data-ar="بيشتغل بالعربي؟">Does it work in Arabic?</summary><p data-ar="أيوه. النظام والموقع بالعربي والإنجليزي، والمساعد الذكي بيرد بالمصري والإنجليزي والفرانكو.">Yes. The system and website work in Arabic and English, and the AI assistant answers in Egyptian Arabic, English and Franco.</p></details>
     </div>
   </section>
@@ -557,40 +725,43 @@ footer{color:var(--muted);font-size:.84rem}
         <div class="tbl"><table style="min-width:0">
           <thead><tr><th data-ar="المرحلة">Milestone</th><th class="r" data-ar="النسبة">Share</th><th class="r" data-ar="الأعمال (دولار)">Business (USD)</th></tr></thead>
           <tbody>
-            <tr><td data-ar="البداية">Kick-off</td><td class="r ltr">40%</td><td class="r ltr">800</td></tr>
-            <tr><td data-ar="النظام شغال زي ما اتفقنا">System working as agreed</td><td class="r ltr">40%</td><td class="r ltr">800</td></tr>
-            <tr><td data-ar="الإطلاق">Launch</td><td class="r ltr">20%</td><td class="r ltr">400</td></tr>
+            <tr><td data-ar="البداية">Kick-off</td><td class="r">40%</td><td class="r">800</td></tr>
+            <tr><td data-ar="النظام شغال زي ما اتفقنا">System working as agreed</td><td class="r">40%</td><td class="r">800</td></tr>
+            <tr><td data-ar="الإطلاق">Launch</td><td class="r">20%</td><td class="r">400</td></tr>
           </tbody>
         </table></div>
         <p class="note" data-ar="نفس التقسيم لكل الباقات. الدفع بالدولار أو بالجنيه بسعر يوم الفاتورة.">Same split for every package. Pay in USD or in EGP at the rate on the invoice date.</p>
       </div>
       <div class="panel">
-        <h2 data-ar="الاشتراكات الشهرية (على حسابك)">Monthly subscriptions (billed to you)</h2>
-        <div class="tbl"><table style="min-width:0">
-          <thead><tr><th data-ar="البند">Item</th><th class="r" data-ar="في الشهر">Per month</th></tr></thead>
+        <h2 data-ar="تكاليف التشغيل (على حسابك)">Running costs (billed to you)</h2>
+        <p class="muted cost-intro" data-ar="الأسعار بيحددها كل مزود، واتراجعت يوم 1 نوفمبر 2026. البنود اللي بتعتمد على الاستخدام مكتوبة كنطاق لأنها بتختلف حسب حجم شغلك.">Prices set by each provider, checked 1 November 2026. Usage-based items depend on your volume, so they are shown as ranges.</p>
+        <div class="tbl"><table class="cost-tbl" style="min-width:0">
+          <thead><tr><th data-ar="البند">Item</th><th data-ar="السعر">Price</th><th data-ar="طريقة الحساب">How it's billed</th></tr></thead>
           <tbody>
-            <tr><td data-ar="سيرفر سحابي">Cloud server</td><td class="r ltr">USD 12–24</td></tr>
-            <tr><td data-ar="ترخيص Odoo Community">Odoo license (Community)</td><td class="r ltr">USD 0</td></tr>
-            <tr><td data-ar="استخدام الذكاء الاصطناعي">AI usage</td><td class="r ltr">USD 2–10</td></tr>
-            <tr><td data-ar="مزود واتساب بيزنس (باقة الأعمال)">WhatsApp Business provider (Business package)</td><td class="r ltr">from USD 19</td></tr>
-            <tr><td data-ar="الدومين">Domain</td><td class="r ltr">~USD 1–2</td></tr>
+            <tr><td data-ar="سيرفر سحابي (ERP وCRM والموقع)">Cloud server (ERP, CRM, website)</td><td class="cost-p" data-ar="6–24 دولار / شهر">USD 6–24 / month</td><td class="cost-how" data-ar="باقة شهرية ثابتة، الحجم حسب عدد المستخدمين">Fixed monthly plan, size depends on users</td></tr>
+            <tr><td data-ar="ترخيص Odoo Community">Odoo Community license</td><td class="cost-p" data-ar="مجاني">Free</td><td class="cost-how" data-ar="بدون رسوم لكل مستخدم">No per-user fees</td></tr>
+            <tr><td data-ar="استخدام المساعد الذكي">AI assistant usage</td><td class="cost-p" data-ar="حوالي 2–10 دولار / شهر">about USD 2–10 / month</td><td class="cost-how" data-ar="بالدفع حسب الاستخدام؛ تقدير لحوالي 3,000 محادثة في الشهر">Pay per use; estimate for ~3,000 chats a month</td></tr>
+            <tr><td data-ar="ردود الواتساب على العملاء">WhatsApp replies to customers</td><td class="cost-p" data-ar="مجاني">Free</td><td class="cost-how" data-ar="الردود خلال 24 ساعة من رسالة العميل">Replies within 24 hours of a customer's message</td></tr>
+            <tr><td data-ar="رسائل واتساب تسويقية (مصر)">WhatsApp marketing messages (Egypt)</td><td class="cost-p" data-ar="حوالي 0.064 دولار للرسالة + 14% ضريبة">about USD 0.064 each + 14% VAT</td><td class="cost-how" data-ar="Meta بتحاسب على كل رسالة، ولو بعتها بس">Charged by Meta per message, only if you send them</td></tr>
+            <tr><td data-ar="تحديثات الطلبات على واتساب (مصر)">WhatsApp order updates (Egypt)</td><td class="cost-p" data-ar="حوالي 0.004 دولار للرسالة + 14% ضريبة">about USD 0.004 each + 14% VAT</td><td class="cost-how" data-ar="Meta بتحاسب على كل رسالة">Charged by Meta per message</td></tr>
+            <tr><td data-ar="الدومين (<bdi dir='ltr'>.com</bdi>)">Domain (.com)</td><td class="cost-p" data-ar="حوالي 500–800 جنيه / سنة">about EGP 500–800 / year</td><td class="cost-how" data-ar="تجديد سنوي">Yearly renewal</td></tr>
           </tbody>
         </table></div>
-        <p class="note" data-ar="كل الاشتراكات (السيرفر والدومين والواتساب والذكاء الاصطناعي وMeta وجوجل) باسم شركتك وبتتدفع منك مباشرة للمزودين. ميزانية الإعلانات منفصلة.">Every subscription (server, domain, WhatsApp, AI, Meta and Google) is in your company's name and paid by you directly to the provider. Ad budgets are separate.</p>
+        <p class="note" data-ar="كل الحسابات (السيرفر والدومين والواتساب والذكاء الاصطناعي وMeta وجوجل) باسم شركتك وبتتدفع منك مباشرة للمزود. ميزانية الإعلانات منفصلة. المصادر: صفحات أسعار <a href='https://www.digitalocean.com/pricing/droplets'>DigitalOcean</a> و<a href='https://www.hetzner.com/cloud/'>Hetzner</a>، وأسعار WhatsApp Business من <a href='https://developers.facebook.com/docs/whatsapp/pricing'>Meta</a> لمصر، و<a href='https://www.godaddy.com/resources/ar-ae/'>GoDaddy</a> مصر.">Every account (server, domain, WhatsApp, AI, Meta, Google) is in your company's name and paid by you directly to the provider. Ad budgets are separate. Sources: <a href="https://www.digitalocean.com/pricing/droplets">DigitalOcean</a> and <a href="https://www.hetzner.com/cloud/">Hetzner</a> price pages, <a href="https://developers.facebook.com/docs/whatsapp/pricing">Meta</a> WhatsApp Business pricing for Egypt, <a href="https://www.godaddy.com/resources/ar-ae/">GoDaddy</a> Egypt.</p>
       </div>
     </div>
     <div class="panel" id="limits">
       <h3 data-ar="النطاق والحدود">Scope and limits</h3>
       <ul class="check">
-        <li data-ar="لحد ١٥ مستخدم، شركة واحدة، مخزن واحد، عملة واحدة (جنيه)">Up to 15 users, 1 company, 1 warehouse, 1 currency (EGP)</li>
+        <li data-ar="لحد 15 مستخدم، شركة واحدة، مخزن واحد، عملة واحدة (جنيه)">Up to 15 users, 1 company, 1 warehouse, 1 currency (EGP)</li>
         <li data-ar="Odoo Community بالخطوات القياسية. الفاتورة الإلكترونية (ETA) والمرتبات والمحاسبة الكاملة بعرض منفصل">Odoo Community with standard workflows. Egyptian e-invoicing (ETA), payroll and full accounting are quoted separately</li>
-        <li data-ar="استيراد العملاء والمنتجات ورصيد المخزون الافتتاحي لحد ٥٬٠٠٠ صف من قالب الإكسل، مرة واحدة">Data import: customers, products and opening stock, up to 5,000 rows, from our Excel template, imported once</li>
+        <li data-ar="استيراد العملاء والمنتجات ورصيد المخزون الافتتاحي لحد 5,000 صف من قالب الإكسل، مرة واحدة">Data import: customers, products and opening stock, up to 5,000 rows, from our Excel template, imported once</li>
         <li data-ar="الموقع: عدد صفحات الباقة، إنت بتوفر النصوص والصور، وجولتين تعديل">Website: up to the package's page count, you provide text and images, 2 rounds of revisions</li>
-        <li data-ar="٣ نماذج طباعة (عرض سعر، فاتورة، إذن تسليم) ولحد ٥ مؤشرات في اللوحة">3 printed layouts (quotation, invoice, delivery note) and up to 5 dashboard tiles</li>
-        <li data-ar="المساعد الذكي بيرد من محتوى إنت موافق عليه (لحد ٢٠ صفحة) وبيحول الأسئلة الصعبة لفريقك">AI assistant answers from your approved content (up to 20 pages) and hands complex questions to your staff</li>
+        <li data-ar="3 نماذج طباعة (عرض سعر، فاتورة، إذن تسليم) ولحد 5 مؤشرات في اللوحة">3 printed layouts (quotation, invoice, delivery note) and up to 5 dashboard tiles</li>
+        <li data-ar="المساعد الذكي بيرد من محتوى إنت موافق عليه (لحد 20 صفحة) وبيحول الأسئلة الصعبة لفريقك">AI assistant answers from your approved content (up to 20 pages) and hands complex questions to your staff</li>
         <li data-ar="الواتساب محتاج توثيق حساب Meta ورقم مخصص، وموافقة Meta خارج إيدي">WhatsApp needs Meta business verification and a dedicated number; Meta's approval is outside my control</li>
         <li data-ar="كل الاشتراكات والحسابات باسمك وعلى حسابك، وأنا بيبقى معايا صلاحية الإعداد بس">All subscriptions and accounts are in your name and paid by you; I only get admin access to set them up</li>
-        <li data-ar="الدعم: لحد ٦ ساعات في الشهر للإصلاحات والتعديلات الصغيرة، والرد خلال يوم عمل">Support: up to 6 hours a month for fixes and changes under 1 hour each, replies within 1 business day</li>
+        <li data-ar="الدعم: لحد 6 ساعات في الشهر للإصلاحات والتعديلات الصغيرة، والرد خلال يوم عمل">Support: up to 6 hours a month for fixes and changes under 1 hour each, replies within 1 business day</li>
         <li data-ar="أي حاجة أكبر من كده (موديولات أو ربط جديد أو مخازن أو شركات إضافية) بتتسعر كإضافة قبل الشغل">Anything beyond these limits (new modules, integrations, extra warehouses or companies) is quoted as an add-on before work starts</li>
       </ul>
     </div>
@@ -599,16 +770,16 @@ footer{color:var(--muted);font-size:.84rem}
   <section id="start" class="no-print">
     <h2 data-ar="ابدأ الآن: احكيلي عن شغلك">Get started: tell me about your business</h2>
     <p class="lead" data-ar="املا اللي تقدر عليه وابعته على واتساب، أو <a href='https://calendly.com/shady-al-halawani'>احجز ميعاد مباشرة على Calendly</a>.">Fill in what you can and send it on WhatsApp, or <a href="https://calendly.com/shady-al-halawani">book a time directly on Calendly</a>.</p>
-    <form id="disc" class="panel">
+    <form id="disc" class="panel" novalidate>
       <div class="grid2">
-        <label for="f-name"><span data-ar="اسمك">Your name</span><input id="f-name" name="name" autocomplete="name"></label>
-        <label for="f-company"><span data-ar="اسم الشركة">Company name</span><input id="f-company" name="company"></label>
+        <label for="f-name"><span class="req"><span data-ar="اسمك">Your name</span></span><input id="f-name" name="name" autocomplete="name" required></label>
+        <label for="f-company"><span class="req"><span data-ar="اسم الشركة">Company name</span></span><input id="f-company" name="company" autocomplete="organization" required></label>
         <label for="f-industry"><span data-ar="الشركة بتشتغل في إيه؟">What does the business do?</span><input id="f-industry" name="industry"></label>
         <label for="f-size"><span data-ar="كام شخص هيستخدم النظام؟">How many people will use the system?</span>
           <select id="f-size" name="size"><option>1–5</option><option>6–15</option><option>16–30</option><option>30+</option></select></label>
         <label for="f-pkg"><span data-ar="الباقة اللي مايل لها">Package you're leaning towards</span>
           <select id="f-pkg" name="pkg"><option value="Not sure yet" data-ar="لسه مش متأكد">Not sure yet</option><option value="Starter" data-ar="الأساسية">Starter</option><option value="Business" selected data-ar="الأعمال">Business</option><option value="Custom" data-ar="المخصصة">Custom</option></select></label>
-        <label for="f-meet"><span data-ar="أنسب وقت لمكالمة ٣٠ دقيقة">Best time for a 30-minute call</span><input id="f-meet" name="meet"></label>
+        <label for="f-meet"><span data-ar="أنسب وقت لمكالمة 30 دقيقة">Best time for a 30-minute call</span><input id="f-meet" name="meet"></label>
       </div>
       <fieldset><legend data-ar="محتاج إيه أكتر؟">What do you need most?</legend>
         <div class="boxes">
@@ -626,8 +797,13 @@ footer{color:var(--muted);font-size:.84rem}
         <label for="f-today"><span data-ar="بتستخدم إيه دلوقتي؟">What do you use today?</span><textarea id="f-today" name="today"></textarea></label>
         <label for="f-pain"><span data-ar="إيه أكبر مشكلة دلوقتي؟">What is the biggest headache right now?</span><textarea id="f-pain" name="pain"></textarea></label>
       </div>
-      <div><a class="btn btn-wa" id="send-wa" href="https://wa.me/201205461115"><img class="ic" src="assets/whatsapp.svg" alt=""><span data-ar="ابعت إجاباتي على واتساب">Send my answers on WhatsApp</span></a></div>
-      <p class="note"><span data-ar="لو الواتساب ما فتحش، ابعت على">If WhatsApp doesn't open, message</span> <span class="ltr">+20 120 546 1115</span></p>
+      <div class="hp" aria-hidden="true"><label for="f-honey">Leave this empty</label><input type="text" id="f-honey" name="_honey" tabindex="-1" autocomplete="off"></div>
+      <div class="send-row">
+        <button type="submit" class="btn btn-cal" id="send-mail"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg><span data-ar="ابعت إجاباتي">Send my answers</span></button>
+        <a class="btn btn-wa-line" id="send-wa" href="https://wa.me/201205461115"><img class="ic" src="assets/whatsapp.svg" alt=""><span data-ar="أو ابعتها واتساب">Or send on WhatsApp</span></a>
+      </div>
+      <p id="form-status" class="status" role="status" aria-live="polite" hidden></p>
+      <p class="note"><span data-ar="لو الواتساب ما فتحش، ابعت على">If WhatsApp doesn't open, message</span> <span class="ltr" dir="ltr">+20 120 546 1115</span></p>
     </form>
   </section>
 
@@ -653,7 +829,7 @@ footer{color:var(--muted);font-size:.84rem}
     </div>
   </section>
 
-  <footer data-ar="أسعار ثابتة للنطاق المتفق عليه كتابة. الأسعار لا تشمل ضريبة القيمة المضافة. العرض سارٍ ٣٠ يومًا من ١ نوفمبر ٢٠٢٦.">Fixed prices for the scope agreed in writing. Prices exclude VAT. Offer valid for 30 days from 1 November 2026.</footer>
+  <footer data-ar="أسعار ثابتة للنطاق المتفق عليه كتابة. الأسعار لا تشمل ضريبة القيمة المضافة. العرض سارٍ 30 يومًا من 1 نوفمبر 2026.">Fixed prices for the scope agreed in writing. Prices exclude VAT. Offer valid for 30 days from 1 November 2026.</footer>
 </main>
 </div>
 
@@ -667,7 +843,7 @@ footer{color:var(--muted);font-size:.84rem}
   var lang='en';
   var nodes=[].slice.call(document.querySelectorAll('[data-ar]'));
   nodes.forEach(function(n){n.setAttribute('data-en',n.innerHTML);});
-  function fmt(n){return Math.round(n).toLocaleString(lang==='ar'?'ar-EG':'en-US');}
+  function fmt(n){return Math.round(n).toLocaleString('en-US');}
   function money(n){return lang==='ar'?fmt(n)+' جنيه':'EGP '+fmt(n);}
 
   function g(id){return +document.getElementById(id).value;}
@@ -699,7 +875,36 @@ footer{color:var(--muted);font-size:.84rem}
     btn.href='https://wa.me/'+WA+'?text='+encodeURIComponent(lines.join('\n'));
   }
   form.addEventListener('input',build);form.addEventListener('change',build);
-  form.addEventListener('submit',function(e){e.preventDefault();});
+  // Email copy of the answers via FormSubmit (WhatsApp link stays as the alternative)
+  var sendBtn=document.getElementById('send-mail'),statusEl=document.getElementById('form-status'),statusKey='',sending=false;
+  var CAL='<a href="https://calendly.com/shady-al-halawani">';
+  var FT={
+    en:{need:'Please add your name and company so Shady knows who to reply to.',sending:'Sending your answers…',
+        ok:'Thanks! Your answers reached Shady. '+CAL+'Book a time on Calendly</a> or he\'ll reach out within 1 business day.',
+        err:'Sorry, your answers didn\'t go through. Please use the WhatsApp button instead, or message <bdi dir="ltr">+20 120 546 1115</bdi>.'},
+    ar:{need:'من فضلك اكتب اسمك واسم الشركة عشان شادي يعرف يرد عليك.',sending:'بنبعت إجاباتك…',
+        ok:'شكرًا! إجاباتك وصلت لشادي. '+CAL+'احجز ميعاد على Calendly</a> أو هيتواصل معاك خلال يوم عمل.',
+        err:'للأسف إجاباتك ما اتبعتتش. ابعتها من زرار الواتساب، أو كلم <bdi dir="ltr">+20 120 546 1115</bdi>.'}
+  };
+  var TONE={need:'err',sending:'info',ok:'ok',err:'err'};
+  function showStatus(k){statusKey=k;if(!k){statusEl.hidden=true;return;}statusEl.hidden=false;statusEl.setAttribute('data-tone',TONE[k]);statusEl.innerHTML=FT[lang][k];}
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    if(sending)return;
+    var miss=['f-name','f-company'].filter(function(id){return !v(id);});
+    ['f-name','f-company'].forEach(function(id){document.getElementById(id).setAttribute('aria-invalid',miss.indexOf(id)>-1?'true':'false');});
+    if(miss.length){showStatus('need');document.getElementById(miss[0]).focus();return;}
+    var needs=[].slice.call(form.querySelectorAll('input[type=checkbox]:checked')).map(function(c){return c.value;});
+    var body={name:v('f-name'),company:v('f-company'),industry:v('f-industry'),users:v('f-size'),package:v('f-pkg'),needs:needs.join(', '),
+      using_today:v('f-today'),biggest_headache:v('f-pain'),best_call_time:v('f-meet'),language:lang,
+      _subject:'New proposal enquiry – '+(v('f-company')||v('f-name')),_template:'table',_captcha:'false',_honey:v('f-honey')};
+    sending=true;sendBtn.disabled=true;sendBtn.setAttribute('aria-busy','true');showStatus('sending');
+    fetch('https://formsubmit.co/ajax/shadydeeb4@gmail.com',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(body)})
+      .then(function(r){return r.json().catch(function(){return {};});})
+      .then(function(d){showStatus(d&&(d.success===true||d.success==='true')?'ok':'err');})
+      .catch(function(){showStatus('err');})
+      .then(function(){sending=false;sendBtn.disabled=false;sendBtn.removeAttribute('aria-busy');});
+  });
 
   function setLang(l){
     lang=l;
@@ -713,6 +918,7 @@ footer{color:var(--muted);font-size:.84rem}
     if(vid&&src&&src.getAttribute('src')!==want){src.setAttribute('src',want);vid.setAttribute('poster','assets/video/intro-'+l+'.jpg');vid.load();}
     try{localStorage.setItem('lang',l);}catch(e){}
     calc();build();
+    if(statusKey)showStatus(statusKey);
   }
   document.querySelectorAll('.lang button').forEach(function(b){b.addEventListener('click',function(){setLang(b.getAttribute('data-lang'));});});
   var start='en';try{start=localStorage.getItem('lang')||'en';}catch(e){}
