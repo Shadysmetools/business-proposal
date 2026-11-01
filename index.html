@@ -1,23 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Business System Proposal | Shady Al-Halawani</title>
-<meta name="description" content="ERP, CRM, website and AI packages by Shady Al-Halawani, ERP Expert and Odoo Consultant.">
-<meta property="og:title" content="ERP, CRM, Website & AI Packages">
+<meta name="description" content="ERP, CRM, website, AI and automation packages by Shady Al-Halawani, ERP Expert and Odoo Consultant.">
+<meta property="og:title" content="ERP, CRM, Website & AI Packages | Shady Al-Halawani">
 <meta property="og:description" content="One system for your sales, stock, customers and website, with AI that answers on WhatsApp.">
-<meta property="og:image" content="assets/shady.jpg">
+<meta property="og:image" content="https://shadysmetools.github.io/business-proposal/assets/shady.jpg">
 <link rel="icon" href="assets/shady.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-/* Layout idea: a client dashboard. Fixed navy sidebar with the consultant, main column of tiles, packages, proof and next step. */
+/* Layout idea: a client dashboard. Navy sidebar with the consultant; main column opens on a navy hero with the video, then numbers, packages, savings, proof and the next step. */
 :root{
   --navy:#0b2f5e;
   --navy-2:#123d75;
+  --navy-3:#06213f;
   --blue:#0b57a4;
+  --sky:#7fb2ec;
   --ink:#16202e;
   --muted:#5b6778;
   --paper:#f3f6fa;
@@ -33,67 +35,87 @@
   --body:"IBM Plex Sans","Segoe UI",Arial,sans-serif;
   color-scheme:light;
 }
+html[lang="ar"]{--display:"IBM Plex Sans Arabic","Segoe UI",Tahoma,sans-serif;--body:"IBM Plex Sans Arabic","Segoe UI",Tahoma,sans-serif}
 *{box-sizing:border-box}
 html,body{margin:0}
-body{background:var(--paper);color:var(--ink);font:15.5px/1.6 var(--body)}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font:15.5px/1.65 var(--body)}
 a{color:var(--blue)}
 a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid #f2b705;outline-offset:2px}
-h1,h2,h3{font-family:var(--display);line-height:1.15;text-wrap:balance;margin:0}
-h2{font-size:1.6rem;color:var(--navy)}
-h3{font-size:1.1rem}
+h1,h2,h3{font-family:var(--display);line-height:1.2;text-wrap:balance;margin:0}
+h2{font-size:1.65rem;color:var(--navy)}
+h3{font-size:1.08rem}
 p{margin:0}
 .num{font-variant-numeric:tabular-nums}
 .muted{color:var(--muted)}
+.ltr{direction:ltr;unicode-bidi:isolate}
 
-/* shell */
 .shell{display:grid;grid-template-columns:290px 1fr;min-height:100%}
-aside.side{background:var(--navy);color:#fff;padding:28px 22px;display:flex;flex-direction:column;gap:22px;position:sticky;top:0;height:100vh;overflow-y:auto}
-.me{display:grid;gap:12px;justify-items:start}
-.me img{width:96px;height:96px;border-radius:50%;object-fit:cover;border:3px solid #fff}
+aside.side{background:var(--navy);color:#fff;padding:26px 22px;display:flex;flex-direction:column;gap:20px;position:sticky;top:0;height:100vh;overflow-y:auto}
+.me{display:grid;gap:10px;justify-items:start}
+.me .ph{position:relative}
+.me .ph img{width:96px;height:96px;border-radius:50%;object-fit:cover;border:3px solid #fff;display:block}
+.me .ph .dot{position:absolute;bottom:6px;inset-inline-end:4px;width:16px;height:16px;border-radius:50%;background:var(--wa);border:3px solid var(--navy)}
 .me strong{font-family:var(--display);font-size:1.3rem}
 .roles{display:flex;flex-wrap:wrap;gap:6px}
 .chip{border:1px solid #3d6aa3;color:#dbe6f5;border-radius:999px;padding:2px 10px;font-size:.78rem}
+.lang{display:inline-flex;border:1px solid #3d6aa3;border-radius:999px;padding:3px;gap:2px;align-self:flex-start}
+.lang button{font:600 .82rem var(--body);background:transparent;color:#c9d8ee;border:0;border-radius:999px;padding:5px 14px;cursor:pointer}
+.lang button[aria-pressed="true"]{background:#fff;color:var(--navy)}
 nav.toc{display:grid;gap:2px}
 nav.toc a{color:#c9d8ee;text-decoration:none;padding:7px 10px;border-radius:8px;font-size:.92rem}
 nav.toc a:hover{background:var(--navy-2);color:#fff}
 .side .links{display:grid;gap:8px;margin-top:auto}
 .side .links a{display:flex;gap:10px;align-items:center;color:#fff;text-decoration:none;font-size:.88rem;padding:8px 10px;border:1px solid #2f5b94;border-radius:10px}
-.side .links img{width:18px;height:18px;filter:invert(1)}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:10px;padding:11px 16px;font-weight:600;text-decoration:none;border:1px solid transparent;font-size:.95rem;cursor:pointer}
-.btn-wa{background:var(--wa);color:#fff}
-.btn-wa img{width:18px;height:18px;filter:invert(1)}
+.side .links img,.side .links svg{width:18px;height:18px;flex:none}
+.side .links img{filter:invert(1)}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:10px;padding:11px 18px;font-weight:600;text-decoration:none;border:1px solid transparent;font-size:.95rem;cursor:pointer;line-height:1.2;transition:transform .15s ease,box-shadow .15s ease}
+.btn:hover{transform:translateY(-1px)}
+.btn .ic{width:18px;height:18px;flex:none;filter:invert(1)}
+.btn-wa{background:var(--wa);color:#fff;box-shadow:0 8px 20px -10px rgba(31,168,85,.8)}
 .btn-line{border-color:var(--blue);color:var(--blue);background:#fff}
+.btn-light{border-color:#5b84bd;color:#fff;background:transparent}
 
-main{padding:30px clamp(16px,3vw,40px) 60px;display:grid;gap:36px;max-width:1180px}
-section{display:grid;gap:16px;scroll-margin-top:16px}
-.lead{max-width:68ch;color:var(--muted)}
+main{padding:26px clamp(16px,3vw,40px) 60px;display:grid;gap:40px;max-width:1200px;min-width:0}
+section{display:grid;gap:16px;scroll-margin-top:16px;min-width:0}
+.lead{max-width:70ch;color:var(--muted)}
 
-/* hero */
-.hero{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:28px;display:grid;gap:14px}
-.eyebrow{font-size:.78rem;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);font-weight:600;display:flex;flex-wrap:wrap;gap:6px 18px}
-.hero h1{font-size:clamp(1.7rem,3.4vw,2.5rem);color:var(--navy);font-weight:800;max-width:24ch}
-.hero .actions{display:flex;flex-wrap:wrap;gap:10px}
+.hero{background:radial-gradient(120% 140% at 100% 0%,#1b4f8f 0%,var(--navy) 45%,var(--navy-3) 100%);color:#fff;border-radius:22px;padding:30px;display:grid;grid-template-columns:1.05fr 1fr;gap:28px;align-items:center;overflow:hidden;position:relative}
+.hero::after{content:"";position:absolute;inset:auto -80px -120px auto;width:340px;height:340px;border-radius:50%;border:1px solid rgba(127,178,236,.25);pointer-events:none}
+.eyebrow{font-size:.76rem;text-transform:uppercase;letter-spacing:.07em;color:#b9cbe6;font-weight:600;display:flex;flex-wrap:wrap;gap:6px 16px}
+html[lang="ar"] .eyebrow{text-transform:none;letter-spacing:0}
+.hero h1{font-size:clamp(1.7rem,3.2vw,2.5rem);font-weight:800;margin-top:12px}
+.hero h1 em{font-style:normal;color:var(--sky)}
+.hero .lead{color:#dbe6f5;margin-top:12px}
+.hero .actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.trust{display:flex;flex-wrap:wrap;gap:14px;margin-top:18px;font-size:.85rem;color:#b9cbe6}
+.trust span{display:inline-flex;gap:6px;align-items:center}
+.trust b{color:#fff}
 
-/* kpis */
+.player{position:relative;border-radius:16px;overflow:hidden;background:#04182f;aspect-ratio:16/9;box-shadow:0 30px 60px -30px rgba(0,0,0,.7);border:1px solid rgba(255,255,255,.12)}
+.player video{width:100%;height:100%;display:block;object-fit:cover;background:#04182f}
+.player .tagv{position:absolute;top:12px;inset-inline-start:12px;background:rgba(0,0,0,.45);color:#fff;font-size:.75rem;border-radius:999px;padding:3px 10px;pointer-events:none}
+
 .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
 .kpi{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;display:grid;gap:4px}
 .kpi .k{font-size:.76rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-weight:600}
+html[lang="ar"] .kpi .k{text-transform:none;letter-spacing:0;font-size:.85rem}
 .kpi .v{font-family:var(--display);font-size:1.7rem;font-weight:800;color:var(--navy)}
 .kpi .s{font-size:.85rem;color:var(--muted)}
-.kpi.good{border-left:5px solid var(--good)}
-.kpi.gold{border-left:5px solid var(--gold)}
-.kpi.blue{border-left:5px solid var(--blue)}
-.strike{text-decoration:line-through;color:var(--muted);font-weight:600}
+.kpi.good{border-inline-start:5px solid var(--good)}
+.kpi.gold{border-inline-start:5px solid var(--gold)}
+.kpi.blue{border-inline-start:5px solid var(--blue)}
+.strike{text-decoration:line-through;color:var(--muted)!important}
 
-/* value */
 .vals{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
 .val{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;display:grid;gap:6px;align-content:start}
+.val .ico{width:38px;height:38px;border-radius:10px;background:var(--tint);display:grid;place-items:center;color:var(--blue);font-weight:800;font-family:var(--display)}
 .val p{color:var(--muted);font-size:.92rem}
 
-/* packages */
 .pkgs{display:grid;grid-template-columns:1fr 1.12fr 1fr;gap:16px;align-items:stretch}
 .pkg{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px;display:flex;flex-direction:column;gap:14px}
-.pkg.rec{border:2px solid var(--blue);box-shadow:0 14px 34px -20px rgba(11,47,94,.55)}
+.pkg.rec{border:2px solid var(--blue);box-shadow:0 18px 40px -22px rgba(11,47,94,.6)}
 .badge{align-self:flex-start;background:var(--tint);color:var(--blue);font-weight:600;font-size:.78rem;border-radius:999px;padding:3px 10px}
 .badge.gold{background:var(--gold-tint);color:var(--gold)}
 .badge.grey{background:#eef1f5;color:var(--muted)}
@@ -102,44 +124,55 @@ section{display:grid;gap:16px;scroll-margin-top:16px}
 .price span{color:var(--muted);font-size:.88rem}
 .save{background:var(--good-tint);color:var(--good);border-radius:8px;padding:6px 10px;font-size:.86rem;font-weight:600}
 ul.check{list-style:none;padding:0;margin:0;display:grid;gap:7px}
-ul.check li{padding-left:24px;position:relative;font-size:.93rem}
-ul.check li::before{content:"";position:absolute;left:2px;top:.45em;width:12px;height:7px;border-left:2.5px solid var(--good);border-bottom:2.5px solid var(--good);transform:rotate(-45deg)}
+ul.check li{padding-inline-start:24px;position:relative;font-size:.93rem}
+ul.check li::before{content:"";position:absolute;inset-inline-start:2px;top:.5em;width:12px;height:7px;border-left:2.5px solid var(--good);border-bottom:2.5px solid var(--good);transform:rotate(-45deg)}
 ul.check li.bonus::before{border-color:var(--gold)}
 ul.check li b{font-weight:600}
 .pkg .fit{font-size:.88rem;color:var(--muted);border-top:1px solid var(--line);padding-top:12px;margin-top:auto}
 .pkg .btn{width:100%}
-.note{font-size:.9rem;color:var(--muted)}
+.note{font-size:.88rem;color:var(--muted)}
 
-/* guarantee */
 .guar{display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:center;background:var(--good-tint);border:1px solid #bfe0cc;border-radius:14px;padding:18px 20px}
 .seal{width:54px;height:54px;border-radius:50%;background:var(--good);color:#fff;display:grid;place-items:center;font-family:var(--display);font-weight:800;font-size:1.3rem}
 
-/* tables */
+.calc{display:grid;grid-template-columns:1.1fr .9fr;gap:16px}
+.calc .panel label{display:grid;gap:6px}
+.calc output{font-weight:700;color:var(--navy)}
+input[type=range]{accent-color:var(--blue);width:100%;padding:0}
+.result{background:var(--navy);color:#fff;border-radius:14px;padding:22px;display:grid;gap:14px;align-content:start}
+.result .big{font-family:var(--display);font-size:2.3rem;font-weight:800;line-height:1.1}
+.result .row{display:flex;justify-content:space-between;gap:10px;border-bottom:1px solid rgba(255,255,255,.15);padding-bottom:8px;font-size:.92rem;color:#dbe6f5}
+.result .row b{color:#fff}
+
 .tbl{overflow-x:auto;background:var(--card);border:1px solid var(--line);border-radius:14px}
 table{border-collapse:collapse;width:100%;min-width:560px;font-size:.93rem}
-th,td{text-align:left;padding:11px 14px;border-bottom:1px solid var(--line);vertical-align:top}
-th{background:var(--tint);color:var(--navy);font-weight:600;font-size:.82rem}
+th,td{text-align:start;padding:11px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--tint);color:var(--navy);font-weight:600;font-size:.84rem}
 tr:last-child td{border-bottom:0}
-td.r,th.r{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+td.r,th.r{text-align:end;font-variant-numeric:tabular-nums;white-space:nowrap}
 tr.you td{background:var(--good-tint);font-weight:600}
 td.c,th.c{text-align:center}
 .yes{color:var(--good);font-weight:700}
 .no{color:#a0a8b4}
 
-/* process */
-.proc{display:grid;grid-template-columns:repeat(4,1fr);gap:0;background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden}
-.proc div{padding:16px 18px;border-right:1px solid var(--line);display:grid;gap:4px}
-.proc div:last-child{border-right:0}
+.proc{display:grid;grid-template-columns:repeat(4,1fr);background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.proc div{padding:16px 18px;border-inline-end:1px solid var(--line);display:grid;gap:4px;align-content:start}
+.proc div:last-child{border-inline-end:0}
 .proc b{font-family:var(--display);color:var(--navy)}
 .proc p{font-size:.88rem;color:var(--muted)}
 
-/* work */
-.work{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.grow{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.gcard{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;display:grid;gap:10px;align-content:start}
+.gcard .logos{display:flex;gap:10px;align-items:center}
+.gcard .logos img{width:26px;height:26px}
+.gcard p{color:var(--muted);font-size:.92rem}
+.stars{color:#f2b705;letter-spacing:2px;font-size:1.05rem}
+
+.work{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}
 .case{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;display:grid;gap:10px;align-content:start}
-.logo{height:46px;display:flex;align-items:center}
-.logo img{max-height:40px;max-width:150px}
+.logo{height:48px;display:flex;align-items:center}
+.logo img{max-height:42px;max-width:200px}
 .logo.dark{background:#000;border-radius:8px;padding:4px 10px;justify-self:start}
-.logo .word{font-family:var(--display);font-weight:800;font-size:1.25rem;color:var(--navy)}
 .tags{display:flex;flex-wrap:wrap;gap:6px}
 .tag{display:inline-flex;align-items:center;gap:5px;background:var(--tint);color:var(--navy);border-radius:6px;padding:2px 8px;font-size:.76rem;font-weight:600}
 .tag img{width:12px;height:12px}
@@ -148,17 +181,14 @@ td.c,th.c{text-align:center}
 .stack span{display:inline-flex;gap:8px;align-items:center;font-size:.9rem;font-weight:500}
 .stack img{width:22px;height:22px}
 
-/* faq */
 details{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 16px}
 details+details{margin-top:8px}
 summary{cursor:pointer;font-weight:600;color:var(--navy)}
 details p{margin-top:8px;color:var(--muted)}
 
-/* two col */
 .two{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 .panel{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px;display:grid;gap:12px;align-content:start}
 
-/* form */
 form{display:grid;gap:14px}
 .grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 label{display:grid;gap:5px;font-weight:500;font-size:.9rem}
@@ -169,15 +199,16 @@ legend{font-weight:500;font-size:.9rem;padding:0 4px}
 .boxes{display:flex;flex-wrap:wrap;gap:8px 18px}
 .boxes label{display:flex;gap:6px;align-items:center;font-weight:400}
 
-/* about */
 .about{display:grid;grid-template-columns:150px 1fr;gap:22px;align-items:start}
-.about img{width:150px;height:150px;border-radius:16px;object-fit:cover}
+.about>img{width:150px;height:150px;border-radius:16px;object-fit:cover}
+.about .btns{display:flex;flex-wrap:wrap;gap:10px}
 footer{color:var(--muted);font-size:.84rem}
 
-@media (max-width:1100px){
+@media (max-width:1150px){
   .kpis,.vals{grid-template-columns:1fr 1fr}
-  .pkgs{grid-template-columns:1fr}
+  .pkgs,.grow{grid-template-columns:1fr}
   .proc{grid-template-columns:1fr 1fr}
+  .hero,.calc{grid-template-columns:1fr}
 }
 @media (max-width:860px){
   .shell{grid-template-columns:1fr}
@@ -187,250 +218,315 @@ footer{color:var(--muted);font-size:.84rem}
 }
 @media (max-width:520px){
   .kpis,.vals,.grid2,.proc{grid-template-columns:1fr}
-  .about{grid-template-columns:1fr}
-  .guar{grid-template-columns:1fr}
+  .about,.guar{grid-template-columns:1fr}
+  .hero{padding:22px}
 }
 @media print{
   @page{size:A4;margin:10mm}
   body{background:#fff;font-size:11.5px}
   .shell{display:block}
-  aside.side{position:static;height:auto;-webkit-print-color-adjust:exact;print-color-adjust:exact;flex-direction:row;flex-wrap:wrap;align-items:center;border-radius:12px}
-  nav.toc,.no-print{display:none!important}
+  aside.side{position:static;height:auto;flex-direction:row;flex-wrap:wrap;align-items:center;border-radius:12px}
+  aside.side,.hero,.result,.kpi,.pkg.rec,th,.badge,.save,tr.you td,.guar,.seal,.tag,.logo.dark{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  nav.toc,.no-print,.lang,.player,#savings{display:none!important}
+  .hero{grid-template-columns:1fr}
   .side .links{margin-top:0;grid-template-columns:repeat(3,auto)}
   main{padding:14px 0;gap:18px;max-width:none}
-  .pkg,.panel,.case,.kpi,.val,.tbl,details,.guar{break-inside:avoid}
-  .kpi,.pkg.rec,th,.badge,.save,tr.you td,.guar,.seal,.tag,.logo.dark{-webkit-print-color-adjust:exact;print-color-adjust:exact}
-  .pkgs{grid-template-columns:1fr 1fr 1fr}
-  details{display:block}
-  details>*{display:block}
+  .pkg,.panel,.case,.kpi,.val,.tbl,details,.guar,.gcard{break-inside:avoid}
+  .pkgs,.grow{grid-template-columns:1fr 1fr 1fr}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
-html{scroll-behavior:smooth}
 </style>
 </head>
 <body>
 <div class="shell">
 
 <aside class="side">
-  <div class="me">
-    <img src="assets/shady.jpg" alt="Shady Al-Halawani" width="96" height="96">
-    <strong>Shady Al-Halawani</strong>
-    <div class="roles"><span class="chip">ERP Expert</span><span class="chip">Odoo Consultant</span><span class="chip">AI Engineer</span></div>
-    <p style="color:#b9cbe6;font-size:.88rem">Cairo, Egypt · MSc Computer Science, Distinction</p>
+  <div class="lang" role="group" aria-label="Language">
+    <button type="button" data-lang="en" aria-pressed="true">English</button>
+    <button type="button" data-lang="ar" aria-pressed="false">العربية</button>
   </div>
-  <a class="btn btn-wa wa" href="https://wa.me/201205461115?text=Hi%20Shady%2C%20I%27d%20like%20to%20book%20a%20free%20call%20about%20the%20ERP%2FCRM%20packages."><img src="assets/whatsapp.svg" alt="">Book a free call</a>
+  <div class="me">
+    <div class="ph"><img src="assets/shady.jpg" alt="Shady Al-Halawani" width="96" height="96"><span class="dot"></span></div>
+    <strong data-ar="شادي الحلواني">Shady Al-Halawani</strong>
+    <div class="roles"><span class="chip" data-ar="خبير ERP">ERP Expert</span><span class="chip" data-ar="استشاري Odoo">Odoo Consultant</span><span class="chip" data-ar="مهندس ذكاء اصطناعي">AI Engineer</span></div>
+    <p style="color:#b9cbe6;font-size:.88rem" data-ar="القاهرة، مصر · ماجستير علوم الحاسب بامتياز">Cairo, Egypt · MSc Computer Science, Distinction</p>
+  </div>
+  <a class="btn btn-wa" data-wa="book" href="https://wa.me/201205461115"><img class="ic" src="assets/whatsapp.svg" alt=""><span data-ar="احجز مكالمة مجانية">Book a free call</span></a>
   <nav class="toc" aria-label="Sections">
-    <a href="#overview">Overview</a>
-    <a href="#packages">Packages</a>
-    <a href="#automation">Automation savings</a>
-    <a href="#compare">Compare packages</a>
-    <a href="#market">Market prices</a>
-    <a href="#work">Recent work</a>
-    <a href="#faq">Questions</a>
-    <a href="#costs">Running costs and payment</a>
-    <a href="#start">Get started</a>
+    <a href="#overview" data-ar="نظرة عامة">Overview</a>
+    <a href="#packages" data-ar="الباقات">Packages</a>
+    <a href="#savings" data-ar="احسب توفيرك">Savings calculator</a>
+    <a href="#automation" data-ar="الأتمتة">Automation</a>
+    <a href="#growth" data-ar="ميتا وجوجل والتقييمات">Meta, Google &amp; reviews</a>
+    <a href="#compare" data-ar="مقارنة الباقات">Compare packages</a>
+    <a href="#market" data-ar="أسعار السوق">Market prices</a>
+    <a href="#work" data-ar="أعمال سابقة">Recent work</a>
+    <a href="#faq" data-ar="أسئلة شائعة">Questions</a>
+    <a href="#costs" data-ar="الدفع والتكاليف">Payment and costs</a>
+    <a href="#start" data-ar="ابدأ الآن">Get started</a>
   </nav>
   <div class="links">
-    <a href="https://www.linkedin.com/in/shady-al-halawani-333a5419a"><svg viewBox="0 0 24 24" width="18" height="18" fill="#fff" aria-hidden="true"><path d="M20.4 2H3.6C2.7 2 2 2.7 2 3.6v16.8c0 .9.7 1.6 1.6 1.6h16.8c.9 0 1.6-.7 1.6-1.6V3.6c0-.9-.7-1.6-1.6-1.6zM8 19H5V9.5h3V19zM6.5 8.2a1.7 1.7 0 1 1 0-3.5 1.7 1.7 0 0 1 0 3.5zM19 19h-3v-4.6c0-1.1 0-2.5-1.5-2.5S12.8 13 12.8 14.3V19h-3V9.5h2.8v1.3h.1c.4-.8 1.4-1.5 2.8-1.5 3 0 3.5 2 3.5 4.5V19z"/></svg>LinkedIn</a>
+    <a href="https://www.linkedin.com/in/shady-al-halawani-333a5419a"><svg viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M20.4 2H3.6C2.7 2 2 2.7 2 3.6v16.8c0 .9.7 1.6 1.6 1.6h16.8c.9 0 1.6-.7 1.6-1.6V3.6c0-.9-.7-1.6-1.6-1.6zM8 19H5V9.5h3V19zM6.5 8.2a1.7 1.7 0 1 1 0-3.5 1.7 1.7 0 0 1 0 3.5zM19 19h-3v-4.6c0-1.1 0-2.5-1.5-2.5S12.8 13 12.8 14.3V19h-3V9.5h2.8v1.3h.1c.4-.8 1.4-1.5 2.8-1.5 3 0 3.5 2 3.5 4.5V19z"/></svg>LinkedIn</a>
     <a href="https://github.com/Shadysmetools"><img src="assets/github.svg" alt="">GitHub</a>
-    <a class="wa" href="https://wa.me/201205461115"><img src="assets/whatsapp.svg" alt="">+20 120 546 1115</a>
+    <a data-wa="book" href="https://wa.me/201205461115"><img src="assets/whatsapp.svg" alt=""><span class="ltr">+20 120 546 1115</span></a>
   </div>
 </aside>
 
 <main>
 
   <section id="overview" class="hero">
-    <div class="eyebrow"><span>Proposal for: [Client name]</span><span>1 November 2026</span><span>Offer valid 30 days</span></div>
-    <h1>One system for your sales, stock, customers and website, with AI that answers on WhatsApp</h1>
-    <p class="lead">ERP, CRM, a bilingual website and an AI assistant, set up on Odoo and run by one consultant you deal with directly. Pick the package that fits today. Everything carries forward when you grow.</p>
-    <div class="actions">
-      <a class="btn btn-wa wa" href="https://wa.me/201205461115?text=Hi%20Shady%2C%20I%27d%20like%20to%20book%20a%20free%20call%20about%20the%20ERP%2FCRM%20packages."><img src="assets/whatsapp.svg" alt="">Book a free 30-minute call</a>
-      <a class="btn btn-line" href="#packages">See the packages</a>
-      <a class="btn btn-line no-print" href="Shady-Al-Halawani-Proposal.pdf">Download PDF</a>
+    <div>
+      <div class="eyebrow"><span data-ar="عرض مقدم إلى: [اسم العميل]">Proposal for: [Client name]</span><span data-ar="١ نوفمبر ٢٠٢٦">1 November 2026</span><span data-ar="العرض سارٍ ٣٠ يومًا">Offer valid 30 days</span></div>
+      <h1 data-ar="نظام واحد لمبيعاتك ومخزونك وعملائك وموقعك، <em>وذكاء اصطناعي بيرد على واتساب</em>">One system for your sales, stock, customers and website, <em>with AI that answers on WhatsApp</em></h1>
+      <p class="lead" data-ar="ERP وCRM وموقع بالعربي والإنجليزي ومساعد ذكي وأتمتة توفر وقت فريقك، مبنية على Odoo مع استشاري واحد بتتعامل معاه مباشرة. اختار الباقة المناسبة النهارده، وكل حاجة بتكمل معاك لما تكبر.">ERP, CRM, a bilingual website, an AI assistant and automations that save your team hours, built on Odoo by one consultant you deal with directly. Pick the package that fits today. Everything carries forward when you grow.</p>
+      <div class="actions">
+        <a class="btn btn-wa" data-wa="book" href="https://wa.me/201205461115"><img class="ic" src="assets/whatsapp.svg" alt=""><span data-ar="احجز مكالمة مجانية ٣٠ دقيقة">Book a free 30-minute call</span></a>
+        <a class="btn btn-light" href="#packages" data-ar="شوف الباقات">See the packages</a>
+        <a class="btn btn-light no-print" href="Shady-Al-Halawani-Proposal.pdf" data-ar="تحميل PDF">Download PDF</a>
+      </div>
+      <div class="trust">
+        <span><b>✓</b> <span data-ar="سعر ثابت مكتوب">Fixed written price</span></span>
+        <span><b>✓</b> <span data-ar="تدفع لما يشتغل">Pay when it works</span></span>
+        <span><b>✓</b> <span data-ar="بياناتك وحساباتك ملكك">Your data, your accounts</span></span>
+      </div>
+    </div>
+    <div class="player">
+      <video id="intro" controls playsinline preload="metadata" poster="assets/video/intro-en.jpg">
+        <source id="intro-src" src="assets/video/intro-en.mp4" type="video/mp4">
+      </video>
+      <span class="tagv" data-ar="فيديو تعريفي">Intro video</span>
     </div>
   </section>
 
   <div class="kpis">
-    <div class="kpi blue"><span class="k">Recommended package</span><span class="v num">USD 2,000</span><span class="s">about EGP 111,600, all-in</span></div>
-    <div class="kpi gold"><span class="k">Typical agency price</span><span class="v num strike">EGP 150k+</span><span class="s">for the same scope in Egypt</span></div>
-    <div class="kpi good"><span class="k">Support included</span><span class="v">3 months</span><span class="s">fixes, small changes, monitoring</span></div>
-    <div class="kpi good"><span class="k">License fees</span><span class="v num">USD 0</span><span class="s">Odoo Community, no per-user cost</span></div>
+    <div class="kpi blue"><span class="k" data-ar="الباقة المُوصى بها">Recommended package</span><span class="v num ltr">USD 2,000</span><span class="s" data-ar="حوالي ١١١٬٦٠٠ جنيه، شامل">about EGP 111,600, all-in</span></div>
+    <div class="kpi gold"><span class="k" data-ar="سعر الشركات المعتاد">Typical agency price</span><span class="v num strike ltr">EGP 150k+</span><span class="s" data-ar="لنفس الشغل في مصر">for the same scope in Egypt</span></div>
+    <div class="kpi good"><span class="k" data-ar="ساعات موفرة شهريًا">Staff hours saved / month</span><span class="v num ltr">20–30</span><span class="s" data-ar="بالأتمتة (تقدير)">with automation (estimate)</span></div>
+    <div class="kpi good"><span class="k" data-ar="رسوم التراخيص">License fees</span><span class="v num ltr">USD 0</span><span class="s" data-ar="Odoo Community، بدون رسوم لكل مستخدم">Odoo Community, no per-user cost</span></div>
   </div>
 
   <div class="vals">
-    <div class="val"><h3>One place for the whole business</h3><p>Sales, stock, invoices and customers in one system instead of Excel and WhatsApp threads.</p></div>
-    <div class="val"><h3>Automation that cuts costs</h3><p>Reminders, follow-ups, reorders and reports run on their own, so your team does less admin.</p></div>
-    <div class="val"><h3>AI that speaks like your customers</h3><p>Answers in Egyptian Arabic, English and Franco, day and night.</p></div>
-    <div class="val"><h3>Yours from day one</h3><p>Your server, your domain, your data. You get every admin password.</p></div>
+    <div class="val"><span class="ico">1</span><h3 data-ar="مكان واحد لكل الشغل">One place for the whole business</h3><p data-ar="المبيعات والمخزون والفواتير والعملاء في نظام واحد بدل الإكسل وشاتات الواتساب.">Sales, stock, invoices and customers in one system instead of Excel and WhatsApp threads.</p></div>
+    <div class="val"><span class="ico">⚙</span><h3 data-ar="أتمتة بتقلل التكاليف">Automation that cuts costs</h3><p data-ar="التذكيرات والمتابعات وطلبات الشراء والتقارير بتشتغل لوحدها.">Reminders, follow-ups, reorders and reports run on their own.</p></div>
+    <div class="val"><span class="ico">AI</span><h3 data-ar="ذكاء اصطناعي بيتكلم زي عملائك">AI that speaks like your customers</h3><p data-ar="بيرد بالمصري والإنجليزي والفرانكو، ليل نهار.">Answers in Egyptian Arabic, English and Franco, day and night.</p></div>
+    <div class="val"><span class="ico">★</span><h3 data-ar="عملاء أكتر من جوجل وميتا">More customers from Google and Meta</h3><p data-ar="تقييمات جوجل وتتبع الإعلانات عشان تعرف إيه اللي بيجيب بيع.">Google reviews and ad tracking, so you know what brings sales.</p></div>
   </div>
 
   <section id="packages">
-    <h2>Packages</h2>
-    <p class="lead">Fixed prices for the scope written below. Start small and upgrade later: you only pay the difference, and nothing is rebuilt.</p>
+    <h2 data-ar="الباقات">Packages</h2>
+    <p class="lead" data-ar="أسعار ثابتة للنطاق المكتوب تحت. ابدأ صغير وطوّر بعدين: هتدفع الفرق بس، ومفيش حاجة هتتعمل من الأول.">Fixed prices for the scope written below. Start small and upgrade later: you only pay the difference, and nothing is rebuilt.</p>
     <div class="pkgs">
       <article class="pkg">
-        <span class="badge grey">Start here</span>
-        <h3>Starter</h3>
-        <div class="price"><b class="num">USD 1,200</b><span>about EGP 67,000 · one-time</span></div>
+        <span class="badge grey" data-ar="ابدأ من هنا">Start here</span>
+        <h3 data-ar="الأساسية">Starter</h3>
+        <div class="price"><b class="num ltr">USD 1,200</b><span data-ar="حوالي ٦٧٬٠٠٠ جنيه · مرة واحدة">about EGP 67,000 · one-time</span></div>
         <ul class="check">
-          <li><b>CRM:</b> lead pipeline, follow-ups, sales dashboard</li>
-          <li><b>Sales and invoicing:</b> quotations to invoices</li>
-          <li><b>Website:</b> 4 pages, Arabic and English, forms into the CRM</li>
-          <li><b>2 automations:</b> unpaid-invoice reminders and lead follow-up reminders</li>
-          <li>Customers and products imported from Excel</li>
-          <li>Launch: server, domain, SSL, daily backups</li>
-          <li>1 training session</li>
-          <li>1 month of support</li>
+          <li data-ar="<b>CRM:</b> متابعة العملاء المحتملين ولوحة مبيعات"><b>CRM:</b> lead pipeline, follow-ups, sales dashboard</li>
+          <li data-ar="<b>المبيعات والفواتير:</b> من عرض السعر للفاتورة"><b>Sales and invoicing:</b> quotations to invoices</li>
+          <li data-ar="<b>موقع:</b> ٤ صفحات عربي وإنجليزي، والنماذج بتدخل على الـCRM"><b>Website:</b> 4 pages, Arabic and English, forms into the CRM</li>
+          <li data-ar="<b>أتمتتين:</b> تذكير الفواتير المتأخرة ومتابعة العملاء"><b>2 automations:</b> unpaid-invoice reminders and lead follow-ups</li>
+          <li data-ar="استيراد العملاء والمنتجات من الإكسل">Customers and products imported from Excel</li>
+          <li data-ar="الإطلاق: إعداد السيرفر والدومين وSSL ونسخ احتياطي يومي">Launch: server, domain, SSL and daily backups set up</li>
+          <li data-ar="جلسة تدريب واحدة وشهر دعم">1 training session and 1 month of support</li>
         </ul>
-        <p class="fit">Best for: getting sales and customers organised first.</p>
-        <a class="btn btn-line wa" href="https://wa.me/201205461115?text=Hi%20Shady%2C%20I%27m%20interested%20in%20the%20Starter%20package.">Choose Starter</a>
+        <p class="fit" data-ar="مناسبة لـ: تنظيم المبيعات والعملاء الأول.">Best for: getting sales and customers organised first.</p>
+        <a class="btn btn-line" data-wa="starter" href="https://wa.me/201205461115" data-ar="اختار الأساسية">Choose Starter</a>
       </article>
 
       <article class="pkg rec">
-        <span class="badge">Recommended · best value</span>
-        <h3>Business</h3>
-        <div class="price"><b class="num">USD 2,000</b><span>about EGP 111,600 · one-time</span></div>
-        <div class="save">Bonuses worth USD 650 included free</div>
+        <span class="badge" data-ar="المُوصى بها · أفضل قيمة">Recommended · best value</span>
+        <h3 data-ar="الأعمال">Business</h3>
+        <div class="price"><b class="num ltr">USD 2,000</b><span data-ar="حوالي ١١١٬٦٠٠ جنيه · مرة واحدة">about EGP 111,600 · one-time</span></div>
+        <div class="save" data-ar="هدايا بقيمة ٨٥٠ دولار مجانًا">Bonuses worth USD 850 included free</div>
         <ul class="check">
-          <li>Everything in Starter, plus:</li>
-          <li><b>ERP:</b> inventory, purchasing and expenses</li>
-          <li><b>Website:</b> 6 pages, Arabic and English</li>
-          <li><b>AI assistant</b> on your website and WhatsApp that answers customers and captures leads</li>
-          <li><b>AI-drafted</b> quotations and follow-up messages</li>
-          <li><b>All 6 cost-cutting automations</b> listed below</li>
-          <li>Suppliers imported too</li>
-          <li>2 training sessions and short user guides</li>
-          <li>3 months of support</li>
-          <li class="bonus"><b>Bonus:</b> Google Analytics and conversion tracking (USD 150)</li>
-          <li class="bonus"><b>Bonus:</b> management dashboard for sales, stock and cash (USD 200)</li>
-          <li class="bonus"><b>Bonus:</b> 2 extra support months vs. paying monthly (USD 200)</li>
-          <li class="bonus"><b>Bonus:</b> first-year domain paid by me (USD 15) and 1 extra custom report (USD 85)</li>
+          <li data-ar="كل اللي في الأساسية، وكمان:">Everything in Starter, plus:</li>
+          <li data-ar="<b>ERP:</b> المخزون والمشتريات والمصروفات"><b>ERP:</b> inventory, purchasing and expenses</li>
+          <li data-ar="<b>موقع:</b> ٦ صفحات عربي وإنجليزي"><b>Website:</b> 6 pages, Arabic and English</li>
+          <li data-ar="<b>مساعد ذكي</b> على الموقع والواتساب بيرد على العملاء ويسجل الطلبات"><b>AI assistant</b> on your website and WhatsApp that answers customers and captures leads</li>
+          <li data-ar="<b>كل الأتمتة</b> اللي بتوفر التكاليف"><b>All the cost-cutting automations</b></li>
+          <li data-ar="عروض أسعار ورسائل متابعة بيكتبها الذكاء الاصطناعي">AI-drafted quotations and follow-up messages</li>
+          <li data-ar="جلستين تدريب وأدلة استخدام و٣ شهور دعم">2 training sessions, user guides and 3 months of support</li>
+          <li class="bonus" data-ar="<b>هدية:</b> Google Analytics وMeta Pixel وتتبع التحويلات (١٥٠ دولار)"><b>Bonus:</b> Google Analytics, Meta Pixel and conversion tracking (USD 150)</li>
+          <li class="bonus" data-ar="<b>هدية:</b> تجهيز Google Business وطلب تقييمات تلقائي بعد كل طلب (٢٠٠ دولار)"><b>Bonus:</b> Google Business Profile set-up and automatic review requests after each order (USD 200)</li>
+          <li class="bonus" data-ar="<b>هدية:</b> لوحة إدارة للمبيعات والمخزون والكاش (٢٠٠ دولار)"><b>Bonus:</b> management dashboard for sales, stock and cash (USD 200)</li>
+          <li class="bonus" data-ar="<b>هدية:</b> شهرين دعم إضافيين (٢٠٠ دولار)"><b>Bonus:</b> 2 extra support months (USD 200)</li>
+          <li class="bonus" data-ar="<b>هدية:</b> تقرير مخصص إضافي ومؤشرين زيادة في اللوحة (١٠٠ دولار)"><b>Bonus:</b> 1 extra custom report and 2 extra dashboard tiles (USD 100)</li>
         </ul>
-        <p class="fit">Best for: running the whole business on one system, with AI doing the repetitive replies.</p>
-        <a class="btn btn-wa wa" href="https://wa.me/201205461115?text=Hi%20Shady%2C%20I%27m%20interested%20in%20the%20Business%20package."><img src="assets/whatsapp.svg" alt="">Choose Business</a>
+        <p class="fit" data-ar="مناسبة لـ: إدارة الشغل كله على نظام واحد، والذكاء الاصطناعي بيعمل الردود المتكررة.">Best for: running the whole business on one system, with AI doing the repetitive replies.</p>
+        <a class="btn btn-wa" data-wa="business" href="https://wa.me/201205461115"><img class="ic" src="assets/whatsapp.svg" alt=""><span data-ar="اختار الأعمال">Choose Business</span></a>
       </article>
 
       <article class="pkg">
-        <span class="badge gold">For unique processes</span>
-        <h3>Custom</h3>
-        <div class="price"><b class="num">from USD 6,500</b><span>about EGP 362,700 · one-time</span></div>
+        <span class="badge gold" data-ar="لاحتياجات خاصة">For unique processes</span>
+        <h3 data-ar="المخصصة">Custom</h3>
+        <div class="price"><b class="num" data-ar="من 6,500 دولار">from USD 6,500</b><span data-ar="حوالي ٣٦٢٬٧٠٠ جنيه · مرة واحدة">about EGP 362,700 · one-time</span></div>
         <ul class="check">
-          <li>Everything in Business, plus:</li>
-          <li>ERP and CRM built around your exact workflow, on Odoo or as a custom web app</li>
-          <li>AI trained on your own documents, plus invoice and receipt reading</li>
-          <li>Integrations and automations across your other tools: shipping, payments, marketplaces</li>
-          <li>Custom-designed website</li>
-          <li>Full source code in your own GitHub account</li>
-          <li>3 months of support</li>
+          <li data-ar="كل اللي في الأعمال، وكمان:">Everything in Business, plus:</li>
+          <li data-ar="ERP وCRM مبنيين على طريقة شغلك بالظبط، على Odoo أو كتطبيق خاص">ERP and CRM built around your exact workflow, on Odoo or as a custom web app</li>
+          <li data-ar="ذكاء اصطناعي متدرب على مستنداتك وقراءة الفواتير والإيصالات">AI trained on your own documents, plus invoice and receipt reading</li>
+          <li data-ar="ربط وأتمتة مع أدواتك التانية: الشحن والدفع والمنصات">Integrations and automations with your other tools: shipping, payments, marketplaces</li>
+          <li data-ar="إعداد حملات Meta وGoogle Ads وتقاريرها">Meta and Google Ads campaign set-up and reporting</li>
+          <li data-ar="تصميم موقع خاص والكود كامل في حساب GitHub بتاعك">Custom-designed website and full source code in your own GitHub account</li>
         </ul>
-        <p class="fit">Best for: processes no standard system handles, or plans to sell the software.</p>
-        <a class="btn btn-line wa" href="https://wa.me/201205461115?text=Hi%20Shady%2C%20I%27d%20like%20to%20discuss%20the%20Custom%20package.">Discuss Custom</a>
+        <p class="fit" data-ar="مناسبة لـ: عمليات مفيش نظام جاهز بيخدمها، أو لو ناوي تبيع السوفتوير.">Best for: processes no standard system handles, or plans to sell the software.</p>
+        <a class="btn btn-line" data-wa="custom" href="https://wa.me/201205461115" data-ar="ناقش المخصصة">Discuss Custom</a>
       </article>
     </div>
 
     <div class="guar">
       <div class="seal" aria-hidden="true">✓</div>
-      <div><h3>You pay for what works</h3><p class="muted">You pay the second milestone only once the system works the way we agreed in writing. If something in the agreed scope isn't right, I fix it before you pay.</p></div>
+      <div><h3 data-ar="تدفع على اللي بيشتغل">You pay for what works</h3><p class="muted" data-ar="الدفعة التانية بتتدفع بس لما النظام يشتغل زي ما اتفقنا كتابة. ولو حاجة في النطاق المتفق عليه مش مظبوطة، بصلحها قبل ما تدفع.">You pay the second milestone only once the system works the way we agreed in writing. If something in the agreed scope isn't right, I fix it before you pay.</p></div>
+    </div>
+  </section>
+
+  <section id="savings">
+    <h2 data-ar="احسب توفيرك">Savings calculator</h2>
+    <p class="lead" data-ar="حرّك الأرقام على حسب شغلك. الحساب تقديري.">Move the numbers to match your business. It's an estimate.</p>
+    <div class="calc">
+      <div class="panel">
+        <label for="c-salary"><span data-ar="متوسط مرتب الموظف الشهري">Average staff salary per month</span> <output id="o-salary" class="ltr"></output>
+          <input type="range" id="c-salary" min="6000" max="40000" step="1000" value="12000"></label>
+        <label for="c-hours"><span data-ar="ساعات بتوفرها الأتمتة شهريًا">Hours saved by automation per month</span> <output id="o-hours" class="ltr"></output>
+          <input type="range" id="c-hours" min="5" max="40" step="1" value="25"></label>
+        <label for="c-leads"><span data-ar="عملاء بيضيعوا شهريًا من غير متابعة">Leads lost per month without follow-up</span> <output id="o-leads" class="ltr"></output>
+          <input type="range" id="c-leads" min="0" max="20" step="1" value="3"></label>
+        <label for="c-order"><span data-ar="متوسط قيمة الطلب">Average order value</span> <output id="o-order" class="ltr"></output>
+          <input type="range" id="c-order" min="500" max="50000" step="500" value="5000"></label>
+        <label for="c-margin"><span data-ar="هامش الربح">Profit margin</span> <output id="o-margin" class="ltr"></output>
+          <input type="range" id="c-margin" min="5" max="60" step="1" value="25"></label>
+      </div>
+      <div class="result" aria-live="polite">
+        <span style="color:#b9cbe6" data-ar="التوفير والربح الإضافي في الشهر">Monthly savings and extra profit</span>
+        <span class="big num ltr" id="r-total">–</span>
+        <div class="row"><span data-ar="وقت الموظفين اللي اتوفر">Staff time saved</span><b class="ltr" id="r-time"></b></div>
+        <div class="row"><span data-ar="ربح من عملاء كانوا هيضيعوا">Profit from leads no longer lost</span><b class="ltr" id="r-leads"></b></div>
+        <div class="row"><span data-ar="في السنة">Per year</span><b class="ltr" id="r-year"></b></div>
+        <div class="row" style="border:0"><span data-ar="باقة الأعمال بتجيب تمنها في">Business package pays for itself in</span><b id="r-pay"></b></div>
+      </div>
     </div>
   </section>
 
   <section id="automation">
-    <h2>Automations that cut your costs</h2>
-    <p class="lead">These run on their own once the system is live. For a small team they typically give back 20–30 staff hours a month and speed up how fast customers pay. Hours are estimates and depend on your volume.</p>
+    <h2 data-ar="أتمتة بتقلل تكاليفك">Automations that cut your costs</h2>
+    <p class="lead" data-ar="بتشتغل لوحدها بعد الإطلاق. لفريق صغير بتوفر عادة ٢٠–٣٠ ساعة شغل في الشهر وبتخلي العملاء يدفعوا أسرع. الساعات تقديرية وبتعتمد على حجم شغلك.">These run on their own once the system is live. For a small team they typically give back 20–30 staff hours a month and get customers paying faster. Hours are estimates and depend on your volume.</p>
     <div class="tbl"><table>
-      <thead><tr><th>Automation</th><th>What it replaces</th><th class="r">Est. hours saved / month</th></tr></thead>
+      <thead><tr><th data-ar="الأتمتة">Automation</th><th data-ar="بدل إيه">What it replaces</th><th class="r" data-ar="ساعات موفرة / شهر">Est. hours saved / month</th></tr></thead>
       <tbody>
-        <tr><td>Unpaid-invoice reminders by email and WhatsApp</td><td>Chasing customers by phone</td><td class="r">4–6</td></tr>
-        <tr><td>Lead assignment and follow-up reminders</td><td>Leads forgotten in notebooks and chats</td><td class="r">3–5</td></tr>
-        <tr><td>AI replies to common customer questions</td><td>Answering the same questions all day</td><td class="r">6–10</td></tr>
-        <tr><td>Order confirmations and delivery updates on WhatsApp</td><td>"Where is my order?" calls</td><td class="r">3–4</td></tr>
-        <tr><td>Low-stock alerts and draft purchase orders</td><td>Manual stock counts and missed reorders</td><td class="r">2–3</td></tr>
-        <tr><td>Weekly sales, stock and cash report to the owner</td><td>Building reports in Excel</td><td class="r">2–3</td></tr>
-        <tr class="you"><td>Total</td><td></td><td class="r">20–31</td></tr>
+        <tr><td data-ar="تذكير الفواتير المتأخرة بالإيميل والواتساب">Unpaid-invoice reminders by email and WhatsApp</td><td data-ar="التليفونات لمطاردة العملاء">Chasing customers by phone</td><td class="r ltr">4–6</td></tr>
+        <tr><td data-ar="توزيع العملاء المحتملين وتذكير المتابعة">Lead assignment and follow-up reminders</td><td data-ar="عملاء بيتنسوا في الكشاكيل والشات">Leads forgotten in notebooks and chats</td><td class="r ltr">3–5</td></tr>
+        <tr><td data-ar="ردود ذكية على أسئلة العملاء المتكررة">AI replies to common customer questions</td><td data-ar="الرد على نفس الأسئلة طول اليوم">Answering the same questions all day</td><td class="r ltr">6–10</td></tr>
+        <tr><td data-ar="تأكيد الطلب وتحديثات الشحن على الواتساب">Order confirmations and delivery updates on WhatsApp</td><td data-ar="مكالمات «طلبي فين؟»">"Where is my order?" calls</td><td class="r ltr">3–4</td></tr>
+        <tr><td data-ar="تنبيه نقص المخزون وأوامر شراء جاهزة">Low-stock alerts and draft purchase orders</td><td data-ar="الجرد اليدوي ونسيان الطلب">Manual stock counts and missed reorders</td><td class="r ltr">2–3</td></tr>
+        <tr><td data-ar="طلب تقييم جوجل تلقائي بعد كل طلب">Automatic Google review request after each order</td><td data-ar="طلب التقييمات يدويًا">Asking for reviews by hand</td><td class="r ltr">1–2</td></tr>
+        <tr><td data-ar="تقرير أسبوعي للمبيعات والمخزون والكاش لصاحب الشغل">Weekly sales, stock and cash report to the owner</td><td data-ar="عمل التقارير على الإكسل">Building reports in Excel</td><td class="r ltr">2–3</td></tr>
+        <tr class="you"><td data-ar="الإجمالي">Total</td><td></td><td class="r ltr">21–33</td></tr>
       </tbody>
     </table></div>
   </section>
 
+  <section id="growth">
+    <h2 data-ar="ميتا وجوجل والتقييمات">Meta, Google &amp; reviews</h2>
+    <p class="lead" data-ar="اعرف كل إعلان جاب كام بيعة، وخلي عملاءك الراضيين يقولوا للناس عنك.">Know which ad brought which sale, and let happy customers tell others about you.</p>
+    <div class="grow">
+      <article class="gcard">
+        <div class="logos"><img src="assets/googleanalytics.svg" alt="Google Analytics"><img src="assets/googleads.svg" alt="Google Ads"></div>
+        <h3 data-ar="Google Analytics وGoogle Ads">Google Analytics &amp; Google Ads</h3>
+        <p data-ar="تتبع الزيارات والطلبات والتحويلات على موقعك، مربوط بإعلانات جوجل عشان تعرف العائد من كل جنيه.">Visits, orders and conversions tracked on your site and linked to Google Ads, so you see the return on every pound.</p>
+      </article>
+      <article class="gcard">
+        <div class="logos"><img src="assets/meta.svg" alt="Meta"><img src="assets/facebook.svg" alt="Facebook"><img src="assets/instagram.svg" alt="Instagram"></div>
+        <h3 data-ar="Meta Pixel لفيسبوك وإنستجرام">Meta Pixel for Facebook &amp; Instagram</h3>
+        <p data-ar="Meta Pixel وConversions API عشان إعلانات فيسبوك وإنستجرام توصل للناس اللي فعلًا بتشتري.">Meta Pixel and Conversions API, so Facebook and Instagram ads reach the people who actually buy.</p>
+      </article>
+      <article class="gcard">
+        <div class="logos"><img src="assets/google.svg" alt="Google"><span class="stars" aria-label="5 stars">★★★★★</span></div>
+        <h3 data-ar="تقييمات جوجل">Google reviews</h3>
+        <p data-ar="تجهيز Google Business Profile، ورسالة واتساب تلقائية بعد كل طلب بتطلب تقييم. تقييمات أكتر يعني ظهور أعلى على خرائط جوجل.">Google Business Profile set up, plus an automatic WhatsApp message after each order asking for a review. More reviews means higher placement on Google Maps.</p>
+      </article>
+    </div>
+  </section>
+
   <section id="compare">
-    <h2>Compare packages</h2>
+    <h2 data-ar="مقارنة الباقات">Compare packages</h2>
     <div class="tbl"><table>
-      <thead><tr><th>Included</th><th class="c">Starter</th><th class="c">Business</th><th class="c">Custom</th></tr></thead>
+      <thead><tr><th data-ar="المميزات">Included</th><th class="c" data-ar="الأساسية">Starter</th><th class="c" data-ar="الأعمال">Business</th><th class="c" data-ar="المخصصة">Custom</th></tr></thead>
       <tbody>
-        <tr><td>CRM, sales and invoicing</td><td class="c yes">✓</td><td class="c yes">✓</td><td class="c yes">✓</td></tr>
-        <tr><td>Inventory, purchasing, expenses</td><td class="c no">–</td><td class="c yes">✓</td><td class="c yes">✓</td></tr>
-        <tr><td>Bilingual website</td><td class="c">4 pages</td><td class="c">6 pages</td><td class="c">Custom design</td></tr>
-        <tr><td>Cost-cutting automations</td><td class="c">2</td><td class="c">All 6</td><td class="c">6 + custom</td></tr>
-        <tr><td>AI assistant on website and WhatsApp</td><td class="c no">–</td><td class="c yes">✓</td><td class="c yes">✓</td></tr>
-        <tr><td>AI-drafted quotations and follow-ups</td><td class="c no">–</td><td class="c yes">✓</td><td class="c yes">✓</td></tr>
-        <tr><td>AI on your documents, invoice reading</td><td class="c no">–</td><td class="c no">–</td><td class="c yes">✓</td></tr>
-        <tr><td>Google Analytics and tracking</td><td class="c no">–</td><td class="c yes">Free bonus</td><td class="c yes">✓</td></tr>
-        <tr><td>Management dashboard</td><td class="c no">–</td><td class="c yes">Free bonus</td><td class="c yes">✓</td></tr>
-        <tr><td>Training sessions</td><td class="c">1</td><td class="c">2</td><td class="c">3</td></tr>
-        <tr><td>Support included</td><td class="c">1 month</td><td class="c">3 months</td><td class="c">3 months</td></tr>
-        <tr><td><b>Price</b></td><td class="c num"><b>USD 1,200</b></td><td class="c num"><b>USD 2,000</b></td><td class="c num"><b>from USD 6,500</b></td></tr>
+        <tr><td data-ar="CRM والمبيعات والفواتير">CRM, sales and invoicing</td><td class="c yes">✓</td><td class="c yes">✓</td><td class="c yes">✓</td></tr>
+        <tr><td data-ar="المخزون والمشتريات والمصروفات">Inventory, purchasing, expenses</td><td class="c no">–</td><td class="c yes">✓</td><td class="c yes">✓</td></tr>
+        <tr><td data-ar="موقع بلغتين">Bilingual website</td><td class="c" data-ar="٤ صفحات">4 pages</td><td class="c" data-ar="٦ صفحات">6 pages</td><td class="c" data-ar="تصميم خاص">Custom design</td></tr>
+        <tr><td data-ar="أتمتة بتوفر التكاليف">Cost-cutting automations</td><td class="c">2</td><td class="c" data-ar="الكل">All</td><td class="c" data-ar="الكل + مخصص">All + custom</td></tr>
+        <tr><td data-ar="مساعد ذكي على الموقع والواتساب">AI assistant on website and WhatsApp</td><td class="c no">–</td><td class="c yes">✓</td><td class="c yes">✓</td></tr>
+        <tr><td data-ar="Google Analytics وMeta Pixel">Google Analytics and Meta Pixel</td><td class="c no">–</td><td class="c yes" data-ar="هدية">Free bonus</td><td class="c yes">✓</td></tr>
+        <tr><td data-ar="تقييمات جوجل تلقائية">Automatic Google review requests</td><td class="c no">–</td><td class="c yes" data-ar="هدية">Free bonus</td><td class="c yes">✓</td></tr>
+        <tr><td data-ar="لوحة إدارة">Management dashboard</td><td class="c no">–</td><td class="c yes" data-ar="هدية">Free bonus</td><td class="c yes">✓</td></tr>
+        <tr><td data-ar="حملات Meta وGoogle Ads">Meta and Google Ads campaigns</td><td class="c no">–</td><td class="c no">–</td><td class="c yes">✓</td></tr>
+        <tr><td data-ar="الدعم المشمول">Support included</td><td class="c" data-ar="شهر">1 month</td><td class="c" data-ar="٥ شهور">5 months</td><td class="c" data-ar="٣ شهور">3 months</td></tr>
+        <tr><td><b data-ar="السعر">Price</b></td><td class="c num ltr"><b>USD 1,200</b></td><td class="c num ltr"><b>USD 2,000</b></td><td class="c num ltr"><b>USD 6,500+</b></td></tr>
       </tbody>
     </table></div>
   </section>
 
   <section id="market">
-    <h2>What the same work costs elsewhere in Egypt</h2>
-    <p class="lead">The Business package costs less than Egyptian Odoo partners charge for the ERP alone, and it adds the CRM, website, AI and support. You save because you work directly with the consultant who builds your system, with no sales team or office overhead in the price.</p>
+    <h2 data-ar="نفس الشغل بيتكلف كام في مصر؟">What the same work costs elsewhere in Egypt</h2>
+    <p class="lead" data-ar="باقة الأعمال أرخص من اللي شركات Odoo في مصر بتاخده على الـERP لوحده، وفيها كمان CRM وموقع وذكاء اصطناعي ودعم. بتوفر لأنك بتتعامل مباشرة مع اللي بيبني النظام، من غير فريق مبيعات أو مكاتب في السعر.">The Business package costs less than Egyptian Odoo partners charge for the ERP alone, and it adds the CRM, website, AI and support. You save because you work directly with the consultant who builds your system, with no sales team or office overhead in the price.</p>
     <div class="tbl"><table>
-      <thead><tr><th>Option</th><th>What you get</th><th class="r">Typical price</th></tr></thead>
+      <thead><tr><th data-ar="الاختيار">Option</th><th data-ar="هتاخد إيه">What you get</th><th class="r" data-ar="السعر المعتاد">Typical price</th></tr></thead>
       <tbody>
-        <tr class="you"><td>Business package</td><td>ERP, CRM, website, AI assistant, launch, 3 months support, bonuses</td><td class="r">EGP 111,600</td></tr>
-        <tr><td>Odoo partner, starter package</td><td>ERP only, 2–3 modules, setup and training</td><td class="r">EGP 125,000–250,000</td></tr>
-        <tr><td>Odoo partner, growth package</td><td>5–8 modules, custom workflows, integrations</td><td class="r">EGP 250,000–600,000</td></tr>
-        <tr><td>Small-company website on its own</td><td>5–10 pages</td><td class="r">about EGP 20,000</td></tr>
+        <tr class="you"><td data-ar="باقة الأعمال">Business package</td><td data-ar="ERP وCRM وموقع ومساعد ذكي وأتمتة وإطلاق ودعم وهدايا">ERP, CRM, website, AI assistant, automations, launch, support, bonuses</td><td class="r ltr">EGP 111,600</td></tr>
+        <tr><td data-ar="شركة Odoo، باقة مبتدئة">Odoo partner, starter package</td><td data-ar="ERP بس، ٢–٣ موديولات، إعداد وتدريب">ERP only, 2–3 modules, setup and training</td><td class="r ltr">EGP 125,000–250,000</td></tr>
+        <tr><td data-ar="شركة Odoo، باقة نمو">Odoo partner, growth package</td><td data-ar="٥–٨ موديولات وتخصيص وربط">5–8 modules, custom workflows, integrations</td><td class="r ltr">EGP 250,000–600,000</td></tr>
+        <tr><td data-ar="موقع شركة صغيرة لوحده">Small-company website on its own</td><td data-ar="٥–١٠ صفحات">5–10 pages</td><td class="r ltr">~EGP 20,000</td></tr>
       </tbody>
     </table></div>
-    <p class="note">Published Egyptian prices, checked November 2026. EGP figures use 55.8 EGP per USD.</p>
+    <p class="note" data-ar="أسعار منشورة في مصر، اتراجعت في نوفمبر ٢٠٢٦. سعر الصرف ٥٥٫٨ جنيه للدولار.">Published Egyptian prices, checked November 2026. EGP figures use 55.8 EGP per USD.</p>
   </section>
 
   <section id="how">
-    <h2>How we work</h2>
+    <h2 data-ar="إزاي بنشتغل">How we work</h2>
     <div class="proc">
-      <div><b>1. Discover</b><p>A free call and a workshop to map how your business runs. You get a one-page written scope.</p></div>
-      <div><b>2. Build</b><p>Your system is set up on a test link and your data is imported.</p></div>
-      <div><b>3. Test and train</b><p>Your team tries everything. I fix what comes up and train each role.</p></div>
-      <div><b>4. Launch and support</b><p>Go live, then support on WhatsApp.</p></div>
+      <div><b data-ar="١. نفهم">1. Discover</b><p data-ar="مكالمة مجانية وورشة عمل نفهم فيها شغلك، وتستلم نطاق مكتوب في صفحة واحدة.">A free call and a workshop to map how your business runs. You get a one-page written scope.</p></div>
+      <div><b data-ar="٢. نبني">2. Build</b><p data-ar="النظام بيتجهز على لينك تجريبي وبياناتك بتتنقل عليه.">Your system is set up on a test link and your data is imported.</p></div>
+      <div><b data-ar="٣. نجرب وندرب">3. Test and train</b><p data-ar="فريقك بيجرب كل حاجة، بصلح أي ملاحظة، وبدرب كل دور.">Your team tries everything. I fix what comes up and train each role.</p></div>
+      <div><b data-ar="٤. نطلق وندعم">4. Launch and support</b><p data-ar="الإطلاق، وبعده دعم على الواتساب.">Go live, then support on WhatsApp.</p></div>
     </div>
   </section>
 
   <section id="work">
-    <h2>Recent work</h2>
-    <p class="lead">The same building blocks, ERP, e-commerce, AI and analytics, already running for businesses in Egypt and Saudi Arabia.</p>
+    <h2 data-ar="أعمال سابقة">Recent work</h2>
+    <p class="lead" data-ar="نفس المكونات، ERP وتجارة إلكترونية وذكاء اصطناعي وتحليلات، شغالة فعلًا لشركات في مصر والسعودية.">The same building blocks, ERP, e-commerce, AI and analytics, already running for businesses in Egypt and Saudi Arabia.</p>
     <div class="work">
       <article class="case">
         <div class="logo"><img src="assets/ariika.png" alt="Ariika"></div>
         <div class="tags"><span class="tag"><img src="assets/whatsapp.svg" alt="">WhatsApp</span><span class="tag">AI</span><span class="tag"><img src="assets/shopify.svg" alt="">E-commerce</span></div>
-        <h3>Ariika Egypt: AI customer service on WhatsApp</h3>
-        <p>An AI assistant for a furniture and home-decor store. It answers in Egyptian Arabic, English and Franco, searches 1,300+ products, and sends order updates on WhatsApp.</p>
+        <h3 data-ar="أريكة مصر: خدمة عملاء بالذكاء الاصطناعي على الواتساب">Ariika Egypt: AI customer service on WhatsApp</h3>
+        <p data-ar="مساعد ذكي لمتجر أثاث وديكور. بيرد بالمصري والإنجليزي والفرانكو، بيدور في أكتر من ١٬٣٠٠ منتج، وبيبعت تحديثات الطلب على الواتساب.">An AI assistant for a furniture and home-decor store. It answers in Egyptian Arabic, English and Franco, searches 1,300+ products, and sends order updates on WhatsApp.</p>
         <a href="https://ariika.com">ariika.com</a>
       </article>
       <article class="case">
         <div class="logo"><img src="assets/ariika.png" alt="Ariika"></div>
         <div class="tags"><span class="tag"><img src="assets/odoo.svg" alt="">Odoo 17</span><span class="tag"><img src="assets/googleanalytics.svg" alt="">Analytics</span><span class="tag"><img src="assets/googleads.svg" alt="">Google Ads</span></div>
-        <h3>Ariika Saudi Arabia: Odoo, warehouse and analytics</h3>
-        <p>A custom Odoo module that sends orders to the Flow fulfilment warehouse and brings stock and delivery status back automatically. Plus Google Analytics and Google Ads tracking, so the store sees which ads pay off.</p>
+        <h3 data-ar="أريكة السعودية: Odoo والمستودع والتحليلات">Ariika Saudi Arabia: Odoo, warehouse and analytics</h3>
+        <p data-ar="موديول Odoo خاص بيبعت الطلبات لمستودع Flow وبيرجّع حالة المخزون والتوصيل تلقائي. ومعاه تتبع Google Analytics وGoogle Ads.">A custom Odoo module that sends orders to the Flow fulfilment warehouse and brings stock and delivery status back automatically. Plus Google Analytics and Google Ads tracking.</p>
       </article>
       <article class="case">
         <div class="logo dark"><img src="assets/oko.jpg" alt="OKO"></div>
-        <div class="tags"><span class="tag"><img src="assets/shopify.svg" alt="">Shopify</span><span class="tag">Custom theme</span></div>
-        <h3>OKO: online store</h3>
-        <p>A Shopify store with a customised theme, the full product catalogue imported, and product photos prepared for the web.</p>
+        <div class="tags"><span class="tag"><img src="assets/shopify.svg" alt="">Shopify</span><span class="tag">Theme</span></div>
+        <h3 data-ar="ÖKO: متجر أونلاين">ÖKO: online store</h3>
+        <p data-ar="متجر Shopify بثيم متخصص، وكل المنتجات متضافة، وصور المنتجات متجهزة للويب.">A Shopify store with a customised theme, the full product catalogue imported, and product photos prepared for the web.</p>
       </article>
       <article class="case">
-        <div class="logo"><span class="word">Radwan El Ogail</span></div>
+        <div class="logo"><img src="assets/radwan.svg" alt="Radwan El Ogail"></div>
         <div class="tags"><span class="tag">Website</span></div>
-        <h3>Radwan El Ogail: business website</h3>
-        <p>A business website designed, built and launched.</p>
+        <h3 data-ar="رضوان العجيل: موقع الشركة">Radwan El Ogail: business website</h3>
+        <p data-ar="موقع شركة اتصمم واتبنى واتطلق.">A business website designed, built and launched.</p>
       </article>
     </div>
-    <div class="stack" aria-label="Platforms I work with">
+    <div class="stack" aria-label="Platforms">
       <span><img src="assets/odoo.svg" alt="">Odoo</span>
       <span><img src="assets/shopify.svg" alt="">Shopify</span>
       <span><img src="assets/whatsapp.svg" alt="">WhatsApp Business</span>
+      <span><img src="assets/meta.svg" alt="">Meta</span>
+      <span><img src="assets/google.svg" alt="">Google Business</span>
       <span><img src="assets/googleanalytics.svg" alt="">Google Analytics</span>
       <span><img src="assets/googleads.svg" alt="">Google Ads</span>
       <span><img src="assets/github.svg" alt="">GitHub</span>
@@ -438,137 +534,183 @@ html{scroll-behavior:smooth}
   </section>
 
   <section id="faq">
-    <h2>Questions</h2>
+    <h2 data-ar="أسئلة شائعة">Questions</h2>
     <div>
-      <details open><summary>Why is this cheaper than an Odoo agency?</summary><p>Agencies pay for sales teams, offices and account managers. You work directly with the consultant who builds your system. The scope is fixed and written down before work starts.</p></details>
-      <details><summary>What if we outgrow it?</summary><p>Odoo runs companies with thousands of users. As you grow you add modules such as HR, manufacturing or an online store. Nothing is rebuilt, and your data stays where it is. Moving from Starter to Business costs only the difference.</p></details>
-      <details><summary>Who owns the data and the system?</summary><p>You do. The server, domain and database are registered in your company's name, and you get the admin passwords. You are never locked in.</p></details>
-      <details><summary>What happens after the support period?</summary><p>You keep everything. Ongoing support is optional at USD 100 a month, cancel any time. Daily backups keep running either way.</p></details>
-      <details><summary>Does it work in Arabic?</summary><p>Yes. The system and website work in Arabic and English, and the AI assistant answers in Egyptian Arabic, English and Franco.</p></details>
+      <details open><summary data-ar="ليه أرخص من شركات Odoo؟">Why is this cheaper than an Odoo agency?</summary><p data-ar="الشركات بتدفع على فرق مبيعات ومكاتب ومديري حسابات. إنت بتتعامل مباشرة مع اللي بيبني نظامك، والنطاق ثابت ومكتوب قبل ما نبدأ.">Agencies pay for sales teams, offices and account managers. You work directly with the consultant who builds your system. The scope is fixed and written down before work starts.</p></details>
+      <details><summary data-ar="لو كبرنا؟">What if we outgrow it?</summary><p data-ar="Odoo بيشغّل شركات فيها آلاف المستخدمين. لما تكبر بتضيف موديولات زي الموارد البشرية أو التصنيع أو متجر أونلاين، ومفيش حاجة بتتعمل من الأول. والانتقال من الأساسية للأعمال بالفرق بس.">Odoo runs companies with thousands of users. As you grow you add modules such as HR, manufacturing or an online store. Nothing is rebuilt. Moving from Starter to Business costs only the difference.</p></details>
+      <details><summary data-ar="مين بيملك البيانات والنظام؟">Who owns the data and the system?</summary><p data-ar="إنت. السيرفر والدومين وقاعدة البيانات وكل الاشتراكات باسم شركتك، ومعاك كل الباسوردات. مفيش أي ارتباط إجباري بيا.">You do. The server, domain, database and every subscription are in your company's name, and you get the admin passwords. You are never locked in.</p></details>
+      <details><summary data-ar="بعد فترة الدعم إيه اللي بيحصل؟">What happens after the support period?</summary><p data-ar="كل حاجة بتفضل معاك. الدعم بعد كده اختياري بـ١٠٠ دولار في الشهر وتقدر توقفه في أي وقت، والنسخ الاحتياطي اليومي شغال في كل الأحوال.">You keep everything. Ongoing support is optional at USD 100 a month, cancel any time. Daily backups keep running either way.</p></details>
+      <details><summary data-ar="بيشتغل بالعربي؟">Does it work in Arabic?</summary><p data-ar="أيوه. النظام والموقع بالعربي والإنجليزي، والمساعد الذكي بيرد بالمصري والإنجليزي والفرانكو.">Yes. The system and website work in Arabic and English, and the AI assistant answers in Egyptian Arabic, English and Franco.</p></details>
     </div>
   </section>
 
   <section id="costs">
     <div class="two">
       <div class="panel">
-        <h2>Payment</h2>
+        <h2 data-ar="الدفع">Payment</h2>
         <div class="tbl"><table style="min-width:0">
-          <thead><tr><th>Milestone</th><th class="r">Share</th><th class="r">Business (USD)</th></tr></thead>
+          <thead><tr><th data-ar="المرحلة">Milestone</th><th class="r" data-ar="النسبة">Share</th><th class="r" data-ar="الأعمال (دولار)">Business (USD)</th></tr></thead>
           <tbody>
-            <tr><td>Kick-off</td><td class="r">40%</td><td class="r">800</td></tr>
-            <tr><td>System working as agreed</td><td class="r">40%</td><td class="r">800</td></tr>
-            <tr><td>Launch</td><td class="r">20%</td><td class="r">400</td></tr>
+            <tr><td data-ar="البداية">Kick-off</td><td class="r ltr">40%</td><td class="r ltr">800</td></tr>
+            <tr><td data-ar="النظام شغال زي ما اتفقنا">System working as agreed</td><td class="r ltr">40%</td><td class="r ltr">800</td></tr>
+            <tr><td data-ar="الإطلاق">Launch</td><td class="r ltr">20%</td><td class="r ltr">400</td></tr>
           </tbody>
         </table></div>
-        <p class="note">Same split for every package. Pay in USD or in EGP at the rate on the invoice date.</p>
+        <p class="note" data-ar="نفس التقسيم لكل الباقات. الدفع بالدولار أو بالجنيه بسعر يوم الفاتورة.">Same split for every package. Pay in USD or in EGP at the rate on the invoice date.</p>
       </div>
       <div class="panel">
-        <h2>Monthly running costs</h2>
+        <h2 data-ar="الاشتراكات الشهرية (على حسابك)">Monthly subscriptions (billed to you)</h2>
         <div class="tbl"><table style="min-width:0">
-          <thead><tr><th>Item</th><th class="r">Per month</th></tr></thead>
+          <thead><tr><th data-ar="البند">Item</th><th class="r" data-ar="في الشهر">Per month</th></tr></thead>
           <tbody>
-            <tr><td>Cloud server</td><td class="r">USD 12–24</td></tr>
-            <tr><td>Odoo license (Community)</td><td class="r">USD 0</td></tr>
-            <tr><td>AI usage</td><td class="r">USD 2–10</td></tr>
-            <tr><td>WhatsApp Business provider (Business package)</td><td class="r">from USD 19</td></tr>
+            <tr><td data-ar="سيرفر سحابي">Cloud server</td><td class="r ltr">USD 12–24</td></tr>
+            <tr><td data-ar="ترخيص Odoo Community">Odoo license (Community)</td><td class="r ltr">USD 0</td></tr>
+            <tr><td data-ar="استخدام الذكاء الاصطناعي">AI usage</td><td class="r ltr">USD 2–10</td></tr>
+            <tr><td data-ar="مزود واتساب بيزنس (باقة الأعمال)">WhatsApp Business provider (Business package)</td><td class="r ltr">from USD 19</td></tr>
+            <tr><td data-ar="الدومين">Domain</td><td class="r ltr">~USD 1–2</td></tr>
           </tbody>
         </table></div>
-        <p class="note">Paid directly to the providers, in your company's name.</p>
+        <p class="note" data-ar="كل الاشتراكات (السيرفر والدومين والواتساب والذكاء الاصطناعي وMeta وجوجل) باسم شركتك وبتتدفع منك مباشرة للمزودين. ميزانية الإعلانات منفصلة.">Every subscription (server, domain, WhatsApp, AI, Meta and Google) is in your company's name and paid by you directly to the provider. Ad budgets are separate.</p>
       </div>
     </div>
     <div class="panel" id="limits">
-      <h3>Scope and limits</h3>
+      <h3 data-ar="النطاق والحدود">Scope and limits</h3>
       <ul class="check">
-        <li>Up to 15 users, 1 company, 1 warehouse, 1 currency (EGP)</li>
-        <li>Odoo Community with standard workflows. Egyptian e-invoicing (ETA), payroll and full accounting are quoted separately</li>
-        <li>Data import: customers, products and opening stock, up to 5,000 rows, from our Excel template, imported once</li>
-        <li>Website: up to the package's page count, you provide text and images, 2 rounds of revisions</li>
-        <li>3 printed layouts (quotation, invoice, delivery note) and up to 5 dashboard tiles</li>
-        <li>AI assistant answers from your approved content (up to 20 pages) and hands complex questions to your staff</li>
-        <li>WhatsApp needs Meta business verification and a dedicated number; Meta's approval is outside my control</li>
-        <li>You own and pay for the server, domain, Meta and AI accounts, and I get admin access to set them up</li>
-        <li>Support: up to 6 hours a month for fixes and changes under 1 hour each, replies within 1 business day</li>
-        <li>Anything beyond these limits (new modules, integrations, extra warehouses or companies) is quoted as an add-on before work starts</li>
+        <li data-ar="لحد ١٥ مستخدم، شركة واحدة، مخزن واحد، عملة واحدة (جنيه)">Up to 15 users, 1 company, 1 warehouse, 1 currency (EGP)</li>
+        <li data-ar="Odoo Community بالخطوات القياسية. الفاتورة الإلكترونية (ETA) والمرتبات والمحاسبة الكاملة بعرض منفصل">Odoo Community with standard workflows. Egyptian e-invoicing (ETA), payroll and full accounting are quoted separately</li>
+        <li data-ar="استيراد العملاء والمنتجات ورصيد المخزون الافتتاحي لحد ٥٬٠٠٠ صف من قالب الإكسل، مرة واحدة">Data import: customers, products and opening stock, up to 5,000 rows, from our Excel template, imported once</li>
+        <li data-ar="الموقع: عدد صفحات الباقة، إنت بتوفر النصوص والصور، وجولتين تعديل">Website: up to the package's page count, you provide text and images, 2 rounds of revisions</li>
+        <li data-ar="٣ نماذج طباعة (عرض سعر، فاتورة، إذن تسليم) ولحد ٥ مؤشرات في اللوحة">3 printed layouts (quotation, invoice, delivery note) and up to 5 dashboard tiles</li>
+        <li data-ar="المساعد الذكي بيرد من محتوى إنت موافق عليه (لحد ٢٠ صفحة) وبيحول الأسئلة الصعبة لفريقك">AI assistant answers from your approved content (up to 20 pages) and hands complex questions to your staff</li>
+        <li data-ar="الواتساب محتاج توثيق حساب Meta ورقم مخصص، وموافقة Meta خارج إيدي">WhatsApp needs Meta business verification and a dedicated number; Meta's approval is outside my control</li>
+        <li data-ar="كل الاشتراكات والحسابات باسمك وعلى حسابك، وأنا بيبقى معايا صلاحية الإعداد بس">All subscriptions and accounts are in your name and paid by you; I only get admin access to set them up</li>
+        <li data-ar="الدعم: لحد ٦ ساعات في الشهر للإصلاحات والتعديلات الصغيرة، والرد خلال يوم عمل">Support: up to 6 hours a month for fixes and changes under 1 hour each, replies within 1 business day</li>
+        <li data-ar="أي حاجة أكبر من كده (موديولات أو ربط جديد أو مخازن أو شركات إضافية) بتتسعر كإضافة قبل الشغل">Anything beyond these limits (new modules, integrations, extra warehouses or companies) is quoted as an add-on before work starts</li>
       </ul>
     </div>
   </section>
 
   <section id="start" class="no-print">
-    <h2>Get started: tell me about your business</h2>
-    <p class="lead">Fill in what you can. The button opens WhatsApp with your answers ready to send, and I'll reply to book a free call.</p>
+    <h2 data-ar="ابدأ الآن: احكيلي عن شغلك">Get started: tell me about your business</h2>
+    <p class="lead" data-ar="املا اللي تقدر عليه. الزرار هيفتح واتساب وإجاباتك جاهزة، وهرد عليك نحدد مكالمة مجانية.">Fill in what you can. The button opens WhatsApp with your answers ready to send, and I'll reply to book a free call.</p>
     <form id="disc" class="panel">
       <div class="grid2">
-        <label for="f-name">Your name<input id="f-name" name="name" autocomplete="name"></label>
-        <label for="f-company">Company name<input id="f-company" name="company"></label>
-        <label for="f-industry">What does the business do?<input id="f-industry" name="industry" placeholder="e.g. distribution, retail, clinic, factory"></label>
-        <label for="f-size">How many people will use the system?
+        <label for="f-name"><span data-ar="اسمك">Your name</span><input id="f-name" name="name" autocomplete="name"></label>
+        <label for="f-company"><span data-ar="اسم الشركة">Company name</span><input id="f-company" name="company"></label>
+        <label for="f-industry"><span data-ar="الشركة بتشتغل في إيه؟">What does the business do?</span><input id="f-industry" name="industry"></label>
+        <label for="f-size"><span data-ar="كام شخص هيستخدم النظام؟">How many people will use the system?</span>
           <select id="f-size" name="size"><option>1–5</option><option>6–15</option><option>16–30</option><option>30+</option></select></label>
-        <label for="f-pkg">Package you're leaning towards
-          <select id="f-pkg" name="pkg"><option>Not sure yet</option><option>Starter</option><option selected>Business</option><option>Custom</option></select></label>
-        <label for="f-meet">Best time for a 30-minute call<input id="f-meet" name="meet" placeholder="e.g. Sunday after 4 pm"></label>
+        <label for="f-pkg"><span data-ar="الباقة اللي مايل لها">Package you're leaning towards</span>
+          <select id="f-pkg" name="pkg"><option value="Not sure yet" data-ar="لسه مش متأكد">Not sure yet</option><option value="Starter" data-ar="الأساسية">Starter</option><option value="Business" selected data-ar="الأعمال">Business</option><option value="Custom" data-ar="المخصصة">Custom</option></select></label>
+        <label for="f-meet"><span data-ar="أنسب وقت لمكالمة ٣٠ دقيقة">Best time for a 30-minute call</span><input id="f-meet" name="meet"></label>
       </div>
-      <fieldset><legend>What do you need most?</legend>
+      <fieldset><legend data-ar="محتاج إيه أكتر؟">What do you need most?</legend>
         <div class="boxes">
-          <label><input type="checkbox" id="n-sales" value="Sales and quotations">Sales and quotations</label>
-          <label><input type="checkbox" id="n-stock" value="Inventory">Inventory</label>
-          <label><input type="checkbox" id="n-acc" value="Accounting and invoices">Accounting and invoices</label>
-          <label><input type="checkbox" id="n-crm" value="Customer follow-up">Customer follow-up</label>
-          <label><input type="checkbox" id="n-hr" value="HR and attendance">HR and attendance</label>
-          <label><input type="checkbox" id="n-web" value="Website">Website</label>
-          <label><input type="checkbox" id="n-ai" value="AI / WhatsApp assistant">AI assistant</label>
-          <label><input type="checkbox" id="n-shop" value="Online store">Online store</label>
+          <label><input type="checkbox" id="n-sales" value="Sales"><span data-ar="المبيعات وعروض الأسعار">Sales and quotations</span></label>
+          <label><input type="checkbox" id="n-stock" value="Inventory"><span data-ar="المخزون">Inventory</span></label>
+          <label><input type="checkbox" id="n-acc" value="Accounting"><span data-ar="الحسابات والفواتير">Accounting and invoices</span></label>
+          <label><input type="checkbox" id="n-crm" value="CRM"><span data-ar="متابعة العملاء">Customer follow-up</span></label>
+          <label><input type="checkbox" id="n-auto" value="Automation"><span data-ar="الأتمتة">Automation</span></label>
+          <label><input type="checkbox" id="n-web" value="Website"><span data-ar="الموقع">Website</span></label>
+          <label><input type="checkbox" id="n-ai" value="AI assistant"><span data-ar="المساعد الذكي">AI assistant</span></label>
+          <label><input type="checkbox" id="n-ads" value="Meta/Google and reviews"><span data-ar="إعلانات وتقييمات">Ads and reviews</span></label>
         </div>
       </fieldset>
       <div class="grid2">
-        <label for="f-today">What do you use today?<textarea id="f-today" name="today" placeholder="Excel, paper, another system..."></textarea></label>
-        <label for="f-pain">What is the biggest headache right now?<textarea id="f-pain" name="pain"></textarea></label>
+        <label for="f-today"><span data-ar="بتستخدم إيه دلوقتي؟">What do you use today?</span><textarea id="f-today" name="today"></textarea></label>
+        <label for="f-pain"><span data-ar="إيه أكبر مشكلة دلوقتي؟">What is the biggest headache right now?</span><textarea id="f-pain" name="pain"></textarea></label>
       </div>
-      <div><a class="btn btn-wa" id="send-wa" href="https://wa.me/201205461115"><img src="assets/whatsapp.svg" alt="">Send my answers on WhatsApp</a></div>
-      <p class="note">If WhatsApp doesn't open, message +20 120 546 1115.</p>
+      <div><a class="btn btn-wa" id="send-wa" href="https://wa.me/201205461115"><img class="ic" src="assets/whatsapp.svg" alt=""><span data-ar="ابعت إجاباتي على واتساب">Send my answers on WhatsApp</span></a></div>
+      <p class="note"><span data-ar="لو الواتساب ما فتحش، ابعت على">If WhatsApp doesn't open, message</span> <span class="ltr">+20 120 546 1115</span></p>
     </form>
   </section>
 
   <section id="about">
-    <h2>Who you'll work with</h2>
+    <h2 data-ar="هتشتغل مع مين">Who you'll work with</h2>
     <div class="panel about">
       <img src="assets/shady.jpg" alt="Shady Al-Halawani" width="150" height="150">
       <div style="display:grid;gap:12px">
-        <div><h3>Shady Al-Halawani</h3><p class="muted">ERP Expert · Odoo Consultant · AI Engineer · Cairo</p></div>
+        <div><h3 data-ar="شادي الحلواني">Shady Al-Halawani</h3><p class="muted" data-ar="خبير ERP · استشاري Odoo · مهندس ذكاء اصطناعي · القاهرة">ERP Expert · Odoo Consultant · AI Engineer · Cairo</p></div>
         <ul class="check">
-          <li>Sets up and integrates Odoo for businesses in Egypt and Saudi Arabia: sales, inventory, warehouses, custom modules</li>
-          <li>Builds production AI: assistants that answer customers in Arabic and English, AI search over company documents, WhatsApp automation</li>
-          <li>Builds e-commerce stores, websites and analytics tracking</li>
-          <li>MSc Computer Science, Distinction, University of Roehampton, London</li>
+          <li data-ar="بيجهز ويربط Odoo لشركات في مصر والسعودية: مبيعات ومخازن ومستودعات وموديولات خاصة">Sets up and integrates Odoo for businesses in Egypt and Saudi Arabia: sales, inventory, warehouses, custom modules</li>
+          <li data-ar="بيبني ذكاء اصطناعي شغال فعلًا: مساعدين بيردوا بالعربي والإنجليزي، بحث ذكي في المستندات، وأتمتة واتساب">Builds production AI: assistants that answer customers in Arabic and English, AI search over company documents, WhatsApp automation</li>
+          <li data-ar="متاجر إلكترونية ومواقع وتتبع Meta وجوجل">E-commerce stores, websites, and Meta and Google tracking</li>
+          <li data-ar="ماجستير علوم الحاسب بامتياز، جامعة روهامبتون، لندن">MSc Computer Science, Distinction, University of Roehampton, London</li>
         </ul>
-        <div style="display:flex;flex-wrap:wrap;gap:10px">
+        <div class="btns">
           <a class="btn btn-line" href="https://www.linkedin.com/in/shady-al-halawani-333a5419a">LinkedIn</a>
           <a class="btn btn-line" href="https://github.com/Shadysmetools">GitHub</a>
-          <a class="btn btn-wa wa" href="https://wa.me/201205461115"><img src="assets/whatsapp.svg" alt="">WhatsApp</a>
+          <a class="btn btn-wa" data-wa="book" href="https://wa.me/201205461115"><img class="ic" src="assets/whatsapp.svg" alt="">WhatsApp</a>
         </div>
       </div>
     </div>
   </section>
 
-  <footer>Fixed prices for the scope agreed in writing. Prices exclude VAT. Offer valid for 30 days from 1 November 2026.</footer>
+  <footer data-ar="أسعار ثابتة للنطاق المتفق عليه كتابة. الأسعار لا تشمل ضريبة القيمة المضافة. العرض سارٍ ٣٠ يومًا من ١ نوفمبر ٢٠٢٦.">Fixed prices for the scope agreed in writing. Prices exclude VAT. Offer valid for 30 days from 1 November 2026.</footer>
 </main>
 </div>
 
 <script>
 (function(){
-  var form=document.getElementById('disc'); if(!form) return;
-  var btn=document.getElementById('send-wa');
+  var WA='201205461115';
+  var MSG={
+    en:{book:"Hi Shady, I'd like to book a free call about the ERP/CRM packages.",starter:"Hi Shady, I'm interested in the Starter package.",business:"Hi Shady, I'm interested in the Business package.",custom:"Hi Shady, I'd like to discuss the Custom package."},
+    ar:{book:"أهلًا شادي، عايز أحجز مكالمة مجانية عن باقات الـERP والـCRM.",starter:"أهلًا شادي، مهتم بالباقة الأساسية.",business:"أهلًا شادي، مهتم بباقة الأعمال.",custom:"أهلًا شادي، عايز أتكلم عن الباقة المخصصة."}
+  };
+  var lang='en';
+  var nodes=[].slice.call(document.querySelectorAll('[data-ar]'));
+  nodes.forEach(function(n){n.setAttribute('data-en',n.innerHTML);});
+  function fmt(n){return Math.round(n).toLocaleString(lang==='ar'?'ar-EG':'en-US');}
+  function money(n){return lang==='ar'?fmt(n)+' جنيه':'EGP '+fmt(n);}
+
+  function g(id){return +document.getElementById(id).value;}
+  function calc(){
+    var sal=g('c-salary'),hrs=g('c-hours'),leads=g('c-leads'),order=g('c-order'),margin=g('c-margin');
+    document.getElementById('o-salary').textContent=money(sal);
+    document.getElementById('o-hours').textContent=fmt(hrs);
+    document.getElementById('o-leads').textContent=fmt(leads);
+    document.getElementById('o-order').textContent=money(order);
+    document.getElementById('o-margin').textContent=fmt(margin)+'%';
+    var time=hrs*(sal/176), lp=leads*order*margin/100, tot=time+lp;
+    document.getElementById('r-time').textContent=money(time);
+    document.getElementById('r-leads').textContent=money(lp);
+    document.getElementById('r-year').textContent=money(tot*12);
+    document.getElementById('r-total').textContent=money(tot);
+    var m=tot>0?Math.ceil(111600/tot):0;
+    document.getElementById('r-pay').textContent=tot>0?(m<=1?(lang==='ar'?'أقل من شهر':'under 1 month'):fmt(m)+(lang==='ar'?' شهور':' months')):'–';
+  }
+  ['c-salary','c-hours','c-leads','c-order','c-margin'].forEach(function(id){document.getElementById(id).addEventListener('input',calc);});
+
+  var form=document.getElementById('disc'),btn=document.getElementById('send-wa');
   function v(id){var el=document.getElementById(id);return el?el.value.trim():'';}
   function build(){
     var needs=[].slice.call(form.querySelectorAll('input[type=checkbox]:checked')).map(function(c){return c.value;});
-    var lines=['Hi Shady, here are my answers for the ERP/CRM proposal:',
-      'Name: '+v('f-name'),'Company: '+v('f-company'),'Business: '+v('f-industry'),
-      'Users: '+v('f-size'),'Package: '+v('f-pkg'),'Needs: '+(needs.join(', ')||'-'),
-      'Using today: '+v('f-today'),'Biggest headache: '+v('f-pain'),'Best time for a call: '+v('f-meet')];
-    btn.href='https://wa.me/201205461115?text='+encodeURIComponent(lines.join('\n'));
+    var L=lang==='ar'?['أهلًا شادي، دي إجاباتي على عرض الـERP/CRM:','الاسم: ','الشركة: ','النشاط: ','المستخدمين: ','الباقة: ','الاحتياجات: ','بنستخدم دلوقتي: ','أكبر مشكلة: ','أنسب وقت لمكالمة: ']
+                     :['Hi Shady, here are my answers for the ERP/CRM proposal:','Name: ','Company: ','Business: ','Users: ','Package: ','Needs: ','Using today: ','Biggest headache: ','Best time for a call: '];
+    var vals=[v('f-name'),v('f-company'),v('f-industry'),v('f-size'),v('f-pkg'),needs.join(', ')||'-',v('f-today'),v('f-pain'),v('f-meet')];
+    var lines=[L[0]];vals.forEach(function(x,i){lines.push(L[i+1]+x);});
+    btn.href='https://wa.me/'+WA+'?text='+encodeURIComponent(lines.join('\n'));
   }
-  form.addEventListener('input',build); form.addEventListener('change',build);
+  form.addEventListener('input',build);form.addEventListener('change',build);
   form.addEventListener('submit',function(e){e.preventDefault();});
-  build();
+
+  function setLang(l){
+    lang=l;
+    document.documentElement.lang=l;
+    document.documentElement.dir=(l==='ar')?'rtl':'ltr';
+    nodes.forEach(function(n){n.innerHTML=n.getAttribute(l==='ar'?'data-ar':'data-en');});
+    document.querySelectorAll('.lang button').forEach(function(b){b.setAttribute('aria-pressed',b.getAttribute('data-lang')===l?'true':'false');});
+    document.querySelectorAll('[data-wa]').forEach(function(a){a.href='https://wa.me/'+WA+'?text='+encodeURIComponent(MSG[l][a.getAttribute('data-wa')]);});
+    var vid=document.getElementById('intro'),src=document.getElementById('intro-src');
+    var want='assets/video/intro-'+l+'.mp4';
+    if(vid&&src&&src.getAttribute('src')!==want){src.setAttribute('src',want);vid.setAttribute('poster','assets/video/intro-'+l+'.jpg');vid.load();}
+    try{localStorage.setItem('lang',l);}catch(e){}
+    calc();build();
+  }
+  document.querySelectorAll('.lang button').forEach(function(b){b.addEventListener('click',function(){setLang(b.getAttribute('data-lang'));});});
+  var start='en';try{start=localStorage.getItem('lang')||'en';}catch(e){}
+  if(location.hash==='#ar')start='ar';
+  setLang(start);
 })();
 </script>
 </body>
