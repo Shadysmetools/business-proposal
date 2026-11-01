@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 128" width="480" height="512">
+  <!-- Knowcap mark — the page-fan K, redrawn. All-ink version (navy #191F2E). -->
+  <rect x="16" y="12" width="22" height="104" rx="2" fill="#191F2E"/>
+  <path d="M38,52 C62,47 80,33 90,13 C95,18 97,24 95,29 C83,49 62,60 38,66 Z" fill="#191F2E"/>
+  <path d="M38,56 C60,51 76,38 87,19" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/>
+  <path d="M38,61 C58,55 72,45 80,32" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/>
+  <path d="M38,76 C62,81 80,95 90,115 C95,110 97,104 95,99 C83,79 62,68 38,62 Z" fill="#191F2E"/>
+  <path d="M38,72 C60,77 76,90 87,109" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/>
+  <path d="M38,67 C58,73 72,83 80,96" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/>
+</svg>

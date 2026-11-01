@@ -339,6 +339,14 @@ input[aria-invalid="true"]{border-color:#b42318;box-shadow:0 0 0 3px rgba(180,35
 .cost-tbl td:first-child{font-weight:500;color:var(--ink)}
 .cost-p{font-weight:600;color:var(--navy);font-variant-numeric:tabular-nums;min-width:9.5em}
 .cost-how{color:var(--muted);font-size:.9rem}
+.via{font-size:.82rem;color:var(--muted);font-style:italic;border-top:1px solid var(--line);padding-top:10px}
+html[lang="ar"] .via{font-style:normal}
+.xp{display:grid;gap:6px;padding:14px 16px;border-radius:14px;background:var(--bg);border:1px solid var(--line);justify-self:start;max-width:62ch}
+.xp-k{font-size:.78rem;font-weight:600;color:var(--muted)}
+.xp-row{display:flex;align-items:center;gap:10px}
+.xp-row img{height:28px;width:auto;display:block}
+.xp-name{font-family:"Bricolage Grotesque","IBM Plex Sans",sans-serif;font-size:1.2rem;font-weight:700;color:#191F2E;letter-spacing:-.01em}
+.xp p{font-size:.93rem}
 .about{display:grid;grid-template-columns:160px 1fr;gap:28px;align-items:start}
 .about>img{width:160px;height:160px;border-radius:22px;object-fit:cover;box-shadow:var(--sh-2)}
 .about .btns{display:flex;flex-wrap:wrap;gap:10px}
@@ -430,7 +438,7 @@ footer{color:var(--muted);font-size:.85rem;border-top:1px solid var(--line-2);pa
     <a href="#growth" data-ar="ميتا وجوجل والتقييمات">Meta, Google &amp; reviews</a>
     <a href="#compare" data-ar="مقارنة الباقات">Compare packages</a>
     <a href="#market" data-ar="أسعار السوق">Market prices</a>
-    <a href="#work" data-ar="أعمال سابقة">Recent work</a>
+    <a href="#work" data-ar="خبرات وأعمال سابقة">Experience and recent work</a>
     <a href="#faq" data-ar="أسئلة شائعة">Questions</a>
     <a href="#costs" data-ar="الدفع والتكاليف">Payment and costs</a>
     <a href="#start" data-ar="ابدأ الآن">Get started</a>
@@ -475,7 +483,7 @@ footer{color:var(--muted);font-size:.85rem;border-top:1px solid var(--line-2);pa
   <div class="kpis">
     <div class="kpi blue"><span class="k" data-ar="الباقة المُوصى بها">Recommended package</span><span class="v num" data-ar="2,000 دولار">USD 2,000</span><span class="s" data-ar="حوالي 111,600 جنيه، شامل">about EGP 111,600, all-in</span></div>
     <div class="kpi gold"><span class="k" data-ar="سعر الشركات المعتاد">Typical agency price</span><span class="v num strike" data-ar="+150 ألف جنيه">EGP 150k+</span><span class="s" data-ar="لنفس الشغل في مصر">for the same scope in Egypt</span></div>
-    <div class="kpi good"><span class="k" data-ar="ساعات موفرة شهريًا">Staff hours saved / month</span><span class="v num">20–30</span><span class="s" data-ar="بالأتمتة (تقدير)">with automation (estimate)</span></div>
+    <div class="kpi good"><span class="k" data-ar="ساعات موفرة شهريًا">Staff hours saved / month</span><span class="v num"><span dir="ltr" class="ltr">20–30</span></span><span class="s" data-ar="بالأتمتة (تقدير)">with automation (estimate)</span></div>
     <div class="kpi good"><span class="k" data-ar="رسوم التراخيص">License fees</span><span class="v num" data-ar="0 دولار">USD 0</span><span class="s" data-ar="Odoo Community، بدون رسوم لكل مستخدم">Odoo Community, no per-user cost</span></div>
   </div>
 
@@ -582,18 +590,18 @@ footer{color:var(--muted);font-size:.85rem;border-top:1px solid var(--line-2);pa
 
   <section id="automation">
     <h2 data-ar="أتمتة بتقلل تكاليفك">Automations that cut your costs</h2>
-    <p class="lead" data-ar="بتشتغل لوحدها بعد الإطلاق. لفريق صغير بتوفر عادة 20–30 ساعة شغل في الشهر وبتخلي العملاء يدفعوا أسرع. الساعات تقديرية وبتعتمد على حجم شغلك.">These run on their own once the system is live. For a small team they typically give back 20–30 staff hours a month and get customers paying faster. Hours are estimates and depend on your volume.</p>
+    <p class="lead" data-ar="بتشتغل لوحدها بعد الإطلاق. لفريق صغير بتوفر عادة <span dir='ltr' class='ltr'>20–30</span> ساعة شغل في الشهر وبتخلي العملاء يدفعوا أسرع. الساعات تقديرية وبتعتمد على حجم شغلك.">These run on their own once the system is live. For a small team they typically give back <span dir="ltr" class="ltr">20–30</span> staff hours a month and get customers paying faster. Hours are estimates and depend on your volume.</p>
     <div class="tbl"><table>
       <thead><tr><th data-ar="الأتمتة">Automation</th><th data-ar="بدل إيه">What it replaces</th><th class="r" data-ar="ساعات موفرة / شهر">Est. hours saved / month</th></tr></thead>
       <tbody>
-        <tr><td data-ar="تذكير الفواتير المتأخرة بالإيميل والواتساب">Unpaid-invoice reminders by email and WhatsApp</td><td data-ar="التليفونات لمطاردة العملاء">Chasing customers by phone</td><td class="r">4–6</td></tr>
-        <tr><td data-ar="توزيع العملاء المحتملين وتذكير المتابعة">Lead assignment and follow-up reminders</td><td data-ar="عملاء بيتنسوا في الكشاكيل والشات">Leads forgotten in notebooks and chats</td><td class="r">3–5</td></tr>
-        <tr><td data-ar="ردود ذكية على أسئلة العملاء المتكررة">AI replies to common customer questions</td><td data-ar="الرد على نفس الأسئلة طول اليوم">Answering the same questions all day</td><td class="r">6–10</td></tr>
-        <tr><td data-ar="تأكيد الطلب وتحديثات الشحن على الواتساب">Order confirmations and delivery updates on WhatsApp</td><td data-ar="مكالمات «طلبي فين؟»">"Where is my order?" calls</td><td class="r">3–4</td></tr>
-        <tr><td data-ar="تنبيه نقص المخزون وأوامر شراء جاهزة">Low-stock alerts and draft purchase orders</td><td data-ar="الجرد اليدوي ونسيان الطلب">Manual stock counts and missed reorders</td><td class="r">2–3</td></tr>
-        <tr><td data-ar="طلب تقييم جوجل تلقائي بعد كل طلب">Automatic Google review request after each order</td><td data-ar="طلب التقييمات يدويًا">Asking for reviews by hand</td><td class="r">1–2</td></tr>
-        <tr><td data-ar="تقرير أسبوعي للمبيعات والمخزون والكاش لصاحب الشغل">Weekly sales, stock and cash report to the owner</td><td data-ar="عمل التقارير على الإكسل">Building reports in Excel</td><td class="r">2–3</td></tr>
-        <tr class="you"><td data-ar="الإجمالي">Total</td><td></td><td class="r">21–33</td></tr>
+        <tr><td data-ar="تذكير الفواتير المتأخرة بالإيميل والواتساب">Unpaid-invoice reminders by email and WhatsApp</td><td data-ar="التليفونات لمطاردة العملاء">Chasing customers by phone</td><td class="r"><span dir="ltr" class="ltr">4–6</span></td></tr>
+        <tr><td data-ar="توزيع العملاء المحتملين وتذكير المتابعة">Lead assignment and follow-up reminders</td><td data-ar="عملاء بيتنسوا في الكشاكيل والشات">Leads forgotten in notebooks and chats</td><td class="r"><span dir="ltr" class="ltr">3–5</span></td></tr>
+        <tr><td data-ar="ردود ذكية على أسئلة العملاء المتكررة">AI replies to common customer questions</td><td data-ar="الرد على نفس الأسئلة طول اليوم">Answering the same questions all day</td><td class="r"><span dir="ltr" class="ltr">6–10</span></td></tr>
+        <tr><td data-ar="تأكيد الطلب وتحديثات الشحن على الواتساب">Order confirmations and delivery updates on WhatsApp</td><td data-ar="مكالمات «طلبي فين؟»">"Where is my order?" calls</td><td class="r"><span dir="ltr" class="ltr">3–4</span></td></tr>
+        <tr><td data-ar="تنبيه نقص المخزون وأوامر شراء جاهزة">Low-stock alerts and draft purchase orders</td><td data-ar="الجرد اليدوي ونسيان الطلب">Manual stock counts and missed reorders</td><td class="r"><span dir="ltr" class="ltr">2–3</span></td></tr>
+        <tr><td data-ar="طلب تقييم جوجل تلقائي بعد كل طلب">Automatic Google review request after each order</td><td data-ar="طلب التقييمات يدويًا">Asking for reviews by hand</td><td class="r"><span dir="ltr" class="ltr">1–2</span></td></tr>
+        <tr><td data-ar="تقرير أسبوعي للمبيعات والمخزون والكاش لصاحب الشغل">Weekly sales, stock and cash report to the owner</td><td data-ar="عمل التقارير على الإكسل">Building reports in Excel</td><td class="r"><span dir="ltr" class="ltr">2–3</span></td></tr>
+        <tr class="you"><td data-ar="الإجمالي">Total</td><td></td><td class="r"><span dir="ltr" class="ltr">21–33</span></td></tr>
       </tbody>
     </table></div>
   </section>
@@ -647,9 +655,9 @@ footer{color:var(--muted);font-size:.85rem;border-top:1px solid var(--line-2);pa
       <thead><tr><th data-ar="الاختيار">Option</th><th data-ar="هتاخد إيه">What you get</th><th class="r" data-ar="السعر المعتاد">Typical price</th></tr></thead>
       <tbody>
         <tr class="you"><td data-ar="باقة الأعمال">Business package</td><td data-ar="ERP وCRM وموقع ومساعد ذكي وأتمتة وإطلاق ودعم وهدايا">ERP, CRM, website, AI assistant, automations, launch, support, bonuses</td><td class="r" data-ar="111,600 جنيه">EGP 111,600</td></tr>
-        <tr><td data-ar="شركة Odoo، باقة مبتدئة">Odoo partner, starter package</td><td data-ar="ERP بس، 2–3 موديولات، إعداد وتدريب">ERP only, 2–3 modules, setup and training</td><td class="r" data-ar="125,000–250,000 جنيه">EGP 125,000–250,000</td></tr>
-        <tr><td data-ar="شركة Odoo، باقة نمو">Odoo partner, growth package</td><td data-ar="5–8 موديولات وتخصيص وربط">5–8 modules, custom workflows, integrations</td><td class="r" data-ar="250,000–600,000 جنيه">EGP 250,000–600,000</td></tr>
-        <tr><td data-ar="موقع شركة صغيرة لوحده">Small-company website on its own</td><td data-ar="5–10 صفحات">5–10 pages</td><td class="r" data-ar="حوالي 20,000 جنيه">~EGP 20,000</td></tr>
+        <tr><td data-ar="شركة Odoo، باقة مبتدئة">Odoo partner, starter package</td><td data-ar="ERP بس، <span dir='ltr' class='ltr'>2–3</span> موديولات، إعداد وتدريب">ERP only, <span dir="ltr" class="ltr">2–3</span> modules, setup and training</td><td class="r" data-ar="<span dir='ltr' class='ltr'>125,000–250,000</span> جنيه">EGP <span dir="ltr" class="ltr">125,000–250,000</span></td></tr>
+        <tr><td data-ar="شركة Odoo، باقة نمو">Odoo partner, growth package</td><td data-ar="<span dir='ltr' class='ltr'>5–8</span> موديولات وتخصيص وربط"><span dir="ltr" class="ltr">5–8</span> modules, custom workflows, integrations</td><td class="r" data-ar="<span dir='ltr' class='ltr'>250,000–600,000</span> جنيه">EGP <span dir="ltr" class="ltr">250,000–600,000</span></td></tr>
+        <tr><td data-ar="موقع شركة صغيرة لوحده">Small-company website on its own</td><td data-ar="<span dir='ltr' class='ltr'>5–10</span> صفحات"><span dir="ltr" class="ltr">5–10</span> pages</td><td class="r" data-ar="حوالي 20,000 جنيه">~EGP 20,000</td></tr>
       </tbody>
     </table></div>
     <p class="note" data-ar="أسعار منشورة في مصر، اتراجعت في نوفمبر 2026. سعر الصرف 55.8 جنيه للدولار.">Published Egyptian prices, checked November 2026. EGP figures use 55.8 EGP per USD.</p>
@@ -666,14 +674,22 @@ footer{color:var(--muted);font-size:.85rem;border-top:1px solid var(--line-2);pa
   </section>
 
   <section id="work">
-    <h2 data-ar="أعمال سابقة">Recent work</h2>
+    <h2 data-ar="خبرات وأعمال سابقة">Experience and recent work</h2>
     <p class="lead" data-ar="نفس المكونات، ERP وتجارة إلكترونية وذكاء اصطناعي وتحليلات، شغالة فعلًا لشركات في مصر والسعودية.">The same building blocks, ERP, e-commerce, AI and analytics, already running for businesses in Egypt and Saudi Arabia.</p>
     <div class="work">
+      <article class="case">
+        <div class="logo"><img src="assets/green-pharmaceutical.svg" alt="Green Pharmaceutical"></div>
+        <div class="tags"><span class="tag"><img src="assets/shopify.svg" alt="">Shopify</span><span class="tag">E-commerce</span><span class="tag">Bosta</span><span class="tag"><img src="assets/meta.svg" alt="">Meta Pixel</span></div>
+        <h3 data-ar="جرين فارماسيوتيكال: نقل المتجر الإلكتروني وإطلاقه">Green Pharmaceutical: online store migration and launch</h3>
+        <p data-ar="نقلت براند عناية بالبشرة من القاهرة من WooCommerce لمتجر Shopify جديد بلغتين: 4 خطوط منتجات، دفع عند الاستلام وInstaPay، شحن مع Bosta، وMeta Pixel، وتقييمات العملاء، وتحويلات الروابط وGoogle Search Console.">Moved a Cairo dermatology brand from WooCommerce to a redesigned bilingual Shopify store: 4 product lines, cash on delivery and InstaPay, Bosta shipping, Meta Pixel, customer reviews, redirects and Google Search Console.</p>
+        <a href="https://green-pharmaceutical.com">green-pharmaceutical.com</a>
+      </article>
       <article class="case">
         <div class="logo"><img src="assets/ariika.png" alt="Ariika"></div>
         <div class="tags"><span class="tag"><img src="assets/whatsapp.svg" alt="">WhatsApp</span><span class="tag">AI</span><span class="tag"><img src="assets/shopify.svg" alt="">E-commerce</span></div>
         <h3 data-ar="أريكة مصر: خدمة عملاء بالذكاء الاصطناعي على الواتساب">Ariika Egypt: AI customer service on WhatsApp</h3>
         <p data-ar="مساعد ذكي لمتجر أثاث وديكور. بيرد بالمصري والإنجليزي والفرانكو، بيدور في أكتر من 1,300 منتج، وبيبعت تحديثات الطلب على الواتساب.">An AI assistant for a furniture and home-decor store. It answers in Egyptian Arabic, English and Franco, searches 1,300+ products, and sends order updates on WhatsApp.</p>
+        <p class="via" data-ar="اتنفذ ضمن شغلي في Knowcap.ai">Delivered as part of my role at Knowcap.ai</p>
         <a href="https://ariika.com">ariika.com</a>
       </article>
       <article class="case">
@@ -681,6 +697,7 @@ footer{color:var(--muted);font-size:.85rem;border-top:1px solid var(--line-2);pa
         <div class="tags"><span class="tag"><img src="assets/odoo.svg" alt="">Odoo 17</span><span class="tag"><img src="assets/googleanalytics.svg" alt="">Analytics</span><span class="tag"><img src="assets/googleads.svg" alt="">Google Ads</span></div>
         <h3 data-ar="أريكة السعودية: Odoo والمستودع والتحليلات">Ariika Saudi Arabia: Odoo, warehouse and analytics</h3>
         <p data-ar="موديول Odoo خاص بيبعت الطلبات لمستودع Flow وبيرجّع حالة المخزون والتوصيل تلقائي. ومعاه تتبع Google Analytics وGoogle Ads.">A custom Odoo module that sends orders to the Flow fulfilment warehouse and brings stock and delivery status back automatically. Plus Google Analytics and Google Ads tracking.</p>
+        <p class="via" data-ar="اتنفذ ضمن شغلي في Knowcap.ai">Delivered as part of my role at Knowcap.ai</p>
       </article>
       <article class="case">
         <div class="logo dark"><img src="assets/oko.jpg" alt="OKO"></div>
@@ -738,13 +755,13 @@ footer{color:var(--muted);font-size:.85rem;border-top:1px solid var(--line-2);pa
         <div class="tbl"><table class="cost-tbl" style="min-width:0">
           <thead><tr><th data-ar="البند">Item</th><th data-ar="السعر">Price</th><th data-ar="طريقة الحساب">How it's billed</th></tr></thead>
           <tbody>
-            <tr><td data-ar="سيرفر سحابي (ERP وCRM والموقع)">Cloud server (ERP, CRM, website)</td><td class="cost-p" data-ar="6–24 دولار / شهر">USD 6–24 / month</td><td class="cost-how" data-ar="باقة شهرية ثابتة، الحجم حسب عدد المستخدمين">Fixed monthly plan, size depends on users</td></tr>
+            <tr><td data-ar="سيرفر سحابي (ERP وCRM والموقع)">Cloud server (ERP, CRM, website)</td><td class="cost-p" data-ar="<span dir='ltr' class='ltr'>6–24</span> دولار / شهر">USD <span dir="ltr" class="ltr">6–24</span> / month</td><td class="cost-how" data-ar="باقة شهرية ثابتة، الحجم حسب عدد المستخدمين">Fixed monthly plan, size depends on users</td></tr>
             <tr><td data-ar="ترخيص Odoo Community">Odoo Community license</td><td class="cost-p" data-ar="مجاني">Free</td><td class="cost-how" data-ar="بدون رسوم لكل مستخدم">No per-user fees</td></tr>
-            <tr><td data-ar="استخدام المساعد الذكي">AI assistant usage</td><td class="cost-p" data-ar="حوالي 2–10 دولار / شهر">about USD 2–10 / month</td><td class="cost-how" data-ar="بالدفع حسب الاستخدام؛ تقدير لحوالي 3,000 محادثة في الشهر">Pay per use; estimate for ~3,000 chats a month</td></tr>
+            <tr><td data-ar="استخدام المساعد الذكي">AI assistant usage</td><td class="cost-p" data-ar="حوالي <span dir='ltr' class='ltr'>2–10</span> دولار / شهر">about USD <span dir="ltr" class="ltr">2–10</span> / month</td><td class="cost-how" data-ar="بالدفع حسب الاستخدام؛ تقدير لحوالي 3,000 محادثة في الشهر">Pay per use; estimate for ~3,000 chats a month</td></tr>
             <tr><td data-ar="ردود الواتساب على العملاء">WhatsApp replies to customers</td><td class="cost-p" data-ar="مجاني">Free</td><td class="cost-how" data-ar="الردود خلال 24 ساعة من رسالة العميل">Replies within 24 hours of a customer's message</td></tr>
             <tr><td data-ar="رسائل واتساب تسويقية (مصر)">WhatsApp marketing messages (Egypt)</td><td class="cost-p" data-ar="حوالي 0.064 دولار للرسالة + 14% ضريبة">about USD 0.064 each + 14% VAT</td><td class="cost-how" data-ar="Meta بتحاسب على كل رسالة، ولو بعتها بس">Charged by Meta per message, only if you send them</td></tr>
             <tr><td data-ar="تحديثات الطلبات على واتساب (مصر)">WhatsApp order updates (Egypt)</td><td class="cost-p" data-ar="حوالي 0.004 دولار للرسالة + 14% ضريبة">about USD 0.004 each + 14% VAT</td><td class="cost-how" data-ar="Meta بتحاسب على كل رسالة">Charged by Meta per message</td></tr>
-            <tr><td data-ar="الدومين (<bdi dir='ltr'>.com</bdi>)">Domain (.com)</td><td class="cost-p" data-ar="حوالي 500–800 جنيه / سنة">about EGP 500–800 / year</td><td class="cost-how" data-ar="تجديد سنوي">Yearly renewal</td></tr>
+            <tr><td data-ar="الدومين (<bdi dir='ltr'>.com</bdi>)">Domain (.com)</td><td class="cost-p" data-ar="حوالي <span dir='ltr' class='ltr'>500–800</span> جنيه / سنة">about EGP <span dir="ltr" class="ltr">500–800</span> / year</td><td class="cost-how" data-ar="تجديد سنوي">Yearly renewal</td></tr>
           </tbody>
         </table></div>
         <p class="note" data-ar="كل الحسابات (السيرفر والدومين والواتساب والذكاء الاصطناعي وMeta وجوجل) باسم شركتك وبتتدفع منك مباشرة للمزود. ميزانية الإعلانات منفصلة. المصادر: صفحات أسعار <a href='https://www.digitalocean.com/pricing/droplets'>DigitalOcean</a> و<a href='https://www.hetzner.com/cloud/'>Hetzner</a>، وأسعار WhatsApp Business من <a href='https://developers.facebook.com/docs/whatsapp/pricing'>Meta</a> لمصر، و<a href='https://www.godaddy.com/resources/ar-ae/'>GoDaddy</a> مصر.">Every account (server, domain, WhatsApp, AI, Meta, Google) is in your company's name and paid by you directly to the provider. Ad budgets are separate. Sources: <a href="https://www.digitalocean.com/pricing/droplets">DigitalOcean</a> and <a href="https://www.hetzner.com/cloud/">Hetzner</a> price pages, <a href="https://developers.facebook.com/docs/whatsapp/pricing">Meta</a> WhatsApp Business pricing for Egypt, <a href="https://www.godaddy.com/resources/ar-ae/">GoDaddy</a> Egypt.</p>
@@ -776,7 +793,7 @@ footer{color:var(--muted);font-size:.85rem;border-top:1px solid var(--line-2);pa
         <label for="f-company"><span class="req"><span data-ar="اسم الشركة">Company name</span></span><input id="f-company" name="company" autocomplete="organization" required></label>
         <label for="f-industry"><span data-ar="الشركة بتشتغل في إيه؟">What does the business do?</span><input id="f-industry" name="industry"></label>
         <label for="f-size"><span data-ar="كام شخص هيستخدم النظام؟">How many people will use the system?</span>
-          <select id="f-size" name="size"><option>1–5</option><option>6–15</option><option>16–30</option><option>30+</option></select></label>
+          <select id="f-size" name="size"><option value="1–5">⁦1–5⁩</option><option value="6–15">⁦6–15⁩</option><option value="16–30">⁦16–30⁩</option><option>30+</option></select></label>
         <label for="f-pkg"><span data-ar="الباقة اللي مايل لها">Package you're leaning towards</span>
           <select id="f-pkg" name="pkg"><option value="Not sure yet" data-ar="لسه مش متأكد">Not sure yet</option><option value="Starter" data-ar="الأساسية">Starter</option><option value="Business" selected data-ar="الأعمال">Business</option><option value="Custom" data-ar="المخصصة">Custom</option></select></label>
         <label for="f-meet"><span data-ar="أنسب وقت لمكالمة 30 دقيقة">Best time for a 30-minute call</span><input id="f-meet" name="meet"></label>
@@ -819,6 +836,11 @@ footer{color:var(--muted);font-size:.85rem;border-top:1px solid var(--line-2);pa
           <li data-ar="متاجر إلكترونية ومواقع وتتبع Meta وجوجل">E-commerce stores, websites, and Meta and Google tracking</li>
           <li data-ar="ماجستير علوم الحاسب بامتياز، جامعة روهامبتون، لندن">MSc Computer Science, Distinction, University of Roehampton, London</li>
         </ul>
+        <div class="xp">
+          <span class="xp-k" data-ar="الخبرة">Experience</span>
+          <div class="xp-row"><img src="assets/knowcap.svg" alt="" width="26" height="28"><strong class="xp-name" dir="ltr">Knowcap.ai</strong></div>
+          <p class="muted" data-ar="منصة ذكاء اصطناعي بشارك في بنائها: بحث ذكي ومساعدين وأتمتة للشركات">AI platform I help build: AI search, assistants and automation for businesses</p>
+        </div>
         <div class="btns">
           <a class="btn btn-line" href="https://www.linkedin.com/in/shady-al-halawani-333a5419a">LinkedIn</a>
           <a class="btn btn-line" href="https://github.com/Shadysmetools">GitHub</a>
