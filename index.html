@@ -74,6 +74,10 @@ nav.toc a:hover{background:var(--navy-2);color:#fff}
 .btn:hover{transform:translateY(-1px)}
 .btn .ic{width:18px;height:18px;flex:none;filter:invert(1)}
 .btn-wa{background:var(--wa);color:#fff;box-shadow:0 8px 20px -10px rgba(31,168,85,.8)}
+.btn-cal{background:#fff;color:var(--navy);box-shadow:0 8px 20px -12px rgba(0,0,0,.5)}
+.btn-cal svg{stroke:var(--navy)}
+.about .btn-cal,.panel .btn-cal{background:var(--navy);color:#fff}
+.about .btn-cal svg{stroke:#fff}
 .btn-line{border-color:var(--blue);color:var(--blue);background:#fff}
 .btn-light{border-color:#5b84bd;color:#fff;background:transparent}
 
@@ -251,7 +255,8 @@ footer{color:var(--muted);font-size:.84rem}
     <div class="roles"><span class="chip" data-ar="خبير ERP">ERP Expert</span><span class="chip" data-ar="استشاري Odoo">Odoo Consultant</span><span class="chip" data-ar="مهندس ذكاء اصطناعي">AI Engineer</span></div>
     <p style="color:#b9cbe6;font-size:.88rem" data-ar="القاهرة، مصر · ماجستير علوم الحاسب بامتياز">Cairo, Egypt · MSc Computer Science, Distinction</p>
   </div>
-  <a class="btn btn-wa" data-wa="book" href="https://wa.me/201205461115"><img class="ic" src="assets/whatsapp.svg" alt=""><span data-ar="احجز مكالمة مجانية">Book a free call</span></a>
+  <a class="btn btn-cal" href="https://calendly.com/shady-al-halawani"><svg class="cal" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#fff" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg><span data-ar="احجز مكالمة مجانية">Book a free call</span></a>
+  <a class="btn btn-wa" data-wa="book" href="https://wa.me/201205461115"><img class="ic" src="assets/whatsapp.svg" alt=""><span data-ar="أو كلمني واتساب">Or message on WhatsApp</span></a>
   <nav class="toc" aria-label="Sections">
     <a href="#overview" data-ar="نظرة عامة">Overview</a>
     <a href="#packages" data-ar="الباقات">Packages</a>
@@ -280,7 +285,8 @@ footer{color:var(--muted);font-size:.84rem}
       <h1 data-ar="نظام واحد لمبيعاتك ومخزونك وعملائك وموقعك، <em>وذكاء اصطناعي بيرد على واتساب</em>">One system for your sales, stock, customers and website, <em>with AI that answers on WhatsApp</em></h1>
       <p class="lead" data-ar="ERP وCRM وموقع بالعربي والإنجليزي ومساعد ذكي وأتمتة توفر وقت فريقك، مبنية على Odoo مع استشاري واحد بتتعامل معاه مباشرة. اختار الباقة المناسبة النهارده، وكل حاجة بتكمل معاك لما تكبر.">ERP, CRM, a bilingual website, an AI assistant and automations that save your team hours, built on Odoo by one consultant you deal with directly. Pick the package that fits today. Everything carries forward when you grow.</p>
       <div class="actions">
-        <a class="btn btn-wa" data-wa="book" href="https://wa.me/201205461115"><img class="ic" src="assets/whatsapp.svg" alt=""><span data-ar="احجز مكالمة مجانية ٣٠ دقيقة">Book a free 30-minute call</span></a>
+        <a class="btn btn-cal" href="https://calendly.com/shady-al-halawani"><svg class="cal" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#fff" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg><span data-ar="احجز مكالمة مجانية ٣٠ دقيقة">Book a free 30-minute call</span></a>
+        <a class="btn btn-wa" data-wa="book" href="https://wa.me/201205461115"><img class="ic" src="assets/whatsapp.svg" alt="">WhatsApp</a>
         <a class="btn btn-light" href="#packages" data-ar="شوف الباقات">See the packages</a>
         <a class="btn btn-light no-print" href="Shady-Al-Halawani-Proposal.pdf" data-ar="تحميل PDF">Download PDF</a>
       </div>
@@ -592,7 +598,7 @@ footer{color:var(--muted);font-size:.84rem}
 
   <section id="start" class="no-print">
     <h2 data-ar="ابدأ الآن: احكيلي عن شغلك">Get started: tell me about your business</h2>
-    <p class="lead" data-ar="املا اللي تقدر عليه. الزرار هيفتح واتساب وإجاباتك جاهزة، وهرد عليك نحدد مكالمة مجانية.">Fill in what you can. The button opens WhatsApp with your answers ready to send, and I'll reply to book a free call.</p>
+    <p class="lead" data-ar="املا اللي تقدر عليه وابعته على واتساب، أو <a href='https://calendly.com/shady-al-halawani'>احجز ميعاد مباشرة على Calendly</a>.">Fill in what you can and send it on WhatsApp, or <a href="https://calendly.com/shady-al-halawani">book a time directly on Calendly</a>.</p>
     <form id="disc" class="panel">
       <div class="grid2">
         <label for="f-name"><span data-ar="اسمك">Your name</span><input id="f-name" name="name" autocomplete="name"></label>
@@ -640,6 +646,7 @@ footer{color:var(--muted);font-size:.84rem}
         <div class="btns">
           <a class="btn btn-line" href="https://www.linkedin.com/in/shady-al-halawani-333a5419a">LinkedIn</a>
           <a class="btn btn-line" href="https://github.com/Shadysmetools">GitHub</a>
+          <a class="btn btn-cal" href="https://calendly.com/shady-al-halawani"><svg class="cal" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#fff" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg><span data-ar="احجز مكالمة">Book a call</span></a>
           <a class="btn btn-wa" data-wa="book" href="https://wa.me/201205461115"><img class="ic" src="assets/whatsapp.svg" alt="">WhatsApp</a>
         </div>
       </div>
